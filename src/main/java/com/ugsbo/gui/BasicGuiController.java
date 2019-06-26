@@ -5,9 +5,9 @@ import javafx.scene.control.*;
 
 public class BasicGuiController {
 
-    //Hier werden die fx:id Attribute verknuepft.
+    // Hier werden die fx:id Attribute verknuepft.
     @FXML
-    private Button app1; //Fuer ToDoManager.
+    private Button matrixCalc;
     @FXML
     private Button app2;
     @FXML
@@ -19,7 +19,7 @@ public class BasicGuiController {
      * Konstructor is called before initialize()
      */
     public BasicGuiController() {
-        //Setup of some Fields could be defined here.
+        // Setup of some Fields could be defined here.
     }
 
     /**
@@ -28,9 +28,9 @@ public class BasicGuiController {
      */
     @FXML
     public void initialize() {
-        app1.setOnMouseClicked((event) -> {
-            //MainApp.startToDoMainGui();
-            System.out.println(event);
+        matrixCalc.setOnMouseClicked((event) -> {
+            MainApp.startMatrixCalcGUI();
+            // System.out.println(event);
         });
         app2.setOnMouseClicked((event) -> {
             System.out.println(event);

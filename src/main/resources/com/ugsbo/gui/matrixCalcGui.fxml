@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ugsbo.matrixcalc.MatrixCalcController">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <TextArea fx:id="matrixATextArea" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="200.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button fx:id="multiplyButton" layoutX="14.0" layoutY="27.0" mnemonicParsing="false" text="multiply" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="27.0" />
+            <Button fx:id="addButton" layoutX="14.0" layoutY="62.0" mnemonicParsing="false" text="add" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="67.0" />
+            <Button fx:id="substractButton" layoutX="99.0" layoutY="62.0" mnemonicParsing="false" text="Substract" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="67.0" />
+            <Button fx:id="transposeButton" layoutX="97.0" layoutY="27.0" mnemonicParsing="false" text="Transpose" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="27.0" />
+            <Button fx:id="swapInputButton" layoutX="14.0" layoutY="95.0" mnemonicParsing="false" text="Swap Input" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="107.0" />
+            <Text fx:id="errorText" layoutX="14.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="100.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="400.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <TextArea fx:id="matrixBTextArea" layoutX="-15.0" layoutY="30.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+         </children>
+      </AnchorPane>
+      <Text fx:id="outputText" layoutX="14.0" layoutY="242.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="554.7294921875" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="210.0" />
+   </children>
+</AnchorPane>
