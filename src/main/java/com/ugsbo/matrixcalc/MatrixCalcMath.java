@@ -27,7 +27,15 @@ public class MatrixCalcMath {
      */
     public boolean checkIfMatriciesAreLinked(Double[][] matrixA, Double[][] matrixB) {
         // TODO Check if the number of Rows of Matrix A equal to the coulums of Matrix B
-        return false;
+        if (matrixA != null) {
+            if (matrixA[0].length == matrixB.length) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
     }
 
     /**
