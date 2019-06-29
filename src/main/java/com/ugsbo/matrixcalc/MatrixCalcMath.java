@@ -1,5 +1,7 @@
 package com.ugsbo.matrixcalc;
 
+import java.io.IOException;
+
 /**
  * Contains all basic matrix math calculations.
  */
@@ -28,7 +30,8 @@ public class MatrixCalcMath {
             }
             return result;
         } else {
-            throw new IllegalArgumentException("array must be linked");
+            return null;
+            //throw new IllegalArgumentException("Matricies must be linked");
         }
     }
 
@@ -41,15 +44,16 @@ public class MatrixCalcMath {
      * @return true if you can Muliply A with B false if not.
      */
     public boolean checkIfMatriciesAreLinked(double[][] matrixA, double[][] matrixB) {
-        if (matrixA != null) {
-            if (matrixA[0].length == matrixB.length) {
-                return true;
-            } else {
-                return false;
-            }
-        } else {
+        if (matrixA == null) {
             return false;
         }
+        if (matrixA.length == 0) {
+            return false;
+        }
+        if (matrixA[0].length == matrixB.length) {
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -61,8 +65,20 @@ public class MatrixCalcMath {
      * @return The Matrixsum of matrix A and matrix B
      */
     public double[][] matrixAddition(double[][] matrixA, double[][] matrixB) {
-        // TODO Sum each Element of matrix A to the corrosponding elem in B
-        return null;
+        if (checkIfMatriciesAreTheSameDimension(matrixA, matrixB)) {
+            double[][] result = new double[matrixA.length][matrixA[0].length];
+            for (int rows = 0; rows < matrixA.length; rows++) {
+                for (int colums = 0; colums < matrixA[0].length; colums++) {
+                    result[rows][colums] = matrixA[rows][colums] + matrixB[rows][colums];
+                }
+            }
+            return result;
+        } else {
+            return null;
+            // TODO Fragen wie man eine Exception testen kann.
+            // throw new IllegalArgumentException("Matricies need to have the same
+            // Dimensions");
+        }
     }
 
     /**
@@ -74,7 +90,11 @@ public class MatrixCalcMath {
      * @return true if the Dimensions of Matrix A equals the Dimensions Matrix B
      */
     public boolean checkIfMatriciesAreTheSameDimension(double[][] matrixA, double[][] matrixB) {
-        // TODO Dimension check.
-        return false;
+        if (matrixA.length == matrixB.length && matrixA[0].length == matrixB[0].length) {
+            return true;
+        } else {
+            return false;
+        }
+
     }
 }
