@@ -28,7 +28,7 @@ public class MatrixCalcController {
     @FXML
     public void initialize() {
         multiplyButton.setOnMouseClicked((event) -> {
-            // TODO matrixATextArea and matrixBTextArea need to be parsed to Double[][] do
+            // TODO matrixATextArea and matrixBTextArea need to be parsed to double[][] do
             // this in an extern Methode maybe an extern class.
             // MatrixCalcMath math = new MatrixCalcMath();
             // math.matrixMultiplication(matrixATextArea, matrixATextArea);
