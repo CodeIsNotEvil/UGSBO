@@ -122,4 +122,26 @@ public class MatrixCalcMath {
             // Dimensions");
         }
     }
+
+    /**
+     * Transposes the Input Matrix. Swaps rows with colums.
+     * 
+     * @param matrixA The Inputmatrix A wich will be Transposed
+     * @return The Transposed matrix of matrix A
+     */
+    public double[][] matrixTransponation(double[][] matrixA) {
+        if(matrixA == null) {
+            // TODO hier auch die exception.
+            return null;
+        }
+        int columCountResult = matrixA.length;
+        int rowCountResult = matrixA[0].length;
+        double[][] result = new double[rowCountResult][columCountResult];
+        for (int row = 0; row < rowCountResult; row++) {
+            for (int colum = 0; colum < columCountResult; colum++) {
+                result[row][colum] = matrixA[colum][row];
+            }
+        }
+        return result;
+    }
 }
