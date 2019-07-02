@@ -31,7 +31,7 @@ public class MatrixCalcMath {
             return result;
         } else {
             return null;
-            //throw new IllegalArgumentException("Matricies must be linked");
+            // throw new IllegalArgumentException("Matricies must be linked");
         }
     }
 
@@ -96,5 +96,30 @@ public class MatrixCalcMath {
             return false;
         }
 
+    }
+
+    /**
+     * Substracts matrix A by the matrix B. Substaction for Matrices is just the
+     * substraction of each component with thier coorsponding component.
+     * 
+     * @param matrixA The Inputmatrix A (right TextArea in the GUI)
+     * @param matrixB The Inputmatrix B (left TextArea in the GUI
+     * @return matrix A substracted by matrix B
+     */
+    public double[][] matrixSubstraction(double[][] matrixA, double[][] matrixB) {
+        if (checkIfMatriciesAreTheSameDimension(matrixA, matrixB)) {
+            double[][] result = new double[matrixA.length][matrixA[0].length];
+            for (int rows = 0; rows < matrixA.length; rows++) {
+                for (int colums = 0; colums < matrixA[0].length; colums++) {
+                    result[rows][colums] = matrixA[rows][colums] - matrixB[rows][colums];
+                }
+            }
+            return result;
+        } else {
+            return null;
+            // TODO Fragen wie man eine Exception testen kann.
+            // throw new IllegalArgumentException("Matricies need to have the same
+            // Dimensions");
+        }
     }
 }
