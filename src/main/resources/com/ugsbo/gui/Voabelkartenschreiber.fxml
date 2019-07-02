@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ugsbo.gui.Vokabelkartenschreiber">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -22,13 +22,13 @@
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
             <Label layoutX="14.0" layoutY="14.0" prefHeight="54.0" prefWidth="597.0" text="Willkommen!&#10;Bitte trage deine Karten in der unten gezeigte Form ein. &#10;Gibt es keine zweite Antwort, so lassen Sie das Feld frei.&#10;" />
-            <TextField layoutX="14.0" layoutY="84.0" prefHeight="27.0" prefWidth="597.0" promptText="Name" />
-            <TextField layoutX="14.0" layoutY="123.0" prefHeight="27.0" prefWidth="597.0" promptText="Frage" />
-            <TextField layoutX="14.0" layoutY="164.0" prefHeight="27.0" prefWidth="597.0" promptText="Antwort 1" />
-            <TextField layoutX="14.0" layoutY="200.0" prefHeight="27.0" prefWidth="597.0" promptText="Antwort 2" />
-            <TextField layoutX="14.0" layoutY="236.0" prefHeight="27.0" prefWidth="597.0" promptText="Antwort 3" />
-            <TextField layoutX="14.0" layoutY="275.0" prefHeight="27.0" prefWidth="597.0" promptText="Antwort 4" />
-            <Button layoutX="277.0" layoutY="319.0" mnemonicParsing="false" text="absenden" />
+            <TextField fx:id="Text_Name" layoutX="14.0" layoutY="84.0" prefHeight="27.0" prefWidth="597.0" promptText="Name" />
+            <TextField fx:id="Text_Frage" layoutX="14.0" layoutY="123.0" prefHeight="27.0" prefWidth="597.0" promptText="Frage" />
+            <TextField fx:id="Text_Antwort1" layoutX="14.0" layoutY="164.0" prefHeight="27.0" prefWidth="597.0" promptText="Antwort 1" />
+            <TextField fx:id="Text_Antwort2" layoutX="14.0" layoutY="200.0" prefHeight="27.0" prefWidth="597.0" promptText="Antwort 2" />
+            <TextField fx:id="Text_Antwort3" layoutX="14.0" layoutY="236.0" prefHeight="27.0" prefWidth="597.0" promptText="Antwort 3" />
+            <TextField fx:id="Text_Antwort4" layoutX="14.0" layoutY="275.0" prefHeight="27.0" prefWidth="597.0" promptText="Antwort 4" />
+            <Button fx:id="button_absenden" layoutX="277.0" layoutY="319.0" mnemonicParsing="false" onAction="#button_absenden_pressed" text="absenden" />
       </children>
     </AnchorPane>
   </children>
