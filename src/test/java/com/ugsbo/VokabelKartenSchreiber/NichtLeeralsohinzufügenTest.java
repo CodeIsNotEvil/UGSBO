@@ -11,30 +11,51 @@ public class NichtLeeralsohinzufügenTest {
 	@Test
 	public void NichtAlsLeeralsoHinzufügenTest() {
 		Vokabelkarte WorkingObjekt = new Vokabelkarte();
-		assertEquals("NichtLeerAlsSolcheHinzufügen funktioniert nicht", WorkingObjekt.NichtLeeralsohinzufügen("prüfenTest","RückgabeTest","ZwischenwertTest"), "RückgabeTestprüfenTestZwischenwertTest");
+		
+		String Ergebnis = 	"RückgabeTestprüfenTestZwischenwertTest";
+		String Test = 		WorkingObjekt.NichtLeeralsohinzufügen("prüfenTest","RückgabeTest","ZwischenwertTest");
+		
+		assertEquals("NichtLeerAlsSolcheHinzufügen funktioniert nicht", Ergebnis, Test);
 	}
 	
 	@Test
 	public void NichtAlsLeeralsoHinzufügenRückgabeLeer() {
 		Vokabelkarte WorkingObjekt = new Vokabelkarte();
+		
+		String Ergebnis = 	"RückgabeTestprüfenTestZwischenwertTest";
+		String Test = 		WorkingObjekt.NichtLeeralsohinzufügen("prüfenTest","RückgabeTest","ZwischenwertTest");
+		
+		assertEquals("NichtLeerAlsSolcheHinzufügen funktioniert nicht", Ergebnis, Test);
 		assertEquals("NichtLeerAlsSolcheHinzufügen funktioniert nicht", WorkingObjekt.NichtLeeralsohinzufügen("prüfenTest","","ZwischenwertTest"), "prüfenTest");
 	}
 
 	@Test
 	public void NichtAlsLeeralsoHinzufügenprüfenLeer() {
 		Vokabelkarte WorkingObjekt = new Vokabelkarte();
-		assertEquals("NichtLeerAlsSolcheHinzufügen funktioniert nicht", WorkingObjekt.NichtLeeralsohinzufügen("","RückgabeTest","ZwischenwertTest"), "RückgabeTest");
+		
+		String Ergebnis = 	"RückgabeTest";
+		String Test = 		WorkingObjekt.NichtLeeralsohinzufügen("","RückgabeTest","ZwischenwertTest");
+		
+		assertEquals("NichtLeerAlsSolcheHinzufügen funktioniert nicht", Ergebnis, Test);
 	}
 	
 	@Test
 	public void NichtAlsLeeralsoHinzufügenZwischenwerLeer() {
 		Vokabelkarte WorkingObjekt = new Vokabelkarte();
-		assertEquals("NichtLeerAlsSolcheHinzufügen funktioniert nicht", WorkingObjekt.NichtLeeralsohinzufügen("prüfenTest","","ZwischenwertTest"), "prüfenTest");
+		
+		String Ergebnis = 	"prüfenTest";
+		String Test = 		WorkingObjekt.NichtLeeralsohinzufügen("prüfenTest","","ZwischenwertTest");
+		
+		assertEquals("NichtLeerAlsSolcheHinzufügen funktioniert nicht", Ergebnis, Test);
 	}
 	
 	@Test
 	public void NichtAlsLeeralsoHinzufügenAllesLeer() {
 		Vokabelkarte WorkingObjekt = new Vokabelkarte();
-		assertEquals("NichtLeerAlsSolcheHinzufügen funktioniert nicht", WorkingObjekt.NichtLeeralsohinzufügen("","",""), "");
+		
+		String Ergebnis = 	"";
+		String Test = 		WorkingObjekt.NichtLeeralsohinzufügen("","","");
+		
+		assertEquals("NichtLeerAlsSolcheHinzufügen funktioniert nicht", Ergebnis, Test);
 	}
 }
