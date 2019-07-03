@@ -4,7 +4,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.util.Scanner;
 
-class Vokabelkarte{
+public class Vokabelkarte{
 	String Name;
 	String Frage;
 	String Antwort1;
@@ -35,7 +35,7 @@ class Vokabelkarte{
 	
     /***
      * 
-     * @param zwischenstück		fügt ein Zwischenstück zwischen den beiden Strings ein
+     * @param Zwischenwert		fügt ein Zwischenstück zwischen den beiden Strings ein
      * @param prüfen	Der zu prüfende String
      * @param Rückgabe	Der String an den angehängt werden soll
      * @return	Der fertige String
@@ -44,10 +44,10 @@ class Vokabelkarte{
 	
 	//-------------------------------------------------
 	//Private
-    private String NichtLeeralsohinzufügen(String prüfen, String Rückgabe, String Zwischenwert) {
+    public String NichtLeeralsohinzufügen(String prüfen, String Rückgabe, String Zwischenwert) {
     	if (prüfen != "") {
     		if(Rückgabe!="") {
-    			Rückgabe += Zwischenwert;
+                prüfen += Zwischenwert;
     		}
     		Rückgabe += prüfen;
     	}
