@@ -57,5 +57,5 @@ public class NichtLeeralsohinzufügenTest {
 		String Test = 		WorkingObjekt.NichtLeeralsohinzufügen("","","");
 		
 		assertEquals("NichtLeerAlsSolcheHinzufügen funktioniert nicht", Ergebnis, Test);
-	}
+	}        
 }
