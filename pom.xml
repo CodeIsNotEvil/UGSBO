@@ -99,7 +99,7 @@
             <release>12</release>
             <jlinkImageName>UGSBO</jlinkImageName>
             <launcher>launcher</launcher>
-            <mainClass>UGSBO/com.ugsbo.gui.MainApp</mainClass>
+            <mainClass>UGSBO/com.ugsbo.gui.StartApplication</mainClass>
           </configuration>
         </plugin>
       </plugins>
