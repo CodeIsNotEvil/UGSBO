@@ -22,9 +22,12 @@ class VokabelKartenSchreiber{
     	
     }
     
-
-
-
+    /***
+     * Falls die Gui nicht ganz funktioniert, hier eine Version die per Terminal gesteuert wird
+     */
     
+    public static void TerminalVersion() {
+        VokabelnwithTerminal.start();
+    }
 
 }
