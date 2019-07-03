@@ -1,6 +1,6 @@
 package com.ugsbo.matrixcalc;
 
-import java.io.IOException;
+//import java.io.IOException;
 
 /**
  * Contains all basic matrix math calculations.
