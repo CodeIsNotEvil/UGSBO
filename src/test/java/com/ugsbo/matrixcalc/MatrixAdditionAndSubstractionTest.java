@@ -43,7 +43,7 @@ public class MatrixAdditionAndSubstractionTest {
         double[][] result = math.matrixAddition(matrixA, matrixB);
 
         assertArrayEquals("The first row is not correct", matrixC[0], result[0], 0.1);
-        assertArrayEquals("The seound row is not correct", matrixC[1], result[1], 0.1);
+        assertArrayEquals("The second row is not correct", matrixC[1], result[1], 0.1);
     }
     
     @Test
@@ -56,7 +56,37 @@ public class MatrixAdditionAndSubstractionTest {
         double[][] result = math.matrixAddition(matrixA, matrixB);
 
         assertArrayEquals("The first row is not correct", matrixC[0], result[0], 0.1);
-        assertArrayEquals("The seound row is not correct", matrixC[1], result[1], 0.1);
+        assertArrayEquals("The second row is not correct", matrixC[1], result[1], 0.1);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void tryToAddTowEmptyMatricies() {
+        MatrixCalcMath math = new MatrixCalcMath();
+        // A(0,0) B(0,0) => IllegalArgumentException
+        double[][] matrixA = new double[0][0];
+        double[][] matrixB = new double[0][0];
+        
+        math.matrixAddition(matrixA, matrixB);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void tryToAddTowNullMatrices() {
+        MatrixCalcMath math = new MatrixCalcMath();
+        // A(0,0) B(0,0) => IllegalArgumentException
+        double[][] matrixA = null;
+        double[][] matrixB = null;
+        
+        math.matrixAddition(matrixA, matrixB); 
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void tryToAddTowMatricesWithDifferentDimensions() {
+        MatrixCalcMath math = new MatrixCalcMath();
+        // A(0,0) B(0,0) => IllegalArgumentException
+        double[][] matrixA = {{1.0, 2.0}};
+        double[][] matrixB = {{1.0}, {2.0}};
+        
+        math.matrixAddition(matrixA, matrixB); 
     }
 
     @Test
@@ -69,7 +99,7 @@ public class MatrixAdditionAndSubstractionTest {
         double[][] result = math.matrixSubstraction(matrixA, matrixB);
 
         assertArrayEquals("The first row is not correct", matrixC[0], result[0], 0.1);
-        assertArrayEquals("The seound row is not correct", matrixC[1], result[1], 0.1);
+        assertArrayEquals("The second row is not correct", matrixC[1], result[1], 0.1);
     }
 
     @Test
@@ -82,7 +112,7 @@ public class MatrixAdditionAndSubstractionTest {
         double[][] result = math.matrixSubstraction(matrixA, matrixB);
 
         assertArrayEquals("The first row is not correct", matrixC[0], result[0], 0.1);
-        assertArrayEquals("The seound row is not correct", matrixC[1], result[1], 0.1);
+        assertArrayEquals("The second row is not correct", matrixC[1], result[1], 0.1);
     }
 
     @Test
@@ -95,6 +125,37 @@ public class MatrixAdditionAndSubstractionTest {
         double[][] result = math.matrixSubstraction(matrixA, matrixB);
 
         assertArrayEquals("The first row is not correct", matrixC[0], result[0], 0.1);
-        assertArrayEquals("The seound row is not correct", matrixC[1], result[1], 0.1);
+        assertArrayEquals("The second row is not correct", matrixC[1], result[1], 0.1);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void tryToSubstractTowEmptyMatricies() {
+        MatrixCalcMath math = new MatrixCalcMath();
+        // A(0,0) B(0,0) => IllegalArgumentException
+        double[][] matrixA = new double[0][0];
+        double[][] matrixB = new double[0][0];
+
+        math.matrixSubstraction(matrixA, matrixB);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void tryToSubstractTowNullMatrices() {
+        MatrixCalcMath math = new MatrixCalcMath();
+        // A(0,0) B(0,0) => IllegalArgumentException
+        double[][] matrixA = null;
+        double[][] matrixB = null;
+
+        math.matrixSubstraction(matrixA, matrixB);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void tryToSubstractTowMatricesWithDifferentDimensions() {
+        MatrixCalcMath math = new MatrixCalcMath();
+        // A(0,0) B(0,0) => IllegalArgumentException
+        double[][] matrixA = {{1.0, 2.0}};
+        double[][] matrixB = {{1.0}, {2.0}};
+
+        math.matrixSubstraction(matrixA, matrixB);
+
     }
 }

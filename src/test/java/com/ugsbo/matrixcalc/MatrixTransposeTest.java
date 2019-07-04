@@ -19,7 +19,7 @@ public class MatrixTransposeTest {
         double[][] result = math.matrixTransponation(matrixA);
 
         assertArrayEquals("The first row is not correct", matrixC[0], result[0], 0.1);
-        assertArrayEquals("The seound row is not correct", matrixC[1], result[1], 0.1);
+        assertArrayEquals("The second row is not correct", matrixC[1], result[1], 0.1);
     }
 
     @Test
@@ -32,7 +32,8 @@ public class MatrixTransposeTest {
         double[][] result = math.matrixTransponation(matrixA);
 
         assertArrayEquals("The first row is not correct", matrixC[0], result[0], 0.1);
-        assertArrayEquals("The seound row is not correct", matrixC[1], result[1], 0.1);
+        assertArrayEquals("The second row is not correct", matrixC[1], result[1], 0.1);
+        assertArrayEquals("The third row is not correct", matrixC[2], result[2], 0.1);
     }
 
     @Test
@@ -45,6 +46,7 @@ public class MatrixTransposeTest {
         double[][] result = math.matrixTransponation(matrixA);
 
         assertArrayEquals("The first row is not correct", matrixC[0], result[0], 0.1);
-        assertArrayEquals("The seound row is not correct", matrixC[1], result[1], 0.1);
+        assertArrayEquals("The second row is not correct", matrixC[1], result[1], 0.1);
+        assertArrayEquals("The third row is not correct", matrixC[2], result[2], 0.1);
     }
 }

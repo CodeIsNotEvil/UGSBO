@@ -54,7 +54,7 @@ public class MatrixMultiplicationTest {
         double[][] result = math.matrixMultiplication(matrixA, matrixB);
 
         assertArrayEquals("The first row is not correct", matrixC[0], result[0], 0.1);
-        assertArrayEquals("The seound row is not correct", matrixC[1], result[1], 0.1);
+        assertArrayEquals("The second row is not correct", matrixC[1], result[1], 0.1);
     }
 
     @Test
@@ -68,7 +68,7 @@ public class MatrixMultiplicationTest {
         double[][] result = math.matrixMultiplication(matrixA, matrixB);
 
         assertArrayEquals("The first row is not correct", matrixC[0], result[0], 0.1);
-        assertArrayEquals("The seound row is not correct", matrixC[1], result[1], 0.1);
+        assertArrayEquals("The second row is not correct", matrixC[1], result[1], 0.1);
     }
 
     @Test
@@ -82,30 +82,28 @@ public class MatrixMultiplicationTest {
         double[][] result = math.matrixMultiplication(matrixA, matrixB);
 
         assertArrayEquals("The first row is not correct", matrixC[0], result[0], 0.1);
-        assertArrayEquals("The seound row is not correct", matrixC[1], result[1], 0.1);
+        assertArrayEquals("The second row is not correct", matrixC[1], result[1], 0.1);
     }
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
+
     public void tryToMultiplyTowEmptyMatricies() {
         MatrixCalcMath math = new MatrixCalcMath();
-        // A(0,0) B(0,0) => null
+        // A(0,0) B(0,0) => IllegalArgumentException
         double[][] matrixA = new double[0][0];
         double[][] matrixB = new double[0][0];
-
-        double[][] result = math.matrixMultiplication(matrixA, matrixB);
-
-        assertArrayEquals(null, result);
+        
+        math.matrixMultiplication(matrixA, matrixB);
     }
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
+
     public void tryToMultiplyTowNullObjects() {
         MatrixCalcMath math = new MatrixCalcMath();
-        // null null => null
+        // null null => IllegalArgumentException
         double[][] matrixA = null;
         double[][] matrixB = null;
-
-        double[][] result = math.matrixMultiplication(matrixA, matrixB);
-
-        assertArrayEquals(null, result);
+        
+        math.matrixMultiplication(matrixA, matrixB);
     }
 }
