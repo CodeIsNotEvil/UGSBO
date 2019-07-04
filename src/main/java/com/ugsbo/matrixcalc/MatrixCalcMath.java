@@ -30,8 +30,7 @@ public class MatrixCalcMath {
             }
             return result;
         } else {
-            return null;
-            // throw new IllegalArgumentException("Matricies must be linked");
+            throw new IllegalArgumentException("Matricies must be linked");
         }
     }
 
@@ -74,10 +73,7 @@ public class MatrixCalcMath {
             }
             return result;
         } else {
-            return null;
-            // TODO Fragen wie man eine Exception testen kann.
-            // throw new IllegalArgumentException("Matricies need to have the same
-            // Dimensions");
+            throw new IllegalArgumentException("Matricies need to have the same Dimensions");
         }
     }
 
@@ -90,6 +86,12 @@ public class MatrixCalcMath {
      * @return true if the Dimensions of Matrix A equals the Dimensions Matrix B
      */
     public boolean checkIfMatriciesAreTheSameDimension(double[][] matrixA, double[][] matrixB) {
+        if (matrixA == null || matrixA.length == 0) {
+            return false;
+        }
+        if (matrixA[0] == null) {
+            return false;
+        }
         if (matrixA.length == matrixB.length && matrixA[0].length == matrixB[0].length) {
             return true;
         } else {
@@ -116,10 +118,7 @@ public class MatrixCalcMath {
             }
             return result;
         } else {
-            return null;
-            // TODO Fragen wie man eine Exception testen kann.
-            // throw new IllegalArgumentException("Matricies need to have the same
-            // Dimensions");
+            throw new IllegalArgumentException("Matricies need to have the same Dimensions");
         }
     }
 
@@ -130,9 +129,14 @@ public class MatrixCalcMath {
      * @return The Transposed matrix of matrix A
      */
     public double[][] matrixTransponation(double[][] matrixA) {
-        if(matrixA == null) {
-            // TODO hier auch die exception.
-            return null;
+        if (matrixA == null) {
+            throw new IllegalArgumentException("Matricies need to have the same Dimensions");
+        }
+        if (matrixA.length == 0){
+            throw new IllegalArgumentException("Matricies need to have the same Dimensions");
+        }
+        if(matrixA[0] == null){
+            throw new IllegalArgumentException("Matricies need to have the same Dimensions");
         }
         int columCountResult = matrixA.length;
         int rowCountResult = matrixA[0].length;
@@ -144,4 +148,59 @@ public class MatrixCalcMath {
         }
         return result;
     }
+
+    /**
+     * Calculates the Determinant of a Matrix.
+     * 
+     * @param matrixA The Inputmatrix
+     * @return The Determinant of the Matrix A
+     */
+    public double calcDeterminat(double[][] matrixA) {
+        // checking if a Determinant can be calculated.
+        double result = 0.0;
+        if (checkIfMatrixIsQuadradtic(matrixA)) {
+            if (getMatrixRowCount(matrixA) == 2) {
+                result = calc2by2Determinant(matrixA);
+            } else if (getMatrixRowCount(matrixA) == 3) {
+                result = calc3by3Determinant(matrixA);
+
+            } else {
+                throw new IllegalArgumentException("Matrix is not 2 by 2 or 3 by 3");
+            }
+
+        } else {
+            throw new IllegalArgumentException("Matrix must be Quadratic");
+        }
+        return result;
+    }
+
+    private double calc3by3Determinant(double[][] matrixA) {
+        double result = matrixA[0][0] * matrixA[1][1] * matrixA[2][2] + matrixA[0][1] * matrixA[1][2] * matrixA[2][0]
+                + matrixA[0][2] * matrixA[1][0] * matrixA[2][1] - matrixA[0][0] * matrixA[1][2] * matrixA[2][1]
+                - matrixA[0][1] * matrixA[1][0] * matrixA[2][2] - matrixA[0][2] * matrixA[1][1] * matrixA[2][0];
+        return result;
+    }
+
+    private double calc2by2Determinant(double[][] matrixA) {
+        double result = matrixA[0][0] * matrixA[1][1] - matrixA[0][1] * matrixA[1][0];
+        return result;
+    }
+
+    private int getMatrixRowCount(double[][] matrixA) {
+        return matrixA.length;
+    }
+
+    private boolean checkIfMatrixIsQuadradtic(double[][] matrixA) {
+        if (matrixA == null) {
+            return false;
+        }
+        if (matrixA[0] == null) {
+            return false;
+        }
+        if (matrixA.length == matrixA[0].length) {
+            return true;
+        }
+        return false;
+    }
+
 }
