@@ -7,6 +7,14 @@ public class IsMyComputerOn_App {
 
 	}
 	
+	/***
+	 * 
+	 * @return 
+	 */
 
+ 	public static boolean IstErAn() {
+	// TODO Auto-generated method stub
+	return false;
+	}
 
 }

@@ -13,6 +13,9 @@ import org.junit.Test;
  */
 public class IstErAn {
 
-
+    @Test
+	public void test() {
+		assertTrue("Funktion gibt false zurück? O.o",IsMyComputerOn_App.IstErAn());
+	}
 
 }
