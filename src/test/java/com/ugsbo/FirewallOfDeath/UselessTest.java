@@ -17,5 +17,4 @@ public class UselessTest {
 	public void test() {
 		assertTrue(true);
 	}
-
 }
