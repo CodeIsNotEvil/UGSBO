@@ -26,5 +26,4 @@ public class IsMyComputerOn_App {
 	// TODO Auto-generated method stub
 	return true;
 	}
-
 }
