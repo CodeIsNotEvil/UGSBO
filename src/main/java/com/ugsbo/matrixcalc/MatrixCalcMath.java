@@ -1,7 +1,5 @@
 package com.ugsbo.matrixcalc;
 
-//import java.io.IOException;
-
 /**
  * Contains all basic matrix math calculations.
  */
@@ -132,10 +130,10 @@ public class MatrixCalcMath {
         if (matrixA == null) {
             throw new IllegalArgumentException("Matricies need to have the same Dimensions");
         }
-        if (matrixA.length == 0){
+        if (matrixA.length == 0) {
             throw new IllegalArgumentException("Matricies need to have the same Dimensions");
         }
-        if(matrixA[0] == null){
+        if (matrixA[0] == null) {
             throw new IllegalArgumentException("Matricies need to have the same Dimensions");
         }
         int columCountResult = matrixA.length;
@@ -174,6 +172,12 @@ public class MatrixCalcMath {
         return result;
     }
 
+    /**
+     * Calculates the Determinat of an three by three Matrix.
+     * 
+     * @param matrixA The Inputmatrix form wich the Determinat will be calculated
+     * @return the Determinant of the Matrix
+     */
     private double calc3by3Determinant(double[][] matrixA) {
         double result = matrixA[0][0] * matrixA[1][1] * matrixA[2][2] + matrixA[0][1] * matrixA[1][2] * matrixA[2][0]
                 + matrixA[0][2] * matrixA[1][0] * matrixA[2][1] - matrixA[0][0] * matrixA[1][2] * matrixA[2][1]
@@ -181,15 +185,34 @@ public class MatrixCalcMath {
         return result;
     }
 
+    /**
+     * Calculates the Determinat of an two by two Matrix.
+     * 
+     * @param matrixA The Inputmatrix form wich the Determinat will be calculated
+     * @return the Determinant of the Matrix
+     */
     private double calc2by2Determinant(double[][] matrixA) {
         double result = matrixA[0][0] * matrixA[1][1] - matrixA[0][1] * matrixA[1][0];
         return result;
     }
 
+    /**
+     * Returns the Number of rows of a Matrix.
+     * 
+     * @param matrixA the Inputmatrix form wich the rows will be counted
+     * @return Number of rows
+     */
     private int getMatrixRowCount(double[][] matrixA) {
         return matrixA.length;
     }
 
+    /**
+     * Checks if the rows and colums of an Matrix are equal. If they are equal the
+     * Matrix is Quadratic and the function will return true.
+     * 
+     * @param matrixA the Inputmatrix for wich the rows and colums will be compared
+     * @return isQuadratic
+     */
     private boolean checkIfMatrixIsQuadradtic(double[][] matrixA) {
         if (matrixA == null) {
             return false;

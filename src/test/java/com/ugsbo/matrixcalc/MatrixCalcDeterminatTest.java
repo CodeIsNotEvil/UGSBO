@@ -42,4 +42,13 @@ public class MatrixCalcDeterminatTest {
         
         math.calcDeterminat(matrixA);
     }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void tryToCalculateANonQuadraticMatrixSouldResulInIllegalArgumentException() {
+        MatrixCalcMath math = new MatrixCalcMath();
+        // A(2,4)
+        double[][] matrixA = {{5.0, 6.0, 0.0, 0.0}, {5.0, 6.0, 0.0, 0.0} };
+        
+        math.calcDeterminat(matrixA);
+    }
 }

@@ -42,6 +42,13 @@ public class MatrixCalcController {
         });
     }
 
+    /**
+     * Chcks if the Input is Valid, with Regex. Returns true if the Matrix can be
+     * matched by the regular Expression.
+     * 
+     * @param matrix It is the InputMatrix
+     * @return true if the Matrix is valid Input.
+     */
     public boolean checkInput(String matrix) {
         boolean isMatched = false;
         if (matrix.length() == 0) {
