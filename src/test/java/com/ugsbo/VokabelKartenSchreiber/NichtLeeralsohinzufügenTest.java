@@ -26,7 +26,7 @@ public class NichtLeeralsohinzufügenTest {
 		String separator = "ZwischenwertTest";
 		String erwartet = 	"RückgabeTestprüfenTestZwischenwertTest";
 
-		String ergebnis = 		WorkingObjekt.NichtLeeralsohinzufügen(neuesWort,wortfolgeBisher,separator);
+		String ergebnis = 		WorkingObjekt.NichtLeeralsohinzufügen(wortfolgeBisher,neuesWort,separator);
 		
 		assertEquals("Seperator angehängt + Neues Wort", erwartet, ergebnis);
 	}
@@ -40,24 +40,11 @@ public class NichtLeeralsohinzufügenTest {
 		String separator = "ZwischenwertTest";
 		String erwartet = 	"RückgabeTest";
 
-		String ergebnis = WorkingObjekt.NichtLeeralsohinzufügen(neuesWort,wortfolgeBisher,separator);
+		String ergebnis = WorkingObjekt.NichtLeeralsohinzufügen(wortfolgeBisher,neuesWort,separator);
 		
 		assertEquals("WortFolgebisher zurückgegeben", erwartet, ergebnis);
 	}
 
-	@Test
-	public void NichtAlsLeeralsoHinzufügen_wortFolgeBisher_IstLeer() {
-		Vokabelkarte WorkingObjekt = workingObjekt;
-		
-		String neuesWort = "prüfenTest";
-		String wortfolgeBisher = "";
-		String separator = "ZwischenwertTest";
-		String erwartet = 	"prüfenTest";
-
-		String ergebnis = WorkingObjekt.NichtLeeralsohinzufügen(neuesWort,wortfolgeBisher,separator);
-		
-		assertEquals("Nur das neue Wort ohne Seperator", erwartet, ergebnis);
-	}
 	
 	@Test
 	public void NichtAlsLeeralsoHinzufügen_AllesLeer() {
@@ -68,7 +55,7 @@ public class NichtLeeralsohinzufügenTest {
 		String separator = "";
 		String erwartet = 	"";
 
-		String ergebnis = 		WorkingObjekt.NichtLeeralsohinzufügen(neuesWort,wortfolgeBisher,separator);
+		String ergebnis = 		WorkingObjekt.NichtLeeralsohinzufügen(wortfolgeBisher,neuesWort,separator);
 		
 		assertEquals("leer", erwartet, ergebnis);
 	}        

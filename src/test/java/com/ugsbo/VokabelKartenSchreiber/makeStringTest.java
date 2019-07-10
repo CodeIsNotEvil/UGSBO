@@ -8,62 +8,101 @@ import com.ugsbo.VokableKartenSchreiber.Vokabelkarte;
 
 public class makeStringTest {
 	
-	//TODO: Fehler korigieren
-	/*
-	@Test
-	public void makeStringReturnsStringKorrekt() {
-		Vokabelkarte WorkingObjekt = new Vokabelkarte();
-		
-		String Ergebnis = "TestName/TestFrage/TestAntwort;TestAntwort;TestAntwort;TestAntwort";
-		String Abfrage = WorkingObjekt.makeString("TestName","TestFrage","TestAntwort","TestAntwort","TestAntwort","TestAntwort");
-		
-		//assertTrue(Ergebnis.equals(Abfrage));
-		assertEquals("zurückgeworfener String ist nicht korrekt " ,Abfrage, Ergebnis);
+	private Vokabelkarte workingObjekt;
+
+	@Before
+	public void setup() {
+		workingObjekt = new Vokabelkarte();
 	}
+
+	@Test
+	public void makeString_ReturnsStringKorrekt() {
+		Vokabelkarte WorkingObjekt = workingObjekt;
+		
+		String name = "TestName";
+		String frage = "TestFrage";
+		String antwort1 = "TestAntwort";
+		String antwort2 = "TestAntwort";
+		String antwort3 = "TestAntwort";
+		String antwort4 = "TestAntwort";
+		
+		String Erwartet = "TestName/TestFrage/TestAntwort;TestAntwort;TestAntwort;TestAntwort";
+		
+		String Ergebnis = WorkingObjekt.makeString(name,frage,antwort1,antwort2,antwort3,antwort4);
+		
+		assertEquals("Name Frage und alle Antworten" , Erwartet, Ergebnis);
+	}
+
+	public void makeString_ohneName() {
+		Vokabelkarte WorkingObjekt = workingObjekt;
+		
+		String name = "";
+		String frage = "TestFrage";
+		String antwort1 = "TestAntwort";
+		String antwort2 = "TestAntwort";
+		String antwort3 = "TestAntwort";
+		String antwort4 = "TestAntwort";
+		
+		String Erwartet = "TestFrage/TestAntwort;TestAntwort;TestAntwort;TestAntwort";
+		
+		String Ergebnis = WorkingObjekt.makeString(name,frage,antwort1,antwort2,antwort3,antwort4);
+		
+		assertEquals("Frage und alle Antworten" , Erwartet, Ergebnis);
 	
-	public void makeStringReturnsStringKorrektohneName() {
-		Vokabelkarte WorkingObjekt = new Vokabelkarte();
-		
-		String Ergebnis = "TestFrage/TestAntwort;TestAntwort;TestAntwort;TestAntwort";
-		String Abfrage = WorkingObjekt.makeString("","TestFrage","TestAntwort","TestAntwort","TestAntwort","TestAntwort");
-		
-		//assertTrue(Ergebnis.equals(Abfrage));
-		assertEquals("zurückgeworfener String ist nicht korrekt " ,Abfrage, Ergebnis);
 	}
 	
 	@Test
 	public void makeStringReturnsStringNichtKorrekt() {
-		Vokabelkarte WorkingObjekt = new Vokabelkarte();
+		Vokabelkarte WorkingObjekt = workingObjekt;
 		
+		String name = "TestName";
+		String frage = "";
+		String antwort1 = "";
+		String antwort2 = "";
+		String antwort3 = "TestAntwort";
+		String antwort4 = "TestAntwort";
 		
-		String Ergebnis = "TestName/TestAntwort;TestAntwort;TestAntwort";
-		String Abfrage = WorkingObjekt.makeString("TestName","","","","TestAntwort","TestAntwort");
+		String Erwartet = "TestName/TestAntwort;TestAntwort";
 		
-		//assertTrue(Ergebnis.equals(Abfrage));
-		assertEquals("zurückgeworfener String ist nicht korrekt " ,Abfrage, Ergebnis);
+		String Ergebnis = WorkingObjekt.makeString(name,frage,antwort1,antwort2,antwort3,antwort4);
+		
+		assertEquals("Name und drei Antworten" , Erwartet, Ergebnis);
 	}
 	
 	@Test
-	public void makeStringReturnsStringLeer() {
-		Vokabelkarte WorkingObjekt = new Vokabelkarte();
+	public void makeStringReturns_Leer() {
+		Vokabelkarte WorkingObjekt = workingObjekt;
 		
+		String name = "";
+		String frage = "";
+		String antwort1 = "";
+		String antwort2 = "";
+		String antwort3 = "";
+		String antwort4 = "";
 		
-		String Ergebnis = "";
-		String Abfrage = WorkingObjekt.makeString("","","","","","");
+		String Erwartet = "";
 		
-		//assertTrue(Ergebnis.equals(Abfrage));
-		assertEquals("zurückgeworfener String ist nicht korrekt " ,Abfrage, Ergebnis);
+		String Ergebnis = WorkingObjekt.makeString(name,frage,antwort1,antwort2,antwort3,antwort4);
+		
+		assertEquals("leer" , Erwartet, Ergebnis);
 	}
 	
 	@Test
 	public void makeStringReturnsStringUnvolständigKeineFrage() {
-		Vokabelkarte WorkingObjekt = new Vokabelkarte();
+		Vokabelkarte WorkingObjekt = workingObjekt;
 		
 		
-		String Ergebnis = "TestName/TestAntwort;TestAntwort;TestAntwort;TestAntwort";
-		String Abfrage = WorkingObjekt.makeString("TestName","","TestAntwort","TestAntwort","TestAntwort","TestAntwort");
+		String name = "TestName";
+		String frage = "";
+		String antwort1 = "TestAntwort";
+		String antwort2 = "TestAntwort";
+		String antwort3 = "TestAntwort";
+		String antwort4 = "TestAntwort";
 		
-		//assertTrue(Ergebnis.equals(Abfrage));
-		assertEquals("zurückgeworfener String ist nicht korrekt " , Ergebnis, Abfrage);
-	}*/
+		String Erwartet = "TestName/TestAntwort;TestAntwort;TestAntwort;TestAntwort";
+		
+		String Ergebnis = WorkingObjekt.makeString(name,frage,antwort1,antwort2,antwort3,antwort4);
+		
+		assertEquals("Name und alle Antworten" , Erwartet, Ergebnis);
+	}
 }
