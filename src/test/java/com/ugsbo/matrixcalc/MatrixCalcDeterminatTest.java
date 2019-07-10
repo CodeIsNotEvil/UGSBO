@@ -2,6 +2,7 @@ package com.ugsbo.matrixcalc;
 
 import static org.junit.Assert.assertEquals;
 
+import org.junit.Before;
 import org.junit.Test;
 
 /**
@@ -9,46 +10,52 @@ import org.junit.Test;
  */
 public class MatrixCalcDeterminatTest {
 
+    private MatrixCalcMath matrixMath;
+
+    @Before
+    public void setup() {
+        matrixMath = new MatrixCalcMath();
+    }
+
     @Test
     public void CalculatesTheDeterminanteOfA2by2Matrix() {
-        MatrixCalcMath math = new MatrixCalcMath();
         // A(2,2)
         double[][] matrixA = { { 1.0, 2.0 }, { 3.0, 4.0 } };
         double determinat = -2.0;
+        double delta = 0.01;
 
-        double result = math.calcDeterminat(matrixA);
+        double result = matrixMath.calcDeterminat(matrixA);
 
-        assertEquals("The Determinant is not as it should be", determinat, result, 0.01);
+        assertEquals("The Determinant is not as it should be", determinat, result, delta);
     }
 
     @Test
     public void CalculatesTheDeterminanteOfA3by3Matrix() {
-        MatrixCalcMath math = new MatrixCalcMath();
         // A(3,3)
-        double[][] matrixA = { { 1.0, 2.0, 1.0 }, { 3.0, 4.0, 0.0 }, {5.0, 6.0, 0.0} };
+        double[][] matrixA = { { 1.0, 2.0, 1.0 }, { 3.0, 4.0, 0.0 }, { 5.0, 6.0, 0.0 } };
         double determinat = -2.0;
-        double result = math.calcDeterminat(matrixA);
-        
-        assertEquals("The Determinant is not as it should be", determinat, result, 0.01);
+        double delta = 0.01;
 
-        
+        double result = matrixMath.calcDeterminat(matrixA);
+
+        assertEquals("The Determinant is not as it should be", determinat, result, delta);
+
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void tryToCalculateA4by4MatrixSouldResulInIllegalArgumentException() {
-        MatrixCalcMath math = new MatrixCalcMath();
+    public void tryToCalculateA4by4Matrix_ShouldResulInIllegalArgumentException() {
         // A(4,4)
-        double[][] matrixA = { { 1.0, 2.0, 1.0, 0.0 }, { 3.0, 4.0, 0.0, 0.0 }, {5.0, 6.0, 0.0, 0.0}, {5.0, 6.0, 0.0, 0.0} };
-        
-        math.calcDeterminat(matrixA);
+        double[][] matrixA = { { 1.0, 2.0, 1.0, 0.0 }, { 3.0, 4.0, 0.0, 0.0 }, { 5.0, 6.0, 0.0, 0.0 },
+                { 5.0, 6.0, 0.0, 0.0 } };
+
+        matrixMath.calcDeterminat(matrixA);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void tryToCalculateANonQuadraticMatrixSouldResulInIllegalArgumentException() {
-        MatrixCalcMath math = new MatrixCalcMath();
+    public void tryToCalculateANonQuadraticMatrix_SouldResulInIllegalArgumentException() {
         // A(2,4)
-        double[][] matrixA = {{5.0, 6.0, 0.0, 0.0}, {5.0, 6.0, 0.0, 0.0} };
-        
-        math.calcDeterminat(matrixA);
+        double[][] matrixA = { { 5.0, 6.0, 0.0, 0.0 }, { 5.0, 6.0, 0.0, 0.0 } };
+
+        matrixMath.calcDeterminat(matrixA);
     }
 }

@@ -2,6 +2,7 @@ package com.ugsbo.matrixcalc;
 
 import static org.junit.Assert.assertTrue;
 
+import org.junit.Before;
 import org.junit.Test;
 
 /**
@@ -9,41 +10,44 @@ import org.junit.Test;
  */
 public class MatrixInputcheckTest {
 
+    private MatrixCalcController controller;
+
+    @Before
+    public void setup() {
+        controller = new MatrixCalcController();
+    }
+
     @Test(expected = IllegalArgumentException.class)
     public void inputEmptySouldThrowAIllegalArgumentException() {
-     MatrixCalcController contr = new MatrixCalcController();
-     String input = "";
+        String input = "";
 
-     contr.checkInput(input);
+        controller.checkInput(input);
     }
 
     @Test
-    public void checkIfA1by3MatrixIsMatched(){
-     MatrixCalcController contr = new MatrixCalcController();
-     String input = "1 2 3";
+    public void checkIfA1by3MatrixIsValidInput() {
+        String input = "1 2 3";
 
-     boolean result = contr.checkInput(input);
+        boolean result = controller.checkInput(input);
 
-     assertTrue("The 1 by 3 Matrix was not Matched but it should be.", result);
+        assertTrue("The 1 by 3 Matrix should be Matched as valid input.", result);
     }
 
     @Test
-    public void checkIfA2by3MatrixIsMatched(){
-     MatrixCalcController contr = new MatrixCalcController();
-     String input = "1 2 3\n1 2 3";
+    public void checkIfA2by3MatrixIsValidInput() {
+        String input = "1 2 3\n1 2 3";
 
-     boolean result = contr.checkInput(input);
+        boolean result = controller.checkInput(input);
 
-     assertTrue("The 2 by 3 Matrix was not Matched but it should be.", result);
+        assertTrue("The 2 by 3 Matrix should be Matched as valid input.", result);
     }
 
     @Test
-    public void checkIfA3by3MatrixIsMatched(){
-     MatrixCalcController contr = new MatrixCalcController();
-     String input = "1 2 3\n1 2 3\n1 2 3";
+    public void checkIfA3by3MatrixIsValidInput() {
+        String input = "1 2 3\n1 2 3\n1 2 3";
 
-     boolean result = contr.checkInput(input);
+        boolean result = controller.checkInput(input);
 
-     assertTrue("The 3 by 3 Matrix was not Matched but it should be.", result);
+        assertTrue("The 3 by 3 Matrix should be Matched as valid input.", result);
     }
 }
