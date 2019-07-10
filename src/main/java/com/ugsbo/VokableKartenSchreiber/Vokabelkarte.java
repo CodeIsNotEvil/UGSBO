@@ -44,8 +44,8 @@ public class Vokabelkarte{
 	
 	//-------------------------------------------------
 	//Private
-    public String NichtLeeralsohinzufügen(String neuesWort, String bisherigerString, String Zwischenwert) {    	
-    	if (!bisherigerString.equals("") && !neuesWort.equals("")) {
+    public String NichtLeeralsohinzufügen(String bisherigerString, String neuesWort, String Zwischenwert) {    	
+    	if (!neuesWort.equals("")) {
 			neuesWort += Zwischenwert;
 		}
     	bisherigerString += neuesWort;
@@ -78,12 +78,12 @@ public class Vokabelkarte{
      */
     public String makeString(String Name,String Frage,String Antwort1,String Antwort2,String Antwort3,String Antwort4) {
     	String Ergebnis = "";
-    	Ergebnis = NichtLeeralsohinzufügen(Ergebnis, Name, "");
+    	Ergebnis = NichtLeeralsohinzufügen(Ergebnis, Name, "/");
     	Ergebnis = NichtLeeralsohinzufügen(Ergebnis, Frage, "/");
-    	Ergebnis = NichtLeeralsohinzufügen(Ergebnis, Antwort1, "/");
+    	Ergebnis = NichtLeeralsohinzufügen(Ergebnis, Antwort1, ";");
     	Ergebnis = NichtLeeralsohinzufügen(Ergebnis, Antwort2, ";");
     	Ergebnis = NichtLeeralsohinzufügen(Ergebnis, Antwort3, ";");
-    	Ergebnis = NichtLeeralsohinzufügen(Ergebnis, Antwort4, ";");
+    	Ergebnis = NichtLeeralsohinzufügen(Ergebnis, Antwort4, "");
     	this.Ergebnis = Ergebnis;
     	return Ergebnis;
     }
