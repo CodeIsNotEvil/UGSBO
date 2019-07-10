@@ -8,7 +8,7 @@ import com.ugsbo.VokableKartenSchreiber.Vokabelkarte;
 
 public class makeStringTest {
 	
-	//TODO: Fehler korigieren: Der Test setzt alle Sonderzeichen ans Ende
+	//TODO: Fehler korigieren
 	/*
 	@Test
 	public void makeStringReturnsStringKorrekt() {
@@ -64,6 +64,6 @@ public class makeStringTest {
 		String Abfrage = WorkingObjekt.makeString("TestName","","TestAntwort","TestAntwort","TestAntwort","TestAntwort");
 		
 		//assertTrue(Ergebnis.equals(Abfrage));
-		assertEquals("zurückgeworfener String ist nicht korrekt " ,Abfrage, Ergebnis);
+		assertEquals("zurückgeworfener String ist nicht korrekt " , Ergebnis, Abfrage);
 	}*/
 }

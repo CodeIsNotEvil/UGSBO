@@ -2,60 +2,74 @@ package com.ugsbo.VokabelKartenSchreiber;
 
 import static org.junit.Assert.assertEquals;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import com.ugsbo.VokableKartenSchreiber.Vokabelkarte;
 
 public class NichtLeeralsohinzufügenTest {
 	
-	@Test
-	public void NichtAlsLeeralsoHinzufügenTest() {
-		Vokabelkarte WorkingObjekt = new Vokabelkarte();
-		
-		String Ergebnis = 	"RückgabeTestprüfenTestZwischenwertTest";
-		String Test = 		WorkingObjekt.NichtLeeralsohinzufügen("prüfenTest","RückgabeTest","ZwischenwertTest");
-		
-		assertEquals("NichtLeerAlsSolcheHinzufügen funktioniert nicht", Ergebnis, Test);
-	}
+	private Vokabelkarte workingObjekt;
+
 	
-	@Test
-	public void NichtAlsLeeralsoHinzufügenRückgabeLeer() {
-		Vokabelkarte WorkingObjekt = new Vokabelkarte();
-		
-		String Ergebnis = 	"RückgabeTestprüfenTestZwischenwertTest";
-		String Test = 		WorkingObjekt.NichtLeeralsohinzufügen("prüfenTest","RückgabeTest","ZwischenwertTest");
-		
-		assertEquals("NichtLeerAlsSolcheHinzufügen funktioniert nicht", Ergebnis, Test);
-		assertEquals("NichtLeerAlsSolcheHinzufügen funktioniert nicht", WorkingObjekt.NichtLeeralsohinzufügen("prüfenTest","","ZwischenwertTest"), "prüfenTest");
+	@Before
+	public void setup() {
+		workingObjekt = new Vokabelkarte();
 	}
 
 	@Test
-	public void NichtAlsLeeralsoHinzufügenprüfenLeer() {
-		Vokabelkarte WorkingObjekt = new Vokabelkarte();
+	public void NichtAlsLeeralsoHinzufügen_TestMitAllenParametern() {
+		Vokabelkarte WorkingObjekt = workingObjekt;
 		
-		String Ergebnis = 	"RückgabeTest";
-		String Test = 		WorkingObjekt.NichtLeeralsohinzufügen("","RückgabeTest","ZwischenwertTest");
+		String neuesWort = "prüfenTest";
+		String wortfolgeBisher = "RückgabeTest";
+		String separator = "ZwischenwertTest";
+		String erwartet = 	"RückgabeTestprüfenTestZwischenwertTest";
+
+		String ergebnis = 		WorkingObjekt.NichtLeeralsohinzufügen(neuesWort,wortfolgeBisher,separator);
 		
-		assertEquals("NichtLeerAlsSolcheHinzufügen funktioniert nicht", Ergebnis, Test);
+		assertEquals("Seperator angehängt + Neues Wort", erwartet, ergebnis);
+	}
+
+	@Test
+	public void NichtAlsLeeralsoHinzufügen_neuesWortIstLeer() {
+		Vokabelkarte WorkingObjekt = workingObjekt;
+		
+		String neuesWort = "";
+		String wortfolgeBisher = "RückgabeTest";
+		String separator = "ZwischenwertTest";
+		String erwartet = 	"RückgabeTest";
+
+		String ergebnis = WorkingObjekt.NichtLeeralsohinzufügen(neuesWort,wortfolgeBisher,separator);
+		
+		assertEquals("WortFolgebisher zurückgegeben", erwartet, ergebnis);
+	}
+
+	@Test
+	public void NichtAlsLeeralsoHinzufügen_wortFolgeBisher_IstLeer() {
+		Vokabelkarte WorkingObjekt = workingObjekt;
+		
+		String neuesWort = "prüfenTest";
+		String wortfolgeBisher = "";
+		String separator = "ZwischenwertTest";
+		String erwartet = 	"prüfenTest";
+
+		String ergebnis = WorkingObjekt.NichtLeeralsohinzufügen(neuesWort,wortfolgeBisher,separator);
+		
+		assertEquals("Nur das neue Wort ohne Seperator", erwartet, ergebnis);
 	}
 	
 	@Test
-	public void NichtAlsLeeralsoHinzufügenZwischenwerLeer() {
-		Vokabelkarte WorkingObjekt = new Vokabelkarte();
+	public void NichtAlsLeeralsoHinzufügen_AllesLeer() {
+		Vokabelkarte WorkingObjekt = workingObjekt;
 		
-		String Ergebnis = 	"prüfenTest";
-		String Test = 		WorkingObjekt.NichtLeeralsohinzufügen("prüfenTest","","ZwischenwertTest");
+		String neuesWort = "";
+		String wortfolgeBisher = "";
+		String separator = "";
+		String erwartet = 	"";
+
+		String ergebnis = 		WorkingObjekt.NichtLeeralsohinzufügen(neuesWort,wortfolgeBisher,separator);
 		
-		assertEquals("NichtLeerAlsSolcheHinzufügen funktioniert nicht", Ergebnis, Test);
-	}
-	
-	@Test
-	public void NichtAlsLeeralsoHinzufügenAllesLeer() {
-		Vokabelkarte WorkingObjekt = new Vokabelkarte();
-		
-		String Ergebnis = 	"";
-		String Test = 		WorkingObjekt.NichtLeeralsohinzufügen("","","");
-		
-		assertEquals("NichtLeerAlsSolcheHinzufügen funktioniert nicht", Ergebnis, Test);
+		assertEquals("leer", erwartet, ergebnis);
 	}        
 }

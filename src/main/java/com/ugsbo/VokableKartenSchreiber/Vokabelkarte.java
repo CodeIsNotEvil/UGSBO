@@ -36,22 +36,20 @@ public class Vokabelkarte{
     /***
      * 
      * @param Zwischenwert		fügt ein Zwischenstück zwischen den beiden Strings ein
-     * @param prüfen	Der zu prüfende String
-     * @param Rückgabe	Der String an den angehängt werden soll
+     * @param neuesWort	Der zu prüfende String
+     * @param bisherigerString	Der String an den angehängt werden soll
      * @return	Der fertige String
      */
 	
 	
 	//-------------------------------------------------
 	//Private
-    public String NichtLeeralsohinzufügen(String prüfen, String Rückgabe, String Zwischenwert) {
-    	if (prüfen != "") {
-    		if(Rückgabe!="") {
-                prüfen += Zwischenwert;
-    		}
-    		Rückgabe += prüfen;
-    	}
-    	return Rückgabe;
+    public String NichtLeeralsohinzufügen(String neuesWort, String bisherigerString, String Zwischenwert) {    	
+    	if (!bisherigerString.equals("") && !neuesWort.equals("")) {
+			neuesWort += Zwischenwert;
+		}
+    	bisherigerString += neuesWort;
+    	return bisherigerString;
     }
     
 	//-------------------------------------------------
@@ -86,7 +84,6 @@ public class Vokabelkarte{
     	Ergebnis = NichtLeeralsohinzufügen(Ergebnis, Antwort2, ";");
     	Ergebnis = NichtLeeralsohinzufügen(Ergebnis, Antwort3, ";");
     	Ergebnis = NichtLeeralsohinzufügen(Ergebnis, Antwort4, ";");
-    	
     	this.Ergebnis = Ergebnis;
     	return Ergebnis;
     }
