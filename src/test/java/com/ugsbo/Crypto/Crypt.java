@@ -22,10 +22,13 @@ public class Crypt {
   public void offenIstAnders() {
     
     String eingabe = "TestText"; 
+    String ergebnis;
     
     workingobjekt.setOffen(eingabe);
     workingobjekt.verschlüsseln();
-    workingobjekt.getVerschlüsselt();
+    ergebnis = workingobjekt.getVerschlüsselt();
+    
+    assertNotEquals("unterschidliche Texte",eingabe,ergebnis);
   }
   
   @Test

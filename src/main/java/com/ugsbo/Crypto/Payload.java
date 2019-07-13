@@ -1,5 +1,7 @@
 package com.ugsbo.Crypto;
 
+import javax.crypto.*;
+
 public class Payload {
 
   String offen;
@@ -7,7 +9,9 @@ public class Payload {
   String password;
   
   public Payload() {
-
+    offen = "";
+    verschlüsselt = "";
+    password = "";
   }
   
   
@@ -44,6 +48,7 @@ public class Payload {
   public void setPassword(String password) {
     this.password = password;
   }
+  
   
   
   public void verschlüsseln() {

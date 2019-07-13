@@ -19,15 +19,20 @@ public class DeCrypt {
   public void verschlüsseltIstAnders() {
     
     String eingabe = "TestText"; 
+    String password = "Test";
+    String ergebnis;
     
     workingobjekt.setVerschlüsselt(eingabe);
     workingobjekt.entschlüsseln();
-    workingobjekt.getOffen();
+    ergebnis = workingobjekt.getOffen();
+    
+    assertNotEquals("unterschidliche Texte",eingabe,ergebnis);
   }
   
   @Test
   public void entUndVerschlüsseln() {
     
+    String password = "Test";
     String eingabe = "TestText";
     String ergebnis;
     
