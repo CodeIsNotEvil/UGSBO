@@ -12,8 +12,8 @@ public class JUnitEntscheiderErgebnisTest {
 
 	@Test
 	public void skalaTestTest() {
-		
-		Assert.assertTrue(Entscheider.skalaTest(11) >= 1 || Entscheider.skalaTest(11)<= 10 );
+		int a = Entscheider.skalaTest(11);
+		Assert.assertTrue(a >= 1 || a <= 10 );
 		
 		//fail("Not yet implemented");
 	}
