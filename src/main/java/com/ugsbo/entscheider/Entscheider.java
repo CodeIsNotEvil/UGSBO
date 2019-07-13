@@ -21,7 +21,10 @@ public class Entscheider {
 	}
 	
 	public static String ergebnis(int a, int b, int c, int d, int e, int f, int g, int h) {
-		return "";
+		int erg = (((a + b + c) * d ) /e + f + g) - h;
+		String hilfe = "";
+		if(erg < 5)  hilfe = "Ich kann doch nicht fuer dich entscheiden, dass musst du schon selber wissen.";
+		return hilfe;
 	}
 	
 	public static String fragen() {
