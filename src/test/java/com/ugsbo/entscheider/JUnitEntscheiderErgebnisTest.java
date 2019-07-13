@@ -21,6 +21,8 @@ public class JUnitEntscheiderErgebnisTest {
 	public void ergebnisTest() {
 		String a = Entscheider.ergebnis(1,1,1,1,1,1,1,1);
 		Assert.assertTrue(a == "Ich kann doch nicht fuer dich entscheiden, dass musst du schon selber wissen." );
+		String b = Entscheider.ergebnis(21,1,1,3,2,1,1,4);
+		Assert.assertTrue(b == "Naja, dann geh halt nach Hause und ruh dich aus.");
 	}
 	
 	@Test
