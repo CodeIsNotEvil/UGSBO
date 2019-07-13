@@ -11,11 +11,22 @@ public class JUnitEntscheiderErgebnisTest {
 	
 
 	@Test
-	public void test() {
-		Assert.assertTrue("" == Entscheider.ergebnis(1,1,12,3,1,1,1,1));
+	public void skalaTestTest() {
+		
 		Assert.assertTrue(Entscheider.skalaTest(11) >= 1 || Entscheider.skalaTest(11)<= 10 );
-		Assert.assertTrue(0 == Entscheider.pruefen(2) || 1 == Entscheider.pruefen(2));
+		
 		//fail("Not yet implemented");
+	}
+	
+	@Test
+	public void ergebnisTest() {
+		Assert.assertTrue("" == Entscheider.ergebnis(1,1,1,1,1,1,1,1));
+	}
+	
+	@Test
+	public void pruefenTest() {
+		int a = Entscheider.pruefen(2);
+		Assert.assertTrue(0 == a || 1 == a);
 	}
 
 }
