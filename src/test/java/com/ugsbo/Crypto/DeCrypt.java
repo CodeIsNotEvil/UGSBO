@@ -10,7 +10,7 @@ import org.junit.Test;
 public class DeCrypt {
 
   private Payload workingobjekt;
-  
+
   @Before
   public void setUp() throws Exception {
     workingobjekt = new Payload();
@@ -18,33 +18,33 @@ public class DeCrypt {
 
   @Test
   public void verschlüsseltIstAnders() {
-    
-    String eingabe = "TestText"; 
+
+    String eingabe = "TestText";
     String password = "Test";
     String ergebnis;
-    
+
     try {
-    workingobjekt.setVerschlüsselt(eingabe);
-    workingobjekt.setPassword(password);
+      workingobjekt.setVerschlüsselt(eingabe);
+      workingobjekt.setPassword(password);
       workingobjekt.entschlüsseln();
     } catch (GeneralSecurityException e) {
       e.printStackTrace();
     } catch (UnsupportedEncodingException e) {
       e.printStackTrace();
     }
-    
+
     ergebnis = workingobjekt.getOffen();
-    
-    assertNotEquals("unterschidliche Texte",eingabe,ergebnis);
+
+    assertNotEquals("unterschidliche Texte", eingabe, ergebnis);
   }
-  
+
   @Test
   public void entUndVerschlüsseln() {
-    
+
     String password = "Test";
     String eingabe = "TestText";
     String ergebnis;
-    
+
     try {
       workingobjekt.setOffen(eingabe);
       workingobjekt.setPassword(password);
@@ -53,10 +53,10 @@ public class DeCrypt {
     } catch (GeneralSecurityException | UnsupportedEncodingException e) {
       e.printStackTrace();
     }
-    
+
     ergebnis = workingobjekt.getOffen();
-    
-    assertEquals("das entschlüsselte Test Wort",ergebnis,eingabe);   
+
+    assertEquals("das entschlüsselte Test Wort", ergebnis, eingabe);
   }
 
 }

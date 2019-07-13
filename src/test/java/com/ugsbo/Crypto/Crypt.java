@@ -13,9 +13,9 @@ import org.junit.Test;
 
 public class Crypt {
 
-  
+
   private Payload workingobjekt;
-  
+
   @Before
   public void setUp() throws Exception {
     workingobjekt = new Payload();
@@ -23,33 +23,33 @@ public class Crypt {
 
   @Test
   public void offenIstAnders() {
-    
-    String eingabe = "TestText"; 
+
+    String eingabe = "TestText";
     String ergebnis;
     String password = "";
-    
+
     try {
-        workingobjekt.setOffen(eingabe);
-        workingobjekt.setPassword(password);
-        workingobjekt.entschlüsseln();
-      } catch (GeneralSecurityException e) {
-        e.printStackTrace();
-      } catch (UnsupportedEncodingException e) {
-        e.printStackTrace();
-      }
-    
+      workingobjekt.setOffen(eingabe);
+      workingobjekt.setPassword(password);
+      workingobjekt.entschlüsseln();
+    } catch (GeneralSecurityException e) {
+      e.printStackTrace();
+    } catch (UnsupportedEncodingException e) {
+      e.printStackTrace();
+    }
+
     ergebnis = workingobjekt.getVerschlüsselt();
-    
-    assertNotEquals("unterschidliche Texte",eingabe,ergebnis);
+
+    assertNotEquals("unterschidliche Texte", eingabe, ergebnis);
   }
-  
+
   @Test
   public void verUndEntschlüsseln() {
-    
+
     String password = "Test";
     String eingabe = "TestText";
     String ergebnis;
-    
+
     try {
       workingobjekt.setOffen(eingabe);
       workingobjekt.setPassword(password);
@@ -59,8 +59,8 @@ public class Crypt {
       e.printStackTrace();
     }
     ergebnis = workingobjekt.getOffen();
-    
-    assertEquals("das entschlüsselte Test Wort",ergebnis,eingabe);   
+
+    assertEquals("das entschlüsselte Test Wort", ergebnis, eingabe);
   }
 
 }
