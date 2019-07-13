@@ -1,7 +1,7 @@
 package com.ugsbo.Crypto;
 
 import static org.junit.Assert.*;
-
+import java.security.GeneralSecurityException;
 import com.ugsbo.Crypto.*;
 import org.junit.Before;
 import org.junit.Test;
@@ -37,7 +37,11 @@ public class DeCrypt {
     String ergebnis;
     
     workingobjekt.setOffen(eingabe);
-    workingobjekt.verschlüsseln();
+    try {
+      workingobjekt.verschlüsseln();
+    } catch (GeneralSecurityException e) {
+      e.printStackTrace();
+    }
     workingobjekt.entschlüsseln();
     ergebnis = workingobjekt.getOffen();
     

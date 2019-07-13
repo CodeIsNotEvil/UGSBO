@@ -8,6 +8,7 @@ import java.util.Arrays;
 import javax.crypto.*;
 import javax.crypto.spec.SecretKeySpec;
 
+
 public class Payload {
 
   String offen;
@@ -68,9 +69,12 @@ public class Payload {
   
   
   
-  public void verschlüsseln() {
+  public void verschlüsseln() throws NoSuchAlgorithmException, GeneralSecurityException {
+    Cipher cipher = Cipher.getInstance("AES");
+    cipher.init(Cipher.ENCRYPT_MODE, password);
+    byte[] encrypted = cipher.doFinal(offen.getBytes());
 
-
+    verschlüsselt = encrypted.toString();
   }
 
   public void entschlüsseln() {
