@@ -5,6 +5,7 @@ package com.ugsbo.Crypto;
 
 import com.ugsbo.Crypto.*;
 import static org.junit.Assert.*;
+import java.io.UnsupportedEncodingException;
 import java.security.GeneralSecurityException;
 import java.security.NoSuchAlgorithmException;
 import org.junit.Before;
@@ -25,15 +26,17 @@ public class Crypt {
     
     String eingabe = "TestText"; 
     String ergebnis;
+    String password = "";
     
-    workingobjekt.setOffen(eingabe);
     try {
-      workingobjekt.verschlüsseln();
-    } catch (NoSuchAlgorithmException e) {
-      e.printStackTrace();
-    } catch (GeneralSecurityException e) {
-      e.printStackTrace();
-    }
+        workingobjekt.setOffen(eingabe);
+        workingobjekt.setPassword(password);
+        workingobjekt.entschlüsseln();
+      } catch (GeneralSecurityException e) {
+        e.printStackTrace();
+      } catch (UnsupportedEncodingException e) {
+        e.printStackTrace();
+      }
     
     ergebnis = workingobjekt.getVerschlüsselt();
     
@@ -43,16 +46,18 @@ public class Crypt {
   @Test
   public void verUndEntschlüsseln() {
     
+    String password = "Test";
     String eingabe = "TestText";
     String ergebnis;
     
-    workingobjekt.setOffen(eingabe);
     try {
+      workingobjekt.setOffen(eingabe);
+      workingobjekt.setPassword(password);
+      workingobjekt.entschlüsseln();
       workingobjekt.verschlüsseln();
-    } catch (GeneralSecurityException e) {
+    } catch (GeneralSecurityException | UnsupportedEncodingException e) {
       e.printStackTrace();
     }
-    workingobjekt.entschlüsseln();
     ergebnis = workingobjekt.getOffen();
     
     assertEquals("das entschlüsselte Test Wort",ergebnis,eingabe);   

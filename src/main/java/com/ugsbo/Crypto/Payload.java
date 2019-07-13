@@ -77,8 +77,13 @@ public class Payload {
     verschlüsselt = encrypted.toString();
   }
 
-  public void entschlüsseln() {
-
+  public void entschlüsseln() throws NoSuchAlgorithmException, GeneralSecurityException {
+    byte[] text = verschlüsselt.getBytes();
+    
+    Cipher cipher2 = Cipher.getInstance("AES");
+    cipher2.init(Cipher.DECRYPT_MODE, password);
+    byte[] cipherData2 = cipher2.doFinal(text);
+    offen = new String(cipherData2);
 
   }
 

@@ -1,6 +1,7 @@
 package com.ugsbo.Crypto;
 
 import static org.junit.Assert.*;
+import java.io.UnsupportedEncodingException;
 import java.security.GeneralSecurityException;
 import com.ugsbo.Crypto.*;
 import org.junit.Before;
@@ -22,8 +23,16 @@ public class DeCrypt {
     String password = "Test";
     String ergebnis;
     
+    try {
     workingobjekt.setVerschlüsselt(eingabe);
-    workingobjekt.entschlüsseln();
+    workingobjekt.setPassword(password);
+      workingobjekt.entschlüsseln();
+    } catch (GeneralSecurityException e) {
+      e.printStackTrace();
+    } catch (UnsupportedEncodingException e) {
+      e.printStackTrace();
+    }
+    
     ergebnis = workingobjekt.getOffen();
     
     assertNotEquals("unterschidliche Texte",eingabe,ergebnis);
@@ -36,13 +45,15 @@ public class DeCrypt {
     String eingabe = "TestText";
     String ergebnis;
     
-    workingobjekt.setOffen(eingabe);
     try {
+      workingobjekt.setOffen(eingabe);
+      workingobjekt.setPassword(password);
       workingobjekt.verschlüsseln();
-    } catch (GeneralSecurityException e) {
+      workingobjekt.entschlüsseln();
+    } catch (GeneralSecurityException | UnsupportedEncodingException e) {
       e.printStackTrace();
     }
-    workingobjekt.entschlüsseln();
+    
     ergebnis = workingobjekt.getOffen();
     
     assertEquals("das entschlüsselte Test Wort",ergebnis,eingabe);   
