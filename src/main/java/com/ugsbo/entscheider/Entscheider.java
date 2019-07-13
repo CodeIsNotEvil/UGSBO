@@ -5,6 +5,7 @@
 package com.ugsbo.entscheider;
 
 import java.util.Scanner;
+import java.util.*;
 /**
  * @author bruec
  *
@@ -32,7 +33,17 @@ public class Entscheider {
 	}
 	
 	public static int getAnInteger() {
-		return 0;
+		Scanner in = new Scanner(System.in);
+		while (true){
+			try{
+				return getAnInteger();
+			}
+			catch (InputMismatchException e){
+				getAnInteger();
+				System.out.print("Das ist kein Integer. Try again.");
+			}
+		}
+		
 	}
 	
 	public static int pruefen(int answer) {
