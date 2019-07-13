@@ -1,17 +1,32 @@
 package com.ugsbo.Crypto;
 
+import java.io.UnsupportedEncodingException;
+import java.security.GeneralSecurityException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.Arrays;
 import javax.crypto.*;
+import javax.crypto.spec.SecretKeySpec;
 
 public class Payload {
 
   String offen;
   String verschlüsselt;
-  String password;
+  SecretKeySpec password;
   
   public Payload() {
     offen = "";
     verschlüsselt = "";
-    password = "";
+    
+    try {
+      this.setPassword("");
+    } catch (UnsupportedEncodingException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    } catch (GeneralSecurityException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    }
   }
   
   
@@ -25,14 +40,6 @@ public class Payload {
     return verschlüsselt;
   }
 
-
-
-  public String getPassword() {
-    return password;
-  }
-
-
-
   public void setOffen(String offen) {
     this.offen = offen;
   }
@@ -45,8 +52,18 @@ public class Payload {
 
 
 
-  public void setPassword(String password) {
-    this.password = password;
+  public void setPassword(String password) throws GeneralSecurityException, UnsupportedEncodingException {
+    byte[] key = (password).getBytes("UTF-8");
+    
+   // aus dem Array einen Hash-Wert erzeugen mit MD5 oder SHA
+   MessageDigest sha = MessageDigest.getInstance("SHA-256");
+   key = sha.digest(key);
+   
+   // nur die ersten 128 bit nutzen
+   key = Arrays.copyOf(key, 16); 
+   
+   // der fertige Schluessel
+   this.password = new SecretKeySpec(key, "AES");
   }
   
   
