@@ -16,8 +16,8 @@ public class Entscheider {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		System.out.println(ergebnis(21,1,1,3,2,1,1,4));
-		System.out.println("test");
+		System.out.println(ergebnis(29,1,1,3,2,1,1,4));
+		
 
 	}
 	
@@ -26,6 +26,7 @@ public class Entscheider {
 		String hilfe = "";
 		if(erg < 5)  hilfe = "Ich kann doch nicht fuer dich entscheiden, dass musst du schon selber wissen.";
 		if(erg >= 5 && erg < 15) hilfe = "Naja, dann geh halt nach Hause und ruh dich aus.";
+		if(erg >= 15) hilfe = "Jetzt wieder gehen? Dann bist du doch voellig umsonst aufgestanden. Geh einfach hin.";
 		
 		return hilfe;
 	}

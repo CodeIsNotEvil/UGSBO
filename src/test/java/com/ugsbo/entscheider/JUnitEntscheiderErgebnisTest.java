@@ -23,6 +23,8 @@ public class JUnitEntscheiderErgebnisTest {
 		Assert.assertTrue(a == "Ich kann doch nicht fuer dich entscheiden, dass musst du schon selber wissen." );
 		String b = Entscheider.ergebnis(21,1,1,3,2,1,1,4);
 		Assert.assertTrue(b == "Naja, dann geh halt nach Hause und ruh dich aus.");
+		String c = Entscheider.ergebnis(29,0,1,3,2,0,1,2);
+		Assert.assertTrue(c == "Jetzt wieder gehen? Dann bist du doch voellig umsonst aufgestanden. Geh einfach hin.");
 	}
 	
 	@Test
