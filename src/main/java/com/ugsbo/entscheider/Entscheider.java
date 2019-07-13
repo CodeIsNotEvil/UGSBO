@@ -17,7 +17,12 @@ public class Entscheider {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		System.out.println(ergebnis(29, 1, 1, 3, 2, 1, 1, 4));
+		System.out.println("Herzlich Willkommen!");
+		String a = fragen();
+		System.out.println(a);
+		if(a != "Na dann halt nicht. Tschüssi.") {
+			System.out.println("Auf Wiedersehen. Frag mich gerne nochmal wenn du mal wieder nicht weisst, ob du in die Vorlesung gehen solltest oder nicht.");
+		}
 
 	}
 
@@ -47,6 +52,7 @@ public class Entscheider {
 			}
 
 		} else {
+			a = pruefen(a);
 			if (a == 1) {
 				System.out.println("Dann werde ich dir jetzt ein paar Fragen stellen");
 			} else {
@@ -72,7 +78,7 @@ public class Entscheider {
 		if (mot >= 1 && mot <= 10) {
 			System.out.println(mot);
 		} else {
-			skalaTest(mot);
+			mot = skalaTest(mot);
 			System.out.println(mot);
 		}
 
@@ -82,7 +88,7 @@ public class Entscheider {
 		if (fruehstueck == 1 || fruehstueck == 0) {
 			System.out.println(fruehstueck);
 		} else {
-			pruefen(fruehstueck);
+			fruehstueck = pruefen(fruehstueck);
 			System.out.println(fruehstueck);
 		}
 
@@ -92,7 +98,7 @@ public class Entscheider {
 		if (harry == 1 || harry == 0) {
 			System.out.println(harry);
 		} else {
-			pruefen(harry);
+			harry = pruefen(harry);
 			System.out.println(harry);
 		}
 
@@ -126,7 +132,7 @@ public class Entscheider {
 		if (lernen == 1 || lernen == 0) {
 			System.out.println(lernen);
 		} else {
-			pruefen(lernen);
+			lernen = pruefen(lernen);
 			System.out.println(lernen);
 		}
 		if (lernen == 1)
@@ -138,7 +144,7 @@ public class Entscheider {
 		if (gelb == 1 || gelb == 0) {
 			System.out.println(gelb);
 		} else {
-			pruefen(gelb);
+			gelb = pruefen(gelb);
 			System.out.println(gelb);
 		}
 
