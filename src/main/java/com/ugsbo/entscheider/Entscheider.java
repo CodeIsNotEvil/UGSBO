@@ -16,7 +16,7 @@ public class Entscheider {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		
+		System.out.println(pruefen(2));
 
 	}
 	
@@ -36,18 +36,25 @@ public class Entscheider {
 		Scanner in = new Scanner(System.in);
 		while (true){
 			try{
-				return getAnInteger();
+				return in.nextInt();
 			}
 			catch (InputMismatchException e){
-				getAnInteger();
-				System.out.print("Das ist kein Integer. Try again.");
+				in.next();
+				System.out.println("Das ist kein Integer. Try again.");
 			}
 		}
-		
 	}
 	
+	
 	public static int pruefen(int answer) {
-		return 0;
+		System.out.println("Try again. Nur 1 und 0 sind erlaubt.");
+		Scanner in = new Scanner(System.in);
+		int b = getAnInteger();
+		if(b == 1 || b == 0) {
+			return b;
+		}
+		pruefen(b);
+		return 1;
 	}
 
 }
