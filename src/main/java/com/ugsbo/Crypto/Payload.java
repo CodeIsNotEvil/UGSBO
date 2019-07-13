@@ -5,6 +5,7 @@ import java.security.GeneralSecurityException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
+import java.util.Base64;
 import javax.crypto.*;
 import javax.crypto.spec.SecretKeySpec;
 
@@ -73,16 +74,16 @@ public class Payload {
     Cipher cipher = Cipher.getInstance("AES");
     cipher.init(Cipher.ENCRYPT_MODE, password);
     byte[] encrypted = cipher.doFinal(offen.getBytes());
-
-    verschlüsselt = encrypted.toString();
+    
+    verschlüsselt = Base64.getEncoder().encodeToString(encrypted);
   }
 
   public void entschlüsseln() throws NoSuchAlgorithmException, GeneralSecurityException {
-    byte[] text = verschlüsselt.getBytes();
+    byte[] text = Base64.getDecoder().decode(verschlüsselt);
     
-    Cipher cipher2 = Cipher.getInstance("AES");
-    cipher2.init(Cipher.DECRYPT_MODE, password);
-    byte[] cipherData2 = cipher2.doFinal(text);
+    Cipher cipher = Cipher.getInstance("AES");
+    cipher.init(Cipher.DECRYPT_MODE, password);
+    byte[] cipherData2 = cipher.doFinal(text);
     offen = new String(cipherData2);
 
   }

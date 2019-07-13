@@ -53,8 +53,8 @@ public class Crypt {
     try {
       workingobjekt.setOffen(eingabe);
       workingobjekt.setPassword(password);
-      workingobjekt.entschlüsseln();
       workingobjekt.verschlüsseln();
+      workingobjekt.entschlüsseln();
     } catch (GeneralSecurityException | UnsupportedEncodingException e) {
       e.printStackTrace();
     }
