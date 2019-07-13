@@ -29,7 +29,13 @@ public class Entscheider {
 	}
 	
 	public static int skalaTest(int answer){
-		return 0;
+		System.out.println("Try again. Nur Werte zwischen 1 und 10 sind erlaubt.");
+		int b = getAnInteger();
+		if(b >= 1 && b <= 10) {
+			return b;
+		}
+		skalaTest(b);
+		return -1;
 	}
 	
 	public static int getAnInteger() {
@@ -48,7 +54,6 @@ public class Entscheider {
 	
 	public static int pruefen(int answer) {
 		System.out.println("Try again. Nur 1 und 0 sind erlaubt.");
-		Scanner in = new Scanner(System.in);
 		int b = getAnInteger();
 		if(b == 1 || b == 0) {
 			return b;
