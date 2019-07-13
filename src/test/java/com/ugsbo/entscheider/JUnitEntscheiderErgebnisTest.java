@@ -36,7 +36,7 @@ public class JUnitEntscheiderErgebnisTest {
 	@Test
 	public void fragenTest() {
 		String a = Entscheider.fragen();
-		Assert.assertTrue(a == "Ich kann doch nicht fuer dich entscheiden, dass musst du schon selber wissen." || a == "Naja, dann geh halt nach Hause und ruh dich aus." || a == "Jetzt wieder gehen? Dann bist du doch voellig umsonst aufgestanden. Geh einfach hin." );
+		Assert.assertTrue((a == "Ich kann doch nicht fuer dich entscheiden, dass musst du schon selber wissen.") ||( a == "Naja, dann geh halt nach Hause und ruh dich aus." )|| (a == "Jetzt wieder gehen? Dann bist du doch voellig umsonst aufgestanden. Geh einfach hin.") || (a == "Na dann halt nicht. Tschüssi."));
 	}
 
 }
