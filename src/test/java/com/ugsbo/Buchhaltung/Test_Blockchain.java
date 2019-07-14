@@ -46,4 +46,18 @@ public class Test_Blockchain {
     
     assertEquals("eingabe und Ergebnis sind gleich", eingabe, ergebnis);
   }
+  
+  @Test
+  public void hinzufügenMehrAlsEinmal() {
+    int eingabe = 100;
+    int erwartet = 300;
+    int ergebnis;
+    
+    Workingobjekt.add(eingabe);
+    Workingobjekt.add(eingabe);
+    Workingobjekt.add(eingabe);
+    ergebnis = Workingobjekt.kontostand();
+    
+    assertEquals("eingabe und Ergebnis sind gleich", erwartet, ergebnis);
+  }
 }
