@@ -40,7 +40,7 @@ public class Sitzung {
 
 		return kategorie;
 	}
-	// tips
+	// tipps
 
 	public String learningAgreement(int kategorieZeit) {
 		String tipp = "kein Tipp.";
@@ -53,6 +53,27 @@ public class Sitzung {
 		}
 		if (kategorieZeit == 1) {
 			tipp = "Wenn du jetzt noch kein Learning Agreement hast ist das seltsam. Frag so schnell es geht mal jemanden ob du eins brauchst.";
+		}
+		return tipp;
+
+	}
+	
+	//neuer Tipp zum Wohnen
+	public String wohnen(int kategorieZeit) {
+		String tipp = "kein Tipp.";
+		if(kategorieZeit == 4 ) {
+			tipp = "Schau dich am besten schon mal nach Wohnungen um. Manchmal gibt es Webseiten auf denen man über die Zeit Punkte sammelt.";
+		}
+		
+		if(kategorieZeit == 3) {
+			tipp = "Jetzt informier dich definitiv schon mal wie es mit Wohnen ist. Manchmal gibt es Webseiten auf denen man über die Zeit Punkte sammelt.";
+		}
+		
+		if(kategorieZeit == 2) {
+			tipp = "Jetzt wird es höchste Zeit nach einer Wohung zu schauen.";
+		}
+		if(kategorieZeit == 1) {
+			tipp = "Jetzt ist es schon fast zu spät um nach einer Wohnung zu suchen";
 		}
 		return tipp;
 
