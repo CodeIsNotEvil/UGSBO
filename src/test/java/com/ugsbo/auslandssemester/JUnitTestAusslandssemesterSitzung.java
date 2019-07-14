@@ -11,7 +11,7 @@ import org.junit.Test;
 import com.ugsbo.entscheider.Entscheider;
 
 public class JUnitTestAusslandssemesterSitzung {
-	
+
 //Tests zu Methode kategorieDestination
 	// USA als Destination
 	@Test
@@ -62,8 +62,8 @@ public class JUnitTestAusslandssemesterSitzung {
 		assertEquals("Antwortstring sollte Europa sein", erwartet, b);
 
 	}
-	
-	//Tests zu Methode kategorieInMonaten
+
+	// Tests zu Methode kategorieInMonaten
 	// mehr als 12 Moante
 	@Test
 	public void KategorieInMonatenGroesserZwoelf() {
@@ -103,40 +103,43 @@ public class JUnitTestAusslandssemesterSitzung {
 		assertEquals("erwartet int 4", erwartet, b);
 
 	}
-	
-	//Tests zu Methode learningAgreement
-	
+
+	// Tests zu Methode learningAgreement
+
 	@Test
 	public void learningAgreementTest1() {
+		Sitzung test = new Sitzung("Mustermann", "Max", 12, "Europa");
 		String erwartet = "Jetzt musst du dich noch nicht über das Learning Agreement informieren.";
-		String b = Sitzung.learningAgreement(4);
+		String b = test.learningAgreement(4);
 		assertEquals("erwartet Antwortstring", erwartet, b);
 
 	}
-	
+
 	@Test
 	public void learningAgreementTest2() {
+		Sitzung test = new Sitzung("Mustermann", "Max", 12, "Europa");
 		String erwartet = "Jetzt musst du dich noch nicht über das Learning Agreement informieren.";
-		String b = Sitzung.learningAgreement(3);
+		String b = test.learningAgreement(3);
 		assertEquals("erwartet Antwortstring", erwartet, b);
 
 	}
-	
+
 	@Test
 	public void learningAgreementTest3() {
-		String erwartet = "Jetzt solltest du dich über das Learning Agreement informieren. Was musst du wissen? Wer muss es unterzeichnen? Wo musst du es abgeben?";;
-		String b = Sitzung.learningAgreement(2);
+		Sitzung test = new Sitzung("Mustermann", "Max", 12, "Europa");
+		String erwartet = "Jetzt solltest du dich über das Learning Agreement informieren. Was musst du wissen? Wer muss es unterzeichnen? Wo musst du es abgeben?";
+		;
+		String b = test.learningAgreement(2);
 		assertEquals("erwartet Antwortstring", erwartet, b);
 
 	}
-	
+
 	public void learningAgreementTest4() {
+		Sitzung test = new Sitzung("Mustermann", "Max", 12, "Europa");
 		String erwartet = "Wenn du jetzt noch kein Learning Agreement hast ist das seltsam. Frag so schnell es geht mal jemanden ob du eins brauchst.";
-		String b = Sitzung.learningAgreement(1);
+		String b = test.learningAgreement(1);
 		assertEquals("erwartet Antwortstring", erwartet, b);
 
 	}
-	
-	
 
 }
