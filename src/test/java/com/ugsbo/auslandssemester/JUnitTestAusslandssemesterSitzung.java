@@ -67,7 +67,7 @@ public class JUnitTestAusslandssemesterSitzung {
 	public void KategorieInMonatenGroesserZwoelf() {
 		Sitzung test = new Sitzung("Mustermann", "Max", 13, "Europa");
 		int erwartet = 4;
-		String b = test.kategorieInMonaten();
+		int b = test.kategorieInMonaten();
 		assertEquals("erwartet int 4", erwartet, b);
 
 	}
@@ -77,7 +77,7 @@ public class JUnitTestAusslandssemesterSitzung {
 	public void KategorieInMonatenKleinerDrei() {
 		Sitzung test = new Sitzung("Mustermann", "Max", 2, "Europa");
 		int erwartet = 1;
-		String b = test.kategorieInMonaten();
+		int b = test.kategorieInMonaten();
 		assertEquals("erwartet int 4", erwartet, b);
 
 	}
@@ -87,7 +87,7 @@ public class JUnitTestAusslandssemesterSitzung {
 	public void KategorieInMonatenZwischenZweiFuenf() {
 		Sitzung test = new Sitzung("Mustermann", "Max", 4, "Europa");
 		int erwartet = 2;
-		String b = test.kategorieInMonaten();
+		int b = test.kategorieInMonaten();
 		assertEquals("erwartet int 4", erwartet, b);
 
 	}
@@ -97,7 +97,7 @@ public class JUnitTestAusslandssemesterSitzung {
 	public void KategorieInMonatenZwischenFuenfZwoelf() {
 		Sitzung test = new Sitzung("Mustermann", "Max", 12, "Europa");
 		int erwartet = 3;
-		String b = test.kategorieInMonaten();
+		int b = test.kategorieInMonaten();
 		assertEquals("erwartet int 4", erwartet, b);
 
 	}
