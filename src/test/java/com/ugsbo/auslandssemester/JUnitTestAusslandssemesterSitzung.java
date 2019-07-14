@@ -108,7 +108,7 @@ public class JUnitTestAusslandssemesterSitzung {
 
 	@Test
 	public void learningAgreementTest1() {
-		Sitzung test = new Sitzung("Mustermann", "Max", 12, "Europa");
+		Sitzung test = new Sitzung("Mustermann", "Max", 13, "Europa");
 		String erwartet = "Jetzt musst du dich noch nicht über das Learning Agreement informieren.";
 		String b = test.learningAgreement(4);
 		assertEquals("erwartet Antwortstring", erwartet, b);
@@ -126,7 +126,7 @@ public class JUnitTestAusslandssemesterSitzung {
 
 	@Test
 	public void learningAgreementTest3() {
-		Sitzung test = new Sitzung("Mustermann", "Max", 12, "Europa");
+		Sitzung test = new Sitzung("Mustermann", "Max", 5, "Europa");
 		String erwartet = "Jetzt solltest du dich über das Learning Agreement informieren. Was musst du wissen? Wer muss es unterzeichnen? Wo musst du es abgeben?";
 		;
 		String b = test.learningAgreement(2);
@@ -134,11 +134,52 @@ public class JUnitTestAusslandssemesterSitzung {
 
 	}
 
+	@Test
 	public void learningAgreementTest4() {
-		Sitzung test = new Sitzung("Mustermann", "Max", 12, "Europa");
+		Sitzung test = new Sitzung("Mustermann", "Max", 1, "Europa");
 		String erwartet = "Wenn du jetzt noch kein Learning Agreement hast ist das seltsam. Frag so schnell es geht mal jemanden ob du eins brauchst.";
 		String b = test.learningAgreement(1);
 		assertEquals("erwartet Antwortstring", erwartet, b);
+
+	}
+
+	// Tests zur Methode wohnen
+	@Test
+	public void wohnenTest1() {
+		Sitzung test = new Sitzung("Mustermann", "Max", 1, "Europa");
+		String erwartet = "Jetzt ist es schon fast zu spät um nach einer Wohnung zu suchen";
+		String b = test.wohnen(1);
+		assertEquals("erwartet ein Antwortstring", erwartet, b);
+
+	}
+
+	// Tests zur Methode wohnen
+	@Test
+	public void wohnenTest2() {
+		Sitzung test = new Sitzung("Mustermann", "Max", 5, "Europa");
+		String erwartet = "Jetzt wird es höchste Zeit nach einer Wohung zu schauen.";
+		String b = test.wohnen(2);
+		assertEquals("erwartet ein Antwortstring", erwartet, b);
+
+	}
+
+	// Tests zur Methode wohnen
+	@Test
+	public void wohnenTest3() {
+		Sitzung test = new Sitzung("Mustermann", "Max", 12, "Europa");
+		String erwartet = "Jetzt informier dich definitiv schon mal wie es mit Wohnen ist. Manchmal gibt es Webseiten auf denen man über die Zeit Punkte sammelt.";
+		String b = test.wohnen(3);
+		assertEquals("erwartet ein Antwortstring", erwartet, b);
+
+	}
+	
+	// Tests zur Methode wohnen
+	@Test
+	public void wohnenTest4() {
+		Sitzung test = new Sitzung("Mustermann", "Max", 15, "Europa");
+		String erwartet = "Schau dich am besten schon mal nach Wohnungen um. Manchmal gibt es Webseiten auf denen man über die Zeit Punkte sammelt.";
+		String b = test.wohnen(4);
+		assertEquals("erwartet ein Antwortstring", erwartet, b);
 
 	}
 
