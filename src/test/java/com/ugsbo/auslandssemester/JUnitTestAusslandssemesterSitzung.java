@@ -115,9 +115,24 @@ public class JUnitTestAusslandssemesterSitzung {
 	}
 	
 	@Test
-	public void learningAgreementTest1() {
+	public void learningAgreementTest2() {
 		String erwartet = "Jetzt musst du dich noch nicht über das Learning Agreement informieren.";
 		String b = Sitzung.learningAgreement(3);
+		assertEquals("erwartet Antwortstring", erwartet, b);
+
+	}
+	
+	@Test
+	public void learningAgreementTest3() {
+		String erwartet = "Jetzt solltest du dich über das Learning Agreement informieren. Was musst du wissen? Wer muss es unterzeichnen? Wo musst du es abgeben?";;
+		String b = Sitzung.learningAgreement(2);
+		assertEquals("erwartet Antwortstring", erwartet, b);
+
+	}
+	
+	public void learningAgreementTest4() {
+		String erwartet = "Wenn du jetzt noch kein Learning Agreement hast ist das seltsam. Frag so schnell es geht mal jemanden ob du eins brauchst.";
+		String b = Sitzung.learningAgreement(1);
 		assertEquals("erwartet Antwortstring", erwartet, b);
 
 	}
