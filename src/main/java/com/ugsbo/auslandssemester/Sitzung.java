@@ -25,5 +25,22 @@ public class Sitzung {
 		}
 		return kategorie;
 	}
+	
+	public int kategorieInMonaten() {
+		int kategorie = 4; // alles was größer als 12 Monate ist
+
+		
+		if (inMonaten <= 2) {
+			kategorie = 1;
+		}
+		if (inMonaten > 2 && inMonaten <= 5) {
+			kategorie = 2;
+		}
+		if (inMonaten > 5 && inMonaten <= 12) {
+			kategorie = 3;
+		}
+
+		return kategorie;
+	}
 
 }
