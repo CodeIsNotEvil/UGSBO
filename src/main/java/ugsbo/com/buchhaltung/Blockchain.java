@@ -1,5 +1,7 @@
 package ugsbo.com.buchhaltung;
 
+import com.google.gson.*;
+
 public class Blockchain {
  
   Block Workingobjekt;
@@ -11,7 +13,6 @@ public class Blockchain {
 
 
   public void add(int eingabe) {
-    // TODO Auto-generated method stub
     Block newWorkingobjekt = new Block(eingabe, Workingobjekt, Workingobjekt.getHash(), Workingobjekt.getKontostand());
     
     Workingobjekt = newWorkingobjekt;
@@ -19,14 +20,12 @@ public class Blockchain {
 
 
   public int kontostand() {
-    // TODO Auto-generated method stub
     return Workingobjekt.getKontostand();
   }
   
   public String toString() {
-    
-    
-    return null;
+    String JSON = new GsonBuilder().setPrettyPrinting().create().toJson(Workingobjekt);      
+    return JSON;
   }
 
   
