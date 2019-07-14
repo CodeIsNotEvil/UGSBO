@@ -9,7 +9,7 @@ public class BasicGuiController {
     @FXML
     private Button app1; //Fuer ToDoManager.
     @FXML
-    private Button app2;
+    private Button app2; //Fuer VokabelKartenSchreiber
     @FXML
     private Button app3;
     @FXML
@@ -33,7 +33,8 @@ public class BasicGuiController {
             System.out.println(event);
         });
         app2.setOnMouseClicked((event) -> {
-            System.out.println(event);
+            //System.out.println(event);
+            MainApp.startVokabelKartenSchreiber();
         });
         app3.setOnMouseClicked((event) -> {
             System.out.println(event);

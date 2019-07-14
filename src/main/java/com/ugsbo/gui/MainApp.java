@@ -58,4 +58,10 @@ public class MainApp extends Application {
     }
     stage.show();
   }
+
+  public static void startVokabelKartenSchreiber(){
+    Stage stage = new Stage();
+    MainApp main = new MainApp();
+    main.createStageFromFXML(stage, "Voabelkartenschreiber");
+  }
 }
