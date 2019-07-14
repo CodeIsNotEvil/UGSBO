@@ -2,12 +2,13 @@ package ugsbo.com.buchhaltung;
 
 public class Block {
 
-  String data;
+  int data;
+  int kontostand;
   Block vorher;
   
   
-  public Block() {
-    
+  public Block(int Data) {
+    data = Data;
+    vorher = null;
   }
-
 }
