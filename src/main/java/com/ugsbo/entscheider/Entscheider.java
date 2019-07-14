@@ -25,9 +25,10 @@ public class Entscheider {
 		}
 
 	}
-
-	public static String ergebnis(int a, int b, int c, int d, int e, int f, int g, int h) {
-		int erg = (((a + b + c) * d) / (e + f + g)) - h;
+//testbar  
+	//Eingaben -> alter, lernen, gelb, apfel, mot, harry, fruehstueck, anzahl
+	public static String ergebnis(int alter, int lernen, int gelb, int apfel, int mot, int harry, int fruehstueck, int anzahl) {
+		int erg = (((alter + lernen + gelb) * apfel) / (mot + harry + fruehstueck)) - anzahl;
 		String hilfe = "";
 		if (erg < 5)
 			hilfe = "Ich kann doch nicht fuer dich entscheiden, dass musst du schon selber wissen.";
@@ -38,7 +39,7 @@ public class Entscheider {
 
 		return hilfe;
 	}
-
+//nicht testbar
 	public static String fragen() {
 		// Eingangsfrage
 		System.out.println(
@@ -154,7 +155,7 @@ public class Entscheider {
 		return antwort;
 
 	}
-
+//nicht testbar
 	public static int skalaTest(int answer) {
 		System.out.println("Try again. Nur Werte zwischen 1 und 10 sind erlaubt.");
 		int b = getAnInteger();
@@ -164,7 +165,7 @@ public class Entscheider {
 		skalaTest(b);
 		return -1;
 	}
-
+//nicht testbar 
 	public static int getAnInteger() {
 		Scanner in = new Scanner(System.in);
 		while (true) {
@@ -177,6 +178,7 @@ public class Entscheider {
 		}
 	}
 
+	//Nicht testbar 
 	public static int pruefen(int answer) {
 		System.out.println("Try again. Nur 1 und 0 sind erlaubt.");
 		int b = getAnInteger();
