@@ -153,7 +153,7 @@ public class JUnitTestAusslandssemesterSitzung {
 
 	}
 
-	// Tests zur Methode wohnen
+	
 	@Test
 	public void wohnenTest2() {
 		Sitzung test = new Sitzung("Mustermann", "Max", 5, "Europa");
@@ -163,7 +163,7 @@ public class JUnitTestAusslandssemesterSitzung {
 
 	}
 
-	// Tests zur Methode wohnen
+	
 	@Test
 	public void wohnenTest3() {
 		Sitzung test = new Sitzung("Mustermann", "Max", 12, "Europa");
@@ -173,7 +173,7 @@ public class JUnitTestAusslandssemesterSitzung {
 
 	}
 	
-	// Tests zur Methode wohnen
+	
 	@Test
 	public void wohnenTest4() {
 		Sitzung test = new Sitzung("Mustermann", "Max", 15, "Europa");
@@ -182,5 +182,17 @@ public class JUnitTestAusslandssemesterSitzung {
 		assertEquals("erwartet ein Antwortstring", erwartet, b);
 
 	}
+	
+	//Tests zur Methode packen
+	
+	@Test
+	public void packenTest1() {
+		Sitzung test = new Sitzung("Mustermann", "Max", 1, "Europa");
+		String erwartet = "Jetzt solltest du definitiv eine Liste schreiben und so langsam mal anfangen.";
+		String b = test.wohnen(1);
+		assertEquals("erwartet ein Antwortstring", erwartet, b);
+
+	}
+	
 
 }
