@@ -3,6 +3,8 @@ package com.ugsbo.matrixcalc;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -29,14 +31,29 @@ public class MatrixCalcController {
      */
     @FXML
     public void initialize() {
+        /**
+         * Convert Strings to matricies, multiply them and output the result. 
+         */
         multiplyButton.setOnMouseClicked((event) -> {
-            String matrixA = matrixATextArea.getText();
-            String matrixB = matrixBTextArea.getText();
-            if (checkInput(matrixA)) {
-                // TODO matrixATextArea and matrixBTextArea need to be parsed to double[][] do
-                // this in an extern Methode maybe an extern class.
-                // MatrixCalcMath math = new MatrixCalcMath();
-                // math.matrixMultiplication(matrixATextArea, matrixATextArea);
+            String stringMatrixA = matrixATextArea.getText();
+            String stringMatrixB = matrixBTextArea.getText();
+            if (checkInput(stringMatrixA) && checkInput(stringMatrixB)) {
+                MatrixCalcMath math = new MatrixCalcMath();
+                double[][] matrixA = math.stringToMatrix(stringMatrixA);
+                double[][] matrixB = math.stringToMatrix(stringMatrixB);
+                double[][] result = math.matrixMultiplication(matrixA, matrixB);
+
+                String resultString  = "";
+                for (int i = 0; i < result.length; i++) {
+                    for (int j = 0; j < result[0].length; j++) {
+                        resultString += result[i][j] + "   ";
+                        //System.out.println(result[i][j]);
+                    }
+                    resultString += "\n\n";
+                }
+                //Display output
+                outputText.setText(resultString);
+                outputText.setTextAlignment(TextAlignment.CENTER);
             }
             // System.out.println(matrixATextArea.getText());
         });
