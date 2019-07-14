@@ -14,5 +14,16 @@ public class Sitzung {
 		this.inMonaten = monate;
 		this.destination = ziel;
 	}
+	
+	public String kategorieDestination() {
+		String kategorie = "Europa";
+		if (destination == "Australien" || destination == "Neuseeland" || destination == "Asien") {
+			kategorie = "Asien";
+		}
+		if (destination == "USA") {
+			kategorie = "USA";
+		}
+		return kategorie;
+	}
 
 }
