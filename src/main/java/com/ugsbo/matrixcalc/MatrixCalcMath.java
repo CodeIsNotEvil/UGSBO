@@ -1,5 +1,7 @@
 package com.ugsbo.matrixcalc;
 
+import java.util.ArrayList;
+
 /**
  * Contains all basic matrix math calculations.
  */
@@ -224,6 +226,31 @@ public class MatrixCalcMath {
             return true;
         }
         return false;
+    }
+
+    public double[][] stringToMatrix(String stringMatrix) {
+        
+        ArrayList<String[]> singleNumbersArr =  new ArrayList<String[]>();
+        
+        //Splitting the strings into thier rows
+        String[] singleNumbers = null;
+        String[] rows = stringMatrix.split("\n");
+        for (int i = 0; i < rows.length; i++) {
+            System.out.println(rows[i]);
+            singleNumbers = rows[i].split("\\s");
+            singleNumbersArr.add(singleNumbers);
+        }
+
+        int rowCount = rows.length; //row.length
+        int columCount = singleNumbersArr.size(); //output.length
+        double[][] result = new double[columCount][rowCount];
+        
+        for (int columIndex = 0; columIndex < singleNumbersArr.size(); columIndex++) {
+            for (int rowIndex = 0;  rowIndex < singleNumbers.length; rowIndex++) {
+                    result[columIndex][rowIndex] = Double.parseDouble(singleNumbersArr.get(columIndex)[rowIndex]);
+            }
+        }
+        return result;
     }
 
 }
