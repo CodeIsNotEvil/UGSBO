@@ -62,4 +62,44 @@ public class JUnitTestAusslandssemesterSitzung {
 
 	}
 
+	// mehr als 12 Moante
+	@Test
+	public void KategorieInMonatenGroesserZwoelf() {
+		Sitzung test = new Sitzung("Mustermann", "Max", 13, "Europa");
+		int erwartet = 4;
+		String b = test.kategorieInMonaten();
+		assertEquals("erwartet int 4", erwartet, b);
+
+	}
+
+	// weniger als drei Monate
+	@Test
+	public void KategorieInMonatenKleinerDrei() {
+		Sitzung test = new Sitzung("Mustermann", "Max", 2, "Europa");
+		int erwartet = 1;
+		String b = test.kategorieInMonaten();
+		assertEquals("erwartet int 4", erwartet, b);
+
+	}
+
+	// zwischne zwei und fuenf
+	@Test
+	public void KategorieInMonatenZwischenZweiFuenf() {
+		Sitzung test = new Sitzung("Mustermann", "Max", 4, "Europa");
+		int erwartet = 2;
+		String b = test.kategorieInMonaten();
+		assertEquals("erwartet int 4", erwartet, b);
+
+	}
+
+	// zwischne fuenf und zwoelf
+	@Test
+	public void KategorieInMonatenZwischenFuenfZwoelf() {
+		Sitzung test = new Sitzung("Mustermann", "Max", 12, "Europa");
+		int erwartet = 3;
+		String b = test.kategorieInMonaten();
+		assertEquals("erwartet int 4", erwartet, b);
+
+	}
+
 }
