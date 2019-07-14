@@ -11,7 +11,8 @@ import org.junit.Test;
 import com.ugsbo.entscheider.Entscheider;
 
 public class JUnitTestAusslandssemesterSitzung {
-
+	
+//Tests zu Methode kategorieDestination
 	// USA als Destination
 	@Test
 	public void KategorieDestinationUSA() {
@@ -61,7 +62,8 @@ public class JUnitTestAusslandssemesterSitzung {
 		assertEquals("Antwortstring sollte Europa sein", erwartet, b);
 
 	}
-
+	
+	//Tests zu Methode kategorieInMonaten
 	// mehr als 12 Moante
 	@Test
 	public void KategorieInMonatenGroesserZwoelf() {
@@ -101,5 +103,25 @@ public class JUnitTestAusslandssemesterSitzung {
 		assertEquals("erwartet int 4", erwartet, b);
 
 	}
+	
+	//Tests zu Methode learningAgreement
+	
+	@Test
+	public void learningAgreementTest1() {
+		String erwartet = "Jetzt musst du dich noch nicht über das Learning Agreement informieren.";
+		String b = Sitzung.learningAgreement(4);
+		assertEquals("erwartet Antwortstring", erwartet, b);
+
+	}
+	
+	@Test
+	public void learningAgreementTest1() {
+		String erwartet = "Jetzt musst du dich noch nicht über das Learning Agreement informieren.";
+		String b = Sitzung.learningAgreement(3);
+		assertEquals("erwartet Antwortstring", erwartet, b);
+
+	}
+	
+	
 
 }
