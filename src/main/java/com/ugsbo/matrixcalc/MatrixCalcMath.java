@@ -232,20 +232,21 @@ public class MatrixCalcMath {
         
         ArrayList<String[]> singleNumbersArr =  new ArrayList<String[]>();
         
-        //Splitting the strings into thier rows
+        //Splitting the strings into their rows
         String[] singleNumbers = null;
         String[] rows = stringMatrix.split("\n");
         for (int i = 0; i < rows.length; i++) {
-            System.out.println(rows[i]);
+            //System.out.println(rows[i]);
+        	//Splitting rows into their Numbers
             singleNumbers = rows[i].split("\\s");
             singleNumbersArr.add(singleNumbers);
         }
 
-        int rowCount = rows.length; //row.length
+        int rowlength = singleNumbersArr.get(0).length; //row.length
         int columCount = singleNumbersArr.size(); //output.length
-        double[][] result = new double[columCount][rowCount];
+        double[][] result = new double[columCount][rowlength];
         
-        for (int columIndex = 0; columIndex < singleNumbersArr.size(); columIndex++) {
+        for (int columIndex = 0; columIndex < columCount; columIndex++) {
             for (int rowIndex = 0;  rowIndex < singleNumbers.length; rowIndex++) {
                     result[columIndex][rowIndex] = Double.parseDouble(singleNumbersArr.get(columIndex)[rowIndex]);
             }
