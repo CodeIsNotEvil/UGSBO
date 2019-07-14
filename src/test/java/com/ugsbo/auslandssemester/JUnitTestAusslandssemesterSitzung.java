@@ -14,11 +14,13 @@ public class JUnitTestAusslandssemesterSitzung {
 
 	
 
-
+	//USA als Destination
 	@Test
-	public void Test() {
-		
-		fail("Not yet implemented");
+	public void KategorieDestinationUSA() {
+		Sitzung test = new Sitzung("Mustermann", "Max", 2, "USA");
+		String erwartet = "USA";
+		String b = test.kategorieDestination();
+		assertEquals("Antwortstring sollte USA sein",erwartet,b);
 		
 	}
 
