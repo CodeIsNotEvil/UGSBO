@@ -76,6 +76,46 @@ public class Sitzung {
 
 	}
 
+	// neuer Tipp zu den Deadlines
+
+	public String deadline(int kategorieZeit, String kategorieZiel) {
+		String tipp = "kein Tipp";
+		if (kategorieZiel == "USA" || kategorieZiel == "Asien") {
+			if (kategorieZeit == 4) {
+				tipp = "Zu diesem Zeitraum ist es sinnvoll sich über die entsprechenden Deadlines zu informieren.";
+			}
+
+			if (kategorieZeit == 3) {
+				tipp = "Jetzt solltest du dich auf jeden Fall über die Deadlines informieren.";
+			}
+
+			if (kategorieZeit == 2) {
+				tipp = "Die Bewerbungsdeadlines sind hier wahrscheinlich schon durch. Stipendien könnten aber noch gehen";
+			}
+			if (kategorieZeit == 1) {
+				tipp = "Es tut mir Leid, aber du bist zu spät dran. Alle Deadlines sind durch.";
+			}
+
+		} else {
+			if (kategorieZeit == 4) {
+				tipp = "Zu diesem Zeitpunkt musst du dich noch nicht um Deadlines sorgen. Mal schauen schadet aber nicht.";
+			}
+
+			if (kategorieZeit == 3) {
+				tipp = "Jetzt wäre es wichtig sich über Deadlines zu informieren.";
+			}
+
+			if (kategorieZeit == 2) {
+				tipp = "Jetzt aber wirklich zügig. Die Deadlines sind bestimmt noch nicht ganz abgelaufen.";
+			}
+			if (kategorieZeit == 1) {
+				tipp = "Es tut mir Leid, aber du bist zu spät dran. Alle Deadlines sind durch.";
+			}
+		}
+		return tipp;
+
+	}
+
 	// neuer Tipp zum Wohnen
 	public String wohnen(int kategorieZeit) {
 		String tipp = "kein Tipp.";
