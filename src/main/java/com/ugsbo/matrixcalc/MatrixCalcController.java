@@ -9,17 +9,13 @@ import java.util.ArrayList;
 
 public class MatrixCalcController {
 
-    /**
-     *
-     */
-
     private static final String MULTIPLICATION_STRING = "multiplication";
     private static final String ADDITION_STRING = "addition";
     private static final String SUBSTRACTION_STRING = "substract";
     private static final String TRANPOSE_STRING = "transpose";
     private static final String CALCDETERMINAT_STRING = "calcDeterminate";
 
-    // Hier werden die fx:id Attribute verknuepft.
+    // The fx:id Attributes will be bind here.
     @FXML
     private Button multiplyButton, addButton, DetAButton, DetBButton, substractButton, transposeButton;
     @FXML
@@ -60,6 +56,9 @@ public class MatrixCalcController {
             invokeOperation(matricies, MULTIPLICATION_STRING);
         });
 
+        /**
+         * Convert a String to a matrix, transpose it and output the result.
+         */
         transposeButton.setOnMouseClicked((event) -> {
             String stringMatrixA = matrixATextArea.getText();
             String[] stringMatrix = { stringMatrixA, "" };
@@ -72,6 +71,9 @@ public class MatrixCalcController {
             invokeOperation(matricies, TRANPOSE_STRING);
         });
 
+        /**
+         * Convert Strings to matricies, add them and output the result.
+         */
         addButton.setOnMouseClicked((event) -> {
             String stringMatrixA = matrixATextArea.getText();
             String stringMatrixB = matrixBTextArea.getText();
@@ -86,6 +88,9 @@ public class MatrixCalcController {
             invokeOperation(matricies, ADDITION_STRING);
         });
 
+        /**
+         * Convert Strings to matricies, substract them and output the result.
+         */
         substractButton.setOnMouseClicked((event) -> {
             String stringMatrixA = matrixATextArea.getText();
             String stringMatrixB = matrixBTextArea.getText();
@@ -100,6 +105,9 @@ public class MatrixCalcController {
             invokeOperation(matricies, SUBSTRACTION_STRING);
         });
 
+        /**
+         * Convert the String of the left inputField to a matrix, calculate the Determinate and output it.
+         */
         DetAButton.setOnMouseClicked((event) -> {
             String stringMatrixA = matrixATextArea.getText();
             String[] stringMatrix = { stringMatrixA, "" };
@@ -112,6 +120,9 @@ public class MatrixCalcController {
             invokeOperation(matricies, CALCDETERMINAT_STRING);
         });
 
+        /**
+         * Convert the String of the right inputField to a matrix, calculate the Determinate and output it.
+         */
         DetBButton.setOnMouseClicked((event) -> {
             String stringMatrixB = matrixBTextArea.getText();
             String[] stringMatrix = { "", stringMatrixB };
@@ -126,9 +137,9 @@ public class MatrixCalcController {
     }
 
     /**
-     * Invokes the right operations form the MatrixCalcMath class 
-     * @param matricies contains both or onely one Matrix
-     * @param operation One of the Global Constats to select wich Operation is needed.
+     * Invokes the needed operations form the MatrixCalcMath class 
+     * @param matricies Contains both Matricies or onely one Matrix
+     * @param operation One of the global Constats to select wich Operation is needed.
      */
     private void invokeOperation(ArrayList<double[][]> matricies, String operation) {
         if (matricies.size() == 2) {
@@ -208,15 +219,14 @@ public class MatrixCalcController {
         }
     }
 
-    // TODO Wirte tests for the extracted Methode.
     /**
-     * Checks the Input and Displays it if the Input is Valid.
+     * Checks the Input and Displays it if the Input is valid.
      * 
      * @param stringMatrix            Contains both input matrices if
      *                                numberOfMarriciesToMatch is 2. If the number
      *                                is 1 than one of them has to be a empty String
      * @param numberOfMatricesToMatch If the number is 1 onely one Marix will be
-     *                                verifyed and the otherone needs to be an empty
+     *                                verifyed and the other one needs to be an empty
      *                                String in the stringMatrix
      */
     private void checkInputAndDisplayIfInputIsNotValid(String[] stringMatrix, int numberOfMatricesToMatch) {

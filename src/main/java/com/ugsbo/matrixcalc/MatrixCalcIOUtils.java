@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 
 public class MatrixCalcIOUtils {
     /**
-     * Prints a given 2D-Array to the output text Field.
+     * Prints a given 2D-Array to the output Textfield.
      * 
      * @param output2DArray The Array that gets Displayed
      */
@@ -18,9 +18,9 @@ public class MatrixCalcIOUtils {
     }
 
     /**
-     * Converts Array to String in oder to Display it.
+     * Converts 2D-Array to String in order to Display it.
      * 
-     * @param array2D the array wich will be converted to an Displayable String
+     * @param array2D The array wich will be converted to an Displayable String
      * @return The Displayable String
      */
     protected String convertsArrayToStringInOrderToDisplayIt(double[][] array2D) {
@@ -28,7 +28,6 @@ public class MatrixCalcIOUtils {
         for (int i = 0; i < array2D.length; i++) {
             for (int j = 0; j < array2D[0].length; j++) {
                 displayableString += array2D[i][j] + "   ";
-                // System.out.println(result[i][j]);
             }
             displayableString += "\n\n";
         }
@@ -36,11 +35,11 @@ public class MatrixCalcIOUtils {
     }
 
     /**
-     * Chcks if the Input is Valid, with Regex. Returns true if the Matrix can be
+     * Checks if the Input is Valid, with Regex. Returns true if the Matrix can be
      * matched by the regular Expression.
      * 
      * @param matrix It is the InputMatrix
-     * @return true if the Matrix is valid Input.
+     * @return True if the Matrix is valid Input.
      */
     protected void checkInput(String matrix) throws IllegalArgumentException {
         if (matrix.length() == 0) {
@@ -50,11 +49,11 @@ public class MatrixCalcIOUtils {
         // Matches digits witch following spaces 1 to 3 times
         String row1 = "(\\d*\\u0020*){1,3}";
         // Matches newlineCurrierReturn followed by digits witch following spaces 1 to
-        // 3times
+        // 3 times
         String row2 = "(\\n){0,3}(\\d*\\u0020*){0,3}";
         String row3 = "(\\n){0,3}(\\d*\\u0020*){0,3}";
 
-        // TODO get the input check more stricktly missing matrix slots are allowed.
+        // TODO for verion 2 get the input check more stricktly missing matrix slots are allowed.
 
         Pattern p = Pattern.compile(row1 + row2 + row3);
         Matcher m = p.matcher(matrix);
@@ -78,14 +77,13 @@ public class MatrixCalcIOUtils {
         String[] singleNumbers = null;
         String[] rows = stringMatrix.split("\n");
         for (int i = 0; i < rows.length; i++) {
-            // System.out.println(rows[i]);
             // Splitting rows into their Numbers
             singleNumbers = rows[i].split("\\s");
             singleNumbersArr.add(singleNumbers);
         }
 
-        int rowlength = singleNumbersArr.get(0).length; // row.length
-        int columCount = singleNumbersArr.size(); // output.length
+        int rowlength = singleNumbersArr.get(0).length;
+        int columCount = singleNumbersArr.size();
         double[][] matrix = new double[columCount][rowlength];
 
         for (int columIndex = 0; columIndex < columCount; columIndex++) {
