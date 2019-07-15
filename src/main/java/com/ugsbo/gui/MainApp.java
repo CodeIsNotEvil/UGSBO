@@ -35,7 +35,7 @@ public class MainApp extends Application {
   /**
    * Loades the FXML file and the Default CSS.
    * 
-   * @param stage        The Stage will be passed over from fxml
+   * @param stage        The Stage will be passed over from JavaFx
    * @param fxmlFileName Only the Filename of the fxml file wich sould be loaded
    */
   private void createStageFromFXML(Stage stage, String fxmlFileName) {
@@ -64,4 +64,14 @@ public class MainApp extends Application {
     MainApp main = new MainApp();
     main.createStageFromFXML(stage, "Voabelkartenschreiber");
   }
+  
+  /**
+   * Startet eine Instanz der MatrixCalcGui.
+   */
+  public static void startMatrixCalcGUI() {
+    Stage stage = new Stage();
+    MainApp app = new MainApp();
+    app.createStageFromFXML(stage, "matrixCalcGui");
+  }
+
 }
