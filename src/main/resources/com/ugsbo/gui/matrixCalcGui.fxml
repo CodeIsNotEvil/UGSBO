@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ugsbo.matrixcalc.MatrixCalcController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ugsbo.matrixcalc.MatrixCalcController">
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -18,7 +22,8 @@
             <Button fx:id="addButton" layoutX="14.0" layoutY="62.0" mnemonicParsing="false" text="add" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="67.0" />
             <Button fx:id="substractButton" layoutX="99.0" layoutY="62.0" mnemonicParsing="false" text="Substract" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="67.0" />
             <Button fx:id="transposeButton" layoutX="97.0" layoutY="27.0" mnemonicParsing="false" text="Transpose" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="27.0" />
-            <Button fx:id="swapInputButton" layoutX="14.0" layoutY="95.0" mnemonicParsing="false" text="Swap Input" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="107.0" />
+            <Button fx:id="DetAButton" layoutX="14.0" layoutY="95.0" mnemonicParsing="false" text="DetA" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="107.0" />
+            <Button fx:id="DetBButton" layoutX="120.0" layoutY="107.0" mnemonicParsing="false" text="DetB" />
             <Text fx:id="errorText" layoutX="14.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="100.0" />
          </children>
       </AnchorPane>
