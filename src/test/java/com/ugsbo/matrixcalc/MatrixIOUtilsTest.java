@@ -1,6 +1,7 @@
 package com.ugsbo.matrixcalc;
 
 import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
@@ -116,5 +117,35 @@ public class MatrixIOUtilsTest {
         assertArrayEquals("The first row is not correct", expected[0], result[0], 0.1);
         assertArrayEquals("The second row is not correct", expected[1], result[1], 0.1);
         assertArrayEquals("The thierd row is not correct", expected[2], result[2], 0.1);
+    }
+
+    @Test
+    public void convertsArrayToString_SingleNumber() {
+        double[][] matrix = { { 1.0 } };
+        String expected = "1.0   \n\n";
+
+        String result = util.convertsArrayToStringInOrderToDisplayIt(matrix);
+
+        assertEquals("The Strings do not Match", expected, result);
+    }
+
+    @Test
+    public void convertsArrayToString_FourNumbersInARow() {
+        double[][] matrix = { { 1.0, 2.0, 3.0, 4.0 } };
+        String expected = "1.0   2.0   3.0   4.0   \n\n";
+
+        String result = util.convertsArrayToStringInOrderToDisplayIt(matrix);
+
+        assertEquals("The Strings do not Match", expected, result);
+    }
+
+    @Test
+    public void convertsArrayToString_FourNumbersInTwoRows() {
+        double[][] matrix = { { 1.0, 2.0 }, { 3.0, 4.0 } };
+        String expected = "1.0   2.0   \n\n3.0   4.0   \n\n";
+
+        String result = util.convertsArrayToStringInOrderToDisplayIt(matrix);
+
+        assertEquals("The Strings do not Match", expected, result);
     }
 }
