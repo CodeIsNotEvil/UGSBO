@@ -42,7 +42,7 @@ public class MatrixCalcIOUtils {
      * @param matrix It is the InputMatrix
      * @return true if the Matrix is valid Input.
      */
-    protected boolean checkInput(String matrix) {
+    protected boolean checkInput(String matrix) throws IllegalArgumentException {
         boolean isMatched = false;
         if (matrix.length() == 0) {
             throw new IllegalArgumentException("Please insert a Matrix");
@@ -61,6 +61,8 @@ public class MatrixCalcIOUtils {
         Matcher m = p.matcher(matrix);
 
         isMatched = m.matches();
+        // TODO change the funktion to void and just throw exceptions if something went
+        // worng
 
         // System.out.println(isMatched);
         return isMatched;

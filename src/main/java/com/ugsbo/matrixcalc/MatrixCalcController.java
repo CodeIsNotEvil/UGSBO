@@ -93,16 +93,47 @@ public class MatrixCalcController {
 
             String stringMatrixA = matrixATextArea.getText();
             String stringMatrixB = matrixBTextArea.getText();
-            if (util.checkInput(stringMatrixA) && util.checkInput(stringMatrixB)) {
+
+            boolean stop = false;
+
+            try {
+                util.checkInput(stringMatrixA);
+            } catch (Exception e) {
+                stop = true;
+
+                outputText.setText(e.getMessage() + "A");
+                outputText.setTextAlignment(TextAlignment.CENTER);
+            }
+
+            try {
+                util.checkInput(stringMatrixB);
+            } catch (Exception e) {
+                stop = true;
+
+                outputText.setText(e.getMessage() + "B");
+                outputText.setTextAlignment(TextAlignment.CENTER);
+            }
+
+            if (util.checkInput(stringMatrixA) && util.checkInput(stringMatrixB) && !stop) {
 
                 double[][] matrixA = util.stringToMatrix(stringMatrixA);
                 double[][] matrixB = util.stringToMatrix(stringMatrixB);
-                double[][] result = math.matrixSubstraction(matrixA, matrixB);
 
-                String DisplayableString = util.outputMatrixToOutputText(result);
+                try {
+                    double[][] result = math.matrixSubstraction(matrixA, matrixB);
 
-                outputText.setText(DisplayableString);
-                outputText.setTextAlignment(TextAlignment.CENTER);
+                    String DisplayableString = util.outputMatrixToOutputText(result);
+
+                    outputText.setText(DisplayableString);
+                    outputText.setTextAlignment(TextAlignment.CENTER);
+                } catch (Exception e) {
+
+                    outputText.setText(e.getMessage());
+                    outputText.setTextAlignment(TextAlignment.CENTER);
+                }
+                
+
+
             }
         });
 
@@ -111,15 +142,34 @@ public class MatrixCalcController {
             MatrixCalcIOUtils util = new MatrixCalcIOUtils();
 
             String stringMatrixA = matrixATextArea.getText();
-            if (util.checkInput(stringMatrixA)) {
+
+            boolean stop = false;
+            try {
+
+                util.checkInput(stringMatrixA);
+
+            } catch (IllegalArgumentException e) {
+                stop = true;
+
+                outputText.setText(e.getMessage());
+                outputText.setTextAlignment(TextAlignment.CENTER);
+            }
+            if (util.checkInput(stringMatrixA) && !stop) {
 
                 double[][] matrixA = util.stringToMatrix(stringMatrixA);
-                double result = math.calcDeterminat(matrixA);
+                try {
+                    double result = math.calcDeterminat(matrixA);
 
-                String DisplayableString = Double.toString(result);
+                    String DisplayableString = Double.toString(result);
 
-                outputText.setText(DisplayableString);
-                outputText.setTextAlignment(TextAlignment.CENTER);
+                    outputText.setText(DisplayableString);
+                    outputText.setTextAlignment(TextAlignment.CENTER);
+
+                } catch (IllegalArgumentException e) {
+
+                    outputText.setText(e.getMessage());
+                    outputText.setTextAlignment(TextAlignment.CENTER);
+                }
             }
         });
 
@@ -138,8 +188,6 @@ public class MatrixCalcController {
 
                 outputText.setText(e.getMessage());
                 outputText.setTextAlignment(TextAlignment.CENTER);
-
-                e.printStackTrace();
             }
             if (util.checkInput(stringMatrixB) && !stop) {
 
@@ -156,8 +204,6 @@ public class MatrixCalcController {
 
                     outputText.setText(e.getMessage());
                     outputText.setTextAlignment(TextAlignment.CENTER);
-
-                    e.printStackTrace();
                 }
             }
         });
