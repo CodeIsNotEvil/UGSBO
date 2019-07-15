@@ -218,5 +218,27 @@ public class JUnitTestAusslandssemesterSitzung {
 		assertEquals("erwartet ein Antwortstring", erwartet, b);
 	}
 	
+	//Tests zur Methode deadline
+	
+	//kategorieZeit = 1, kategorieZiel = USA
+	
+	@Test
+	public void deadlineUSAEins() {
+		Sitzung test = new Sitzung("Mustermann", "Max", 2, "USA");
+		String erwartet = "Es tut mir Leid, aber du bist zu spät dran. Alle Deadlines sind durch.";
+		String c = test.deadline(1, "USA");
+		assertEquals("erwartet einen Antwortstring", erwartet, c);
+	}
+	//kategorieZeit = 1, kategorieZiel = Asien
+	@Test
+	public void deadlineAsienEins() {
+		Sitzung test = new Sitzung("Mustermann", "Max", 2, "Asien");
+		String erwartet = "Die Bewerbungsdeadlines sind hier wahrscheinlich schon durch. Stipendien könnten aber noch gehen";
+		String c = test.deadline(1, "Asien");
+		assertEquals("erwartet einen Antwortstring", erwartet, c);
+	}
+ 	
+	
+	
 
 }
