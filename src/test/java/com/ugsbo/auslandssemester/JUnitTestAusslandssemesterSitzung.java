@@ -233,10 +233,27 @@ public class JUnitTestAusslandssemesterSitzung {
 	@Test
 	public void deadlineAsienEins() {
 		Sitzung test = new Sitzung("Mustermann", "Max", 2, "Asien");
-		String erwartet = "Die Bewerbungsdeadlines sind hier wahrscheinlich schon durch. Stipendien könnten aber noch gehen";
+		String erwartet = "Es tut mir Leid, aber du bist zu spät dran. Alle Deadlines sind durch.";
 		String c = test.deadline(1, "Asien");
 		assertEquals("erwartet einen Antwortstring", erwartet, c);
 	}
+	
+	@Test
+	public void deadlineUSAZwei() {
+		Sitzung test = new Sitzung("Mustermann", "Max", 4, "Asien");
+		String erwartet = "Die Bewerbungsdeadlines sind hier wahrscheinlich schon durch. Stipendien könnten aber noch gehen";
+		String c = test.deadline(2, "USA");
+		assertEquals("erwartet einen Antwortstring", erwartet, c);
+	}
+	
+	@Test
+	public void deadlineAsienZwei() {
+		Sitzung test = new Sitzung("Mustermann", "Max", 4, "Asien");
+		String erwartet = "Die Bewerbungsdeadlines sind hier wahrscheinlich schon durch. Stipendien könnten aber noch gehen";
+		String c = test.deadline(2, "Asien");
+		assertEquals("erwartet einen Antwortstring", erwartet, c);
+	}
+	
  	
 	
 	
