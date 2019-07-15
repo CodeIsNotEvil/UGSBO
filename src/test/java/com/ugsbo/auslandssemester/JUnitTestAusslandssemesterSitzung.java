@@ -153,7 +153,6 @@ public class JUnitTestAusslandssemesterSitzung {
 
 	}
 
-	
 	@Test
 	public void wohnenTest2() {
 		Sitzung test = new Sitzung("Mustermann", "Max", 5, "Europa");
@@ -163,7 +162,6 @@ public class JUnitTestAusslandssemesterSitzung {
 
 	}
 
-	
 	@Test
 	public void wohnenTest3() {
 		Sitzung test = new Sitzung("Mustermann", "Max", 12, "Europa");
@@ -172,8 +170,7 @@ public class JUnitTestAusslandssemesterSitzung {
 		assertEquals("erwartet ein Antwortstring", erwartet, b);
 
 	}
-	
-	
+
 	@Test
 	public void wohnenTest4() {
 		Sitzung test = new Sitzung("Mustermann", "Max", 15, "Europa");
@@ -182,9 +179,9 @@ public class JUnitTestAusslandssemesterSitzung {
 		assertEquals("erwartet ein Antwortstring", erwartet, b);
 
 	}
-	
-	//Tests zur Methode packen
-	
+
+	// Tests zur Methode packen
+
 	@Test
 	public void packenTest1() {
 		Sitzung test = new Sitzung("Mustermann", "Max", 1, "Europa");
@@ -193,35 +190,35 @@ public class JUnitTestAusslandssemesterSitzung {
 		assertEquals("erwartet ein Antwortstring", erwartet, b);
 
 	}
-	
+
 	@Test
 	public void packenTest2() {
 		Sitzung test = new Sitzung("Mustermann", "Max", 6, "Europa");
 		String erwartet = "Wenn du magst kannst schonmal anfangen eine Liste zu schreiben.";
-		String b = test.packen(2);	
+		String b = test.packen(2);
 		assertEquals("erwartet ein Antwortstring", erwartet, b);
 	}
-	
+
 	@Test
 	public void packenTest3() {
 		Sitzung test = new Sitzung("Mustermann", "Max", 6, "Europa");
 		String erwartet = "Kein Stress. DU hast noch eine Ewigkeit Zeit zum packen.";
-		String b = test.packen(3);	
+		String b = test.packen(3);
 		assertEquals("erwartet ein Antwortstring", erwartet, b);
 	}
-	
+
 	@Test
 	public void packenTest4() {
 		Sitzung test = new Sitzung("Mustermann", "Max", 6, "Europa");
 		String erwartet = "Kein Stress. DU hast noch eine Ewigkeit Zeit zum packen.";
-		String b = test.packen(4);	
+		String b = test.packen(4);
 		assertEquals("erwartet ein Antwortstring", erwartet, b);
 	}
-	
-	//Tests zur Methode deadline
-	
-	//kategorieZeit = 1, kategorieZiel = USA
-	
+
+	// Tests zur Methode deadline
+
+	// kategorieZeit = 1, kategorieZiel = USA
+
 	@Test
 	public void deadlineUSAEins() {
 		Sitzung test = new Sitzung("Mustermann", "Max", 2, "USA");
@@ -229,7 +226,8 @@ public class JUnitTestAusslandssemesterSitzung {
 		String c = test.deadline(1, "USA");
 		assertEquals("erwartet einen Antwortstring", erwartet, c);
 	}
-	//kategorieZeit = 1, kategorieZiel = Asien
+
+	// kategorieZeit = 1, kategorieZiel = Asien
 	@Test
 	public void deadlineAsienEins() {
 		Sitzung test = new Sitzung("Mustermann", "Max", 2, "Asien");
@@ -237,15 +235,15 @@ public class JUnitTestAusslandssemesterSitzung {
 		String c = test.deadline(1, "Asien");
 		assertEquals("erwartet einen Antwortstring", erwartet, c);
 	}
-	
+
 	@Test
 	public void deadlineUSAZwei() {
-		Sitzung test = new Sitzung("Mustermann", "Max", 4, "Asien");
+		Sitzung test = new Sitzung("Mustermann", "Max", 4, "USA");
 		String erwartet = "Die Bewerbungsdeadlines sind hier wahrscheinlich schon durch. Stipendien könnten aber noch gehen";
 		String c = test.deadline(2, "USA");
 		assertEquals("erwartet einen Antwortstring", erwartet, c);
 	}
-	
+
 	@Test
 	public void deadlineAsienZwei() {
 		Sitzung test = new Sitzung("Mustermann", "Max", 4, "Asien");
@@ -253,9 +251,21 @@ public class JUnitTestAusslandssemesterSitzung {
 		String c = test.deadline(2, "Asien");
 		assertEquals("erwartet einen Antwortstring", erwartet, c);
 	}
+
+	@Test
+	public void deadlineUSADrei() {
+		Sitzung test = new Sitzung("Mustermann", "Max", 4, "USA");
+        String erwartet = "Jetzt solltest du dich auf jeden Fall über die Deadlines informieren.";;
+        String c = test.deadline(3,"USA");
+        assertEqual("erwartet Antwortstring", erwartet, c);
+	}
 	
- 	
-	
-	
+	@Test
+	public void deadlineAsienDrei() {
+		Sitzung test = new Sitzung("Mustermann", "Max", 4, "Asien");
+        String erwartet = "Jetzt solltest du dich auf jeden Fall über die Deadlines informieren.";;
+        String c = test.deadline(3,"Asien");
+        assertEqual("erwartet Antwortstring", erwartet, c);
+	}
 
 }
