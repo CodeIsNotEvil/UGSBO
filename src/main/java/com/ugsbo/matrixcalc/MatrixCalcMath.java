@@ -1,7 +1,5 @@
 package com.ugsbo.matrixcalc;
 
-import java.util.ArrayList;
-
 /**
  * Contains all basic matrix math calculations.
  */
@@ -155,7 +153,7 @@ public class MatrixCalcMath {
      * @param matrixA The Inputmatrix
      * @return The Determinant of the Matrix A
      */
-    public double calcDeterminat(double[][] matrixA) {
+    public double calcDeterminat(double[][] matrixA) throws IllegalArgumentException{
         // checking if a Determinant can be calculated.
         double result = 0.0;
         if (checkIfMatrixIsQuadradtic(matrixA)) {

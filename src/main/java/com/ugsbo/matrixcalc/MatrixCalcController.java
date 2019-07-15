@@ -44,7 +44,7 @@ public class MatrixCalcController {
                 double[][] result = math.matrixMultiplication(matrixA, matrixB);
 
                 String DisplayableString = util.outputMatrixToOutputText(result);
-                
+
                 outputText.setText(DisplayableString);
                 outputText.setTextAlignment(TextAlignment.CENTER);
             }
@@ -81,7 +81,7 @@ public class MatrixCalcController {
                 double[][] result = math.matrixAddition(matrixA, matrixB);
 
                 String DisplayableString = util.outputMatrixToOutputText(result);
-                
+
                 outputText.setText(DisplayableString);
                 outputText.setTextAlignment(TextAlignment.CENTER);
             }
@@ -100,7 +100,7 @@ public class MatrixCalcController {
                 double[][] result = math.matrixSubstraction(matrixA, matrixB);
 
                 String DisplayableString = util.outputMatrixToOutputText(result);
-                
+
                 outputText.setText(DisplayableString);
                 outputText.setTextAlignment(TextAlignment.CENTER);
             }
@@ -117,7 +117,7 @@ public class MatrixCalcController {
                 double result = math.calcDeterminat(matrixA);
 
                 String DisplayableString = Double.toString(result);
-                
+
                 outputText.setText(DisplayableString);
                 outputText.setTextAlignment(TextAlignment.CENTER);
             }
@@ -128,15 +128,37 @@ public class MatrixCalcController {
             MatrixCalcIOUtils util = new MatrixCalcIOUtils();
 
             String stringMatrixB = matrixBTextArea.getText();
-            if (util.checkInput(stringMatrixB)) {
+            boolean stop = false;
+            try {
+
+                util.checkInput(stringMatrixB);
+
+            } catch (IllegalArgumentException e) {
+                stop = true;
+
+                outputText.setText(e.getMessage());
+                outputText.setTextAlignment(TextAlignment.CENTER);
+
+                e.printStackTrace();
+            }
+            if (util.checkInput(stringMatrixB) && !stop) {
 
                 double[][] matrixB = util.stringToMatrix(stringMatrixB);
-                double result = math.calcDeterminat(matrixB);
+                try {
+                    double result = math.calcDeterminat(matrixB);
 
-                String DisplayableString = Double.toString(result);
-                
-                outputText.setText(DisplayableString);
-                outputText.setTextAlignment(TextAlignment.CENTER);
+                    String DisplayableString = Double.toString(result);
+
+                    outputText.setText(DisplayableString);
+                    outputText.setTextAlignment(TextAlignment.CENTER);
+
+                } catch (IllegalArgumentException e) {
+
+                    outputText.setText(e.getMessage());
+                    outputText.setTextAlignment(TextAlignment.CENTER);
+
+                    e.printStackTrace();
+                }
             }
         });
     }
