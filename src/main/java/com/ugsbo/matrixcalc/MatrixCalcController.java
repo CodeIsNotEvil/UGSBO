@@ -44,10 +44,28 @@ public class MatrixCalcController {
                 double[][] result = math.matrixMultiplication(matrixA, matrixB);
 
                 String DisplayableString = util.outputMatrixToOutputText(result);
+                
                 outputText.setText(DisplayableString);
                 outputText.setTextAlignment(TextAlignment.CENTER);
             }
             // System.out.println(matrixATextArea.getText());
+        });
+
+        transposeButton.setOnMouseClicked((event) -> {
+            MatrixCalcMath math = new MatrixCalcMath();
+            MatrixCalcIOUtils util = new MatrixCalcIOUtils();
+
+            String stringMatrixA = matrixATextArea.getText();
+            if (util.checkInput(stringMatrixA)) {
+
+                double[][] matrixA = util.stringToMatrix(stringMatrixA);
+                double[][] result = math.matrixTransponation(matrixA);
+
+                String DisplayableString = util.outputMatrixToOutputText(result);
+
+                outputText.setText(DisplayableString);
+                outputText.setTextAlignment(TextAlignment.CENTER);
+            }
         });
     }
 }
