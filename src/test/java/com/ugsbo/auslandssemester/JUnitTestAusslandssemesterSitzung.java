@@ -352,7 +352,7 @@ public class JUnitTestAusslandssemesterSitzung {
 	
 	@Test
 	public void finanzierungAsienDrei() {
-		Sitzung test = new Sitzung("Mustermann", "Max", 4,"Asien");
+		Sitzung test = new Sitzung("Mustermann", "Max", 6,"Asien");
 		String e = "Jetzt musst du auf jeden Fall überlegen wie du das finanziern willst. Sprich vielleicht mal mit deinen Eltern oder such nach Stipendien";
 		String a = test.finanzierung(3, "Asien");
 		assertEquals("erwartet Antwortstring", e, a);
@@ -360,10 +360,36 @@ public class JUnitTestAusslandssemesterSitzung {
 	
 	@Test
 	public void finanzierungUSADrei() {
-		Sitzung test = new Sitzung("Mustermann", "Max", 4,"USA");
+		Sitzung test = new Sitzung("Mustermann", "Max", 6,"USA");
 		String e = "Jetzt musst du auf jeden Fall überlegen wie du das finanziern willst. Sprich vielleicht mal mit deinen Eltern oder such nach Stipendien";
 		String a = test.finanzierung(3, "USA");
 		assertEquals("erwartet Antwortstring", e, a);
 	}
+	
+	@Test
+	public void finanzierungAsienVier() {
+		Sitzung test = new Sitzung("Mustermann", "Max", 13,"Asien");
+		String e = "Finanzierung ist keine leichte Sache, darüber kann man sich nie zu früh Gedanken machen. Stichwort: Stipendium.";
+		String a = test.finanzierung(4, "Asien");
+		assertEquals("erwartet Antwortstring", e, a);
+	}
+	
+	@Test
+	public void finanzierungUSAVier() {
+		Sitzung test = new Sitzung("Mustermann", "Max", 13,"USA");
+		String e = "Finanzierung ist keine leichte Sache, darüber kann man sich nie zu früh Gedanken machen. Stichwort: Stipendium.";
+		String a = test.finanzierung(4, "USA");
+		assertEquals("erwartet Antwortstring", e, a);
+	}
+	
+	@Test
+	public void finanzierungEuropaEins() {
+		Sitzung test = new Sitzung("Mustermann", "Max", 1,"Europa");
+		String e = "Wenn du ein Erasmus+ STipendium bekommst, dann wirst du noch einen Englischtest absolvieren und einen Vertrag unterschreiben müssen. Denk auch an deine Immatrikulationsbescheingung.";
+		String a = test.finanzierung(1, "Europa");
+		assertEquals("erwartet Antwortstring", e, a);
+	}
+	
+	
 
 }
