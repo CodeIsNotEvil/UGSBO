@@ -210,5 +210,13 @@ public class JUnitTestAusslandssemesterSitzung {
 		assertEquals("erwartet ein Antwortstring", erwartet, b);
 	}
 	
+	@Test
+	public void packenTest4() {
+		Sitzung test = new Sitzung("Mustermann", "Max", 6, "Europa");
+		String erwartet = "Kein Stress. DU hast noch eine Ewigkeit Zeit zum packen.";
+		String b = test.wohnen(4);	
+		assertEquals("erwartet ein Antwortstring", erwartet, b);
+	}
+	
 
 }
