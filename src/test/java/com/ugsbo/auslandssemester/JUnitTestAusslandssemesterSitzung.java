@@ -271,51 +271,83 @@ public class JUnitTestAusslandssemesterSitzung {
 	@Test
 	public void deadlineUSAVier() {
 		Sitzung test = new Sitzung("Mustermann", "Max", 13, "USA");
-        String erwartet = "Zu diesem Zeitraum ist es sinnvoll sich über die entsprechenden Deadlines zu informieren.";
-        String c = test.deadline(4,"USA");
-        assertEquals("erwartet Antwortstring", erwartet, c);
+		String erwartet = "Zu diesem Zeitraum ist es sinnvoll sich über die entsprechenden Deadlines zu informieren.";
+		String c = test.deadline(4, "USA");
+		assertEquals("erwartet Antwortstring", erwartet, c);
 	}
 
 	@Test
 	public void deadlineAsienVier() {
 		Sitzung test = new Sitzung("Mustermann", "Max", 13, "Asien");
-        String erwartet = "Zu diesem Zeitraum ist es sinnvoll sich über die entsprechenden Deadlines zu informieren.";
-        String c = test.deadline(4,"Asien");
-        assertEquals("erwartet Antwortstring", erwartet, c);
+		String erwartet = "Zu diesem Zeitraum ist es sinnvoll sich über die entsprechenden Deadlines zu informieren.";
+		String c = test.deadline(4, "Asien");
+		assertEquals("erwartet Antwortstring", erwartet, c);
 	}
-	
+
 	@Test
 	public void deadlineEuropaEins() {
 		Sitzung test = new Sitzung("Mustermann", "Max", 1, "Europa");
-        String erwartet =  "Es tut mir Leid, aber du bist zu spät dran. Alle Deadlines sind durch.";
-        String c = test.deadline(1,"Europa");
-        assertEquals("erwartet Antwortstring", erwartet, c);
+		String erwartet = "Es tut mir Leid, aber du bist zu spät dran. Alle Deadlines sind durch.";
+		String c = test.deadline(1, "Europa");
+		assertEquals("erwartet Antwortstring", erwartet, c);
 	}
-	
+
 	@Test
 	public void deadlineEuropaZwei() {
 		Sitzung test = new Sitzung("Mustermann", "Max", 4, "Europa");
-        String erwartet = "Jetzt aber wirklich zügig. Die Deadlines sind bestimmt noch nicht ganz abgelaufen.";
-        String c = test.deadline(2,"Europa");
-        assertEquals("erwartet Antwortstring", erwartet, c);
+		String erwartet = "Jetzt aber wirklich zügig. Die Deadlines sind bestimmt noch nicht ganz abgelaufen.";
+		String c = test.deadline(2, "Europa");
+		assertEquals("erwartet Antwortstring", erwartet, c);
 	}
-	
+
 	@Test
 	public void deadlineEuropaDrei() {
 		Sitzung test = new Sitzung("Mustermann", "Max", 6, "Europa");
-        String erwartet = "Jetzt wäre es wichtig sich über Deadlines zu informieren.";
-        String c = test.deadline(3,"Europa");
-        assertEquals("erwartet Antwortstring", erwartet, c);
+		String erwartet = "Jetzt wäre es wichtig sich über Deadlines zu informieren.";
+		String c = test.deadline(3, "Europa");
+		assertEquals("erwartet Antwortstring", erwartet, c);
 	}
-	
+
 	@Test
 	public void deadlineEuropaVier() {
 		Sitzung test = new Sitzung("Mustermann", "Max", 13, "Europa");
-        String erwartet =  "Zu diesem Zeitpunkt musst du dich noch nicht um Deadlines sorgen. Mal schauen schadet aber nicht.";
-        String c = test.deadline(4,"Europa");
-        assertEquals("erwartet Antwortstring", erwartet, c);
+		String erwartet = "Zu diesem Zeitpunkt musst du dich noch nicht um Deadlines sorgen. Mal schauen schadet aber nicht.";
+		String c = test.deadline(4, "Europa");
+		assertEquals("erwartet Antwortstring", erwartet, c);
+	}
+
+	// Testfälle zur Methode finanzierung()
+
+	@Test
+	public void finanzierungAsienEins() {
+		Sitzung test = new Sitzung("Mustermann", "Max", 1,"Asien");
+		String e = "Es tut mir Leid, aber du bist zu spät dran. Alle Deadlines sind durch.";
+		String a = test.finanzierung(1, "Asien");
+		assertEquals("erwartet Antwortstring", e, a);
 	}
 	
+	@Test
+	public void finanzierungUSAEins() {
+		Sitzung test = new Sitzung("Mustermann", "Max", 1,"USA");
+		String e = "Es tut mir Leid, aber du bist zu spät dran. Alle Deadlines sind durch.";
+		String a = test.finanzierung(1, "USA");
+		assertEquals("erwartet Antwortstring", e, a);
+	}
 	
+	@Test
+	public void finanzierungAsienZwei() {
+		Sitzung test = new Sitzung("Mustermann", "Max", 4,"Asien");
+		String e = "Die Bewerbungsdeadlines sind hier wahrscheinlich schon durch. Stipendien könnten aber noch gehen";
+		String a = test.finanzierung(1, "USA");
+		assertEquals("erwartet Antwortstring", e, a);
+	}
+	
+	@Test
+	public void finanzierungUSAZwei() {
+		Sitzung test = new Sitzung("Mustermann", "Max", 4,"USA");
+		String e = "Die Bewerbungsdeadlines sind hier wahrscheinlich schon durch. Stipendien könnten aber noch gehen";
+		String a = test.finanzierung(4, "USA");
+		assertEquals("erwartet Antwortstring", e, a);
+	}
 
 }
