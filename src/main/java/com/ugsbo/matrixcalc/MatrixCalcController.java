@@ -37,7 +37,11 @@ public class MatrixCalcController {
 
             String stringMatrixA = matrixATextArea.getText();
             String stringMatrixB = matrixBTextArea.getText();
-            if (util.checkInput(stringMatrixA) && util.checkInput(stringMatrixB)) {
+            try {
+                
+            } catch (Exception e) {
+                //TODO: handle exception
+            }
 
                 double[][] matrixA = util.stringToMatrix(stringMatrixA);
                 double[][] matrixB = util.stringToMatrix(stringMatrixB);
@@ -47,7 +51,6 @@ public class MatrixCalcController {
 
                 outputText.setText(DisplayableString);
                 outputText.setTextAlignment(TextAlignment.CENTER);
-            }
             // System.out.println(matrixATextArea.getText());
         });
 
@@ -56,7 +59,11 @@ public class MatrixCalcController {
             MatrixCalcIOUtils util = new MatrixCalcIOUtils();
 
             String stringMatrixA = matrixATextArea.getText();
-            if (util.checkInput(stringMatrixA)) {
+            try {
+                
+            } catch (Exception e) {
+                //TODO: handle exception
+            }
 
                 double[][] matrixA = util.stringToMatrix(stringMatrixA);
                 double[][] result = math.matrixTransponation(matrixA);
@@ -65,7 +72,6 @@ public class MatrixCalcController {
 
                 outputText.setText(DisplayableString);
                 outputText.setTextAlignment(TextAlignment.CENTER);
-            }
         });
 
         addButton.setOnMouseClicked((event) -> {
@@ -74,7 +80,11 @@ public class MatrixCalcController {
 
             String stringMatrixA = matrixATextArea.getText();
             String stringMatrixB = matrixBTextArea.getText();
-            if (util.checkInput(stringMatrixA) && util.checkInput(stringMatrixB)) {
+            try {
+                
+            } catch (Exception e) {
+                //TODO: handle exception
+            }
 
                 double[][] matrixA = util.stringToMatrix(stringMatrixA);
                 double[][] matrixB = util.stringToMatrix(stringMatrixB);
@@ -84,7 +94,6 @@ public class MatrixCalcController {
 
                 outputText.setText(DisplayableString);
                 outputText.setTextAlignment(TextAlignment.CENTER);
-            }
         });
 
         substractButton.setOnMouseClicked((event) -> {
@@ -94,13 +103,9 @@ public class MatrixCalcController {
             String stringMatrixA = matrixATextArea.getText();
             String stringMatrixB = matrixBTextArea.getText();
 
-            boolean stop = false;
-
             try {
                 util.checkInput(stringMatrixA);
             } catch (Exception e) {
-                stop = true;
-
                 outputText.setText(e.getMessage() + "A");
                 outputText.setTextAlignment(TextAlignment.CENTER);
             }
@@ -108,13 +113,9 @@ public class MatrixCalcController {
             try {
                 util.checkInput(stringMatrixB);
             } catch (Exception e) {
-                stop = true;
-
                 outputText.setText(e.getMessage() + "B");
                 outputText.setTextAlignment(TextAlignment.CENTER);
             }
-
-            if (util.checkInput(stringMatrixA) && util.checkInput(stringMatrixB) && !stop) {
 
                 double[][] matrixA = util.stringToMatrix(stringMatrixA);
                 double[][] matrixB = util.stringToMatrix(stringMatrixB);
@@ -131,10 +132,6 @@ public class MatrixCalcController {
                     outputText.setText(e.getMessage());
                     outputText.setTextAlignment(TextAlignment.CENTER);
                 }
-                
-
-
-            }
         });
 
         DetAButton.setOnMouseClicked((event) -> {
@@ -143,18 +140,14 @@ public class MatrixCalcController {
 
             String stringMatrixA = matrixATextArea.getText();
 
-            boolean stop = false;
             try {
 
                 util.checkInput(stringMatrixA);
 
             } catch (IllegalArgumentException e) {
-                stop = true;
-
                 outputText.setText(e.getMessage());
                 outputText.setTextAlignment(TextAlignment.CENTER);
             }
-            if (util.checkInput(stringMatrixA) && !stop) {
 
                 double[][] matrixA = util.stringToMatrix(stringMatrixA);
                 try {
@@ -170,7 +163,6 @@ public class MatrixCalcController {
                     outputText.setText(e.getMessage());
                     outputText.setTextAlignment(TextAlignment.CENTER);
                 }
-            }
         });
 
         DetBButton.setOnMouseClicked((event) -> {
@@ -178,18 +170,14 @@ public class MatrixCalcController {
             MatrixCalcIOUtils util = new MatrixCalcIOUtils();
 
             String stringMatrixB = matrixBTextArea.getText();
-            boolean stop = false;
             try {
 
                 util.checkInput(stringMatrixB);
 
             } catch (IllegalArgumentException e) {
-                stop = true;
-
                 outputText.setText(e.getMessage());
                 outputText.setTextAlignment(TextAlignment.CENTER);
             }
-            if (util.checkInput(stringMatrixB) && !stop) {
 
                 double[][] matrixB = util.stringToMatrix(stringMatrixB);
                 try {
@@ -205,7 +193,6 @@ public class MatrixCalcController {
                     outputText.setText(e.getMessage());
                     outputText.setTextAlignment(TextAlignment.CENTER);
                 }
-            }
         });
     }
 }

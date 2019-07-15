@@ -42,8 +42,7 @@ public class MatrixCalcIOUtils {
      * @param matrix It is the InputMatrix
      * @return true if the Matrix is valid Input.
      */
-    protected boolean checkInput(String matrix) throws IllegalArgumentException {
-        boolean isMatched = false;
+    protected void checkInput(String matrix) throws IllegalArgumentException {
         if (matrix.length() == 0) {
             throw new IllegalArgumentException("Please insert a Matrix");
         }
@@ -59,13 +58,10 @@ public class MatrixCalcIOUtils {
 
         Pattern p = Pattern.compile(row1 + row2 + row3);
         Matcher m = p.matcher(matrix);
-
-        isMatched = m.matches();
-        // TODO change the funktion to void and just throw exceptions if something went
-        // worng
-
-        // System.out.println(isMatched);
-        return isMatched;
+        
+        if(!m.matches()){
+            throw new IllegalArgumentException("A Matrix is not in the right format, Matrix ");
+        }
     }
 
     /**

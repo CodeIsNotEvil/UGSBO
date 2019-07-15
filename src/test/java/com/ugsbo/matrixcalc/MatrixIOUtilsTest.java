@@ -2,6 +2,7 @@ package com.ugsbo.matrixcalc;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
@@ -30,27 +31,45 @@ public class MatrixIOUtilsTest {
     public void checkIfA1by3MatrixIsValidInput() {
         String input = "1 2 3";
 
-        boolean result = util.checkInput(input);
+        try {
+            // act
+            util.checkInput(input);
 
-        assertTrue("The 1 by 3 Matrix should be Matched as valid input.", result);
+            // assert
+            assertTrue("The 1 by 3 Matrix should be Matched as valid input.", true);
+        } catch (IllegalArgumentException e) {
+            assertFalse("The 1 by 3 Matrix should be Matched as valid input.", true);
+        }
     }
 
     @Test
     public void checkIfA2by3MatrixIsValidInput() {
+        // arrange
         String input = "1 2 3\n1 2 3";
 
-        boolean result = util.checkInput(input);
+        try {
+            // act
+            util.checkInput(input);
 
-        assertTrue("The 2 by 3 Matrix should be Matched as valid input.", result);
+            // assert
+            assertTrue("The 2 by 3 Matrix should be Matched as valid input.", true);
+        } catch (IllegalArgumentException e) {
+            assertFalse("The 2 by 3 Matrix should be Matched as valid input.", true);
+        }
     }
 
     @Test
     public void checkIfA3by3MatrixIsValidInput() {
         String input = "1 2 3\n1 2 3\n1 2 3";
 
-        boolean result = util.checkInput(input);
+        try {
+            util.checkInput(input);
 
-        assertTrue("The 3 by 3 Matrix should be Matched as valid input.", result);
+            assertTrue("The 3 by 3 Matrix should be Matched as valid input.", true);
+        } catch (IllegalArgumentException e) {
+            assertFalse("The 3 by 3 Matrix should be Matched as valid input.", true);
+        }
+
     }
 
     @Test
