@@ -42,6 +42,8 @@ public class Sitzung {
 	}
 	// tipps
 
+	// tipp zum learning Agreement
+
 	public String learningAgreement(int kategorieZeit) {
 		String tipp = "kein Tipp.";
 		if (kategorieZeit == 4 || kategorieZeit == 3) {
@@ -57,22 +59,38 @@ public class Sitzung {
 		return tipp;
 
 	}
-	
-	//neuer Tipp zum Wohnen
+
+	public String packen(int kategorieZeit) {
+		String tipp = "kein Tipp.";
+		if (kategorieZeit == 4 || kategorieZeit == 3) {
+			tipp = "Kein Stress. DU hast noch eine Ewigkeit Zeit zum packen.";
+		}
+
+		if (kategorieZeit == 2) {
+			tipp = "Wenn du magst kannst schonmal anfangen eine Liste zu schreiben.";
+		}
+		if (kategorieZeit == 1) {
+			tipp = "Jetzt solltest du definitiv eine Liste schreiben und so langsam mal anfangen.";
+		}
+		return tipp;
+
+	}
+
+	// neuer Tipp zum Wohnen
 	public String wohnen(int kategorieZeit) {
 		String tipp = "kein Tipp.";
-		if(kategorieZeit == 4 ) {
+		if (kategorieZeit == 4) {
 			tipp = "Schau dich am besten schon mal nach Wohnungen um. Manchmal gibt es Webseiten auf denen man über die Zeit Punkte sammelt.";
 		}
-		
-		if(kategorieZeit == 3) {
+
+		if (kategorieZeit == 3) {
 			tipp = "Jetzt informier dich definitiv schon mal wie es mit Wohnen ist. Manchmal gibt es Webseiten auf denen man über die Zeit Punkte sammelt.";
 		}
-		
-		if(kategorieZeit == 2) {
+
+		if (kategorieZeit == 2) {
 			tipp = "Jetzt wird es höchste Zeit nach einer Wohung zu schauen.";
 		}
-		if(kategorieZeit == 1) {
+		if (kategorieZeit == 1) {
 			tipp = "Jetzt ist es schon fast zu spät um nach einer Wohnung zu suchen";
 		}
 		return tipp;

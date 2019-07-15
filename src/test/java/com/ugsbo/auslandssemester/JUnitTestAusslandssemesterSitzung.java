@@ -189,7 +189,7 @@ public class JUnitTestAusslandssemesterSitzung {
 	public void packenTest1() {
 		Sitzung test = new Sitzung("Mustermann", "Max", 1, "Europa");
 		String erwartet = "Jetzt solltest du definitiv eine Liste schreiben und so langsam mal anfangen.";
-		String b = test.wohnen(1);
+		String b = test.packen(1);
 		assertEquals("erwartet ein Antwortstring", erwartet, b);
 
 	}
@@ -198,7 +198,7 @@ public class JUnitTestAusslandssemesterSitzung {
 	public void packenTest2() {
 		Sitzung test = new Sitzung("Mustermann", "Max", 6, "Europa");
 		String erwartet = "Wenn du magst kannst schonmal anfangen eine Liste zu schreiben.";
-		String b = test.wohnen(2);	
+		String b = test.packen(2);	
 		assertEquals("erwartet ein Antwortstring", erwartet, b);
 	}
 	
@@ -206,7 +206,7 @@ public class JUnitTestAusslandssemesterSitzung {
 	public void packenTest3() {
 		Sitzung test = new Sitzung("Mustermann", "Max", 6, "Europa");
 		String erwartet = "Kein Stress. DU hast noch eine Ewigkeit Zeit zum packen.";
-		String b = test.wohnen(3);	
+		String b = test.packen(3);	
 		assertEquals("erwartet ein Antwortstring", erwartet, b);
 	}
 	
@@ -214,7 +214,7 @@ public class JUnitTestAusslandssemesterSitzung {
 	public void packenTest4() {
 		Sitzung test = new Sitzung("Mustermann", "Max", 6, "Europa");
 		String erwartet = "Kein Stress. DU hast noch eine Ewigkeit Zeit zum packen.";
-		String b = test.wohnen(4);	
+		String b = test.packen(4);	
 		assertEquals("erwartet ein Antwortstring", erwartet, b);
 	}
 	
