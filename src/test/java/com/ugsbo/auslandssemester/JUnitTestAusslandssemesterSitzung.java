@@ -338,7 +338,7 @@ public class JUnitTestAusslandssemesterSitzung {
 	public void finanzierungAsienZwei() {
 		Sitzung test = new Sitzung("Mustermann", "Max", 4,"Asien");
 		String e = "Die Bewerbungsdeadlines sind hier wahrscheinlich schon durch. Stipendien könnten aber noch gehen";
-		String a = test.finanzierung(1, "USA");
+		String a = test.finanzierung(2, "USA");
 		assertEquals("erwartet Antwortstring", e, a);
 	}
 	
@@ -346,7 +346,23 @@ public class JUnitTestAusslandssemesterSitzung {
 	public void finanzierungUSAZwei() {
 		Sitzung test = new Sitzung("Mustermann", "Max", 4,"USA");
 		String e = "Die Bewerbungsdeadlines sind hier wahrscheinlich schon durch. Stipendien könnten aber noch gehen";
-		String a = test.finanzierung(4, "USA");
+		String a = test.finanzierung(2, "USA");
+		assertEquals("erwartet Antwortstring", e, a);
+	}
+	
+	@Test
+	public void finanzierungAsienDrei() {
+		Sitzung test = new Sitzung("Mustermann", "Max", 4,"Asien");
+		String e = "Jetzt musst du auf jeden Fall überlegen wie du das finanziern willst. Sprich vielleicht mal mit deinen Eltern oder such nach Stipendien";
+		String a = test.finanzierung(3, "Asien");
+		assertEquals("erwartet Antwortstring", e, a);
+	}
+	
+	@Test
+	public void finanzierungUSADrei() {
+		Sitzung test = new Sitzung("Mustermann", "Max", 4,"USA");
+		String e = "Jetzt musst du auf jeden Fall überlegen wie du das finanziern willst. Sprich vielleicht mal mit deinen Eltern oder such nach Stipendien";
+		String a = test.finanzierung(3, "USA");
 		assertEquals("erwartet Antwortstring", e, a);
 	}
 
