@@ -39,24 +39,42 @@ public class MatrixCalcController {
             String stringMatrixB = matrixBTextArea.getText();
             if (checkInput(stringMatrixA) && checkInput(stringMatrixB)) {
                 MatrixCalcMath math = new MatrixCalcMath();
+
                 double[][] matrixA = math.stringToMatrix(stringMatrixA);
                 double[][] matrixB = math.stringToMatrix(stringMatrixB);
                 double[][] result = math.matrixMultiplication(matrixA, matrixB);
 
-                String resultString  = "";
-                for (int i = 0; i < result.length; i++) {
-                    for (int j = 0; j < result[0].length; j++) {
-                        resultString += result[i][j] + "   ";
-                        //System.out.println(result[i][j]);
-                    }
-                    resultString += "\n\n";
-                }
-                //Display output
-                outputText.setText(resultString);
-                outputText.setTextAlignment(TextAlignment.CENTER);
+                outputMatrixToOutputText(result);
             }
             // System.out.println(matrixATextArea.getText());
         });
+    }
+    /**
+     * Prints a given 2D-Array to the output text Field.
+     * @param output2DArray The Array that gets Displayed
+     */
+    private void outputMatrixToOutputText(double[][] output2DArray) {
+        //convert array to String
+        String DisplayableString = convertsArrayToStringInOrderToDisplayIt(output2DArray);
+        // Display output
+        outputText.setText(DisplayableString);
+        outputText.setTextAlignment(TextAlignment.CENTER);
+    }
+    /**
+     * Converts Array to String in oder to Display it.
+     * @param array2D the array wich will be converted to an Displayable String
+     * @return The Displayable String
+     */
+    private String convertsArrayToStringInOrderToDisplayIt(double[][] array2D) {
+        String displayableString = "";
+        for (int i = 0; i < array2D.length; i++) {
+            for (int j = 0; j < array2D[0].length; j++) {
+                displayableString += array2D[i][j] + "   ";
+                // System.out.println(result[i][j]);
+            }
+            displayableString += "\n\n";
+        }
+        return displayableString;
     }
 
     /**
