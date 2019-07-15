@@ -67,5 +67,24 @@ public class MatrixCalcController {
                 outputText.setTextAlignment(TextAlignment.CENTER);
             }
         });
+
+        addButton.setOnMouseClicked((event) -> {
+            MatrixCalcMath math = new MatrixCalcMath();
+            MatrixCalcIOUtils util = new MatrixCalcIOUtils();
+
+            String stringMatrixA = matrixATextArea.getText();
+            String stringMatrixB = matrixBTextArea.getText();
+            if (util.checkInput(stringMatrixA) && util.checkInput(stringMatrixB)) {
+
+                double[][] matrixA = util.stringToMatrix(stringMatrixA);
+                double[][] matrixB = util.stringToMatrix(stringMatrixB);
+                double[][] result = math.matrixAddition(matrixA, matrixB);
+
+                String DisplayableString = util.outputMatrixToOutputText(result);
+                
+                outputText.setText(DisplayableString);
+                outputText.setTextAlignment(TextAlignment.CENTER);
+            }
+        });
     }
 }
