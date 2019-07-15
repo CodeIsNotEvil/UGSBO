@@ -254,16 +254,32 @@ public class JUnitTestAusslandssemesterSitzung {
 
 	@Test
 	public void deadlineUSADrei() {
-		Sitzung test = new Sitzung("Mustermann", "Max", 4, "USA");
-        String erwartet = "Jetzt solltest du dich auf jeden Fall über die Deadlines informieren.";;
+		Sitzung test = new Sitzung("Mustermann", "Max", 6, "USA");
+        String erwartet = "Jetzt solltest du dich auf jeden Fall über die Deadlines informieren.";
         String c = test.deadline(3,"USA");
         assertEqual("erwartet Antwortstring", erwartet, c);
 	}
 	
 	@Test
 	public void deadlineAsienDrei() {
-		Sitzung test = new Sitzung("Mustermann", "Max", 4, "Asien");
-        String erwartet = "Jetzt solltest du dich auf jeden Fall über die Deadlines informieren.";;
+		Sitzung test = new Sitzung("Mustermann", "Max", 6, "Asien");
+        String erwartet = "Jetzt solltest du dich auf jeden Fall über die Deadlines informieren.";
+        String c = test.deadline(3,"Asien");
+        assertEqual("erwartet Antwortstring", erwartet, c);
+	}
+	
+	@Test
+	public void deadline USAVier() {
+		Sitzung test = new Sitzung("Mustermann", "Max", 13, "USA");
+        String erwartet = "Zu diesem Zeitraum ist es sinnvoll sich über die entsprechenden Deadlines zu informieren.";
+        String c = test.deadline(3,"USA");
+        assertEqual("erwartet Antwortstring", erwartet, c);
+	}
+	
+	@Test
+	public void deadline AsienVier() {
+		Sitzung test = new Sitzung("Mustermann", "Max", 13, "Asien");
+        String erwartet = "Zu diesem Zeitraum ist es sinnvoll sich über die entsprechenden Deadlines zu informieren.";
         String c = test.deadline(3,"Asien");
         assertEqual("erwartet Antwortstring", erwartet, c);
 	}
