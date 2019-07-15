@@ -5,7 +5,19 @@ import javafx.scene.control.*;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 
+import java.util.ArrayList;
+
 public class MatrixCalcController {
+
+    /**
+     *
+     */
+
+    private static final String MULTIPLICATION_STRING = "multiplication";
+    private static final String ADDITION_STRING = "addition";
+    private static final String SUBSTRACTION_STRING = "substract";
+    private static final String TRANPOSE_STRING = "transpose";
+    private static final String CALCDETERMINAT_STRING = "calcDeterminate";
 
     // Hier werden die fx:id Attribute verknuepft.
     @FXML
@@ -41,21 +53,11 @@ public class MatrixCalcController {
 
             checkInputAndDisplayIfInputIsNotValid(stringMatrix, 2);
 
-            double[][] matrixA = util.stringToMatrix(stringMatrixA);
-            double[][] matrixB = util.stringToMatrix(stringMatrixB);
+            ArrayList<double[][]> matricies = new ArrayList<double[][]>();
+            matricies.add(util.stringToMatrix(stringMatrixA));
+            matricies.add(util.stringToMatrix(stringMatrixB));
 
-            try {
-                double[][] result = math.matrixMultiplication(matrixA, matrixB);
-
-                String DisplayableString = util.outputMatrixToOutputText(result);
-    
-                outputText.setText(DisplayableString);
-                outputText.setTextAlignment(TextAlignment.CENTER);
-            } catch (IllegalArgumentException e) {
-                
-                outputText.setText(e.getMessage());
-                outputText.setTextAlignment(TextAlignment.CENTER);
-            }
+            invokeOperation(matricies, MULTIPLICATION_STRING);
         });
 
         transposeButton.setOnMouseClicked((event) -> {
@@ -64,20 +66,10 @@ public class MatrixCalcController {
 
             checkInputAndDisplayIfInputIsNotValid(stringMatrix, 1);
 
-            double[][] matrixA = util.stringToMatrix(stringMatrixA);
+            ArrayList<double[][]> matricies = new ArrayList<double[][]>();
+            matricies.add(util.stringToMatrix(stringMatrixA));
 
-            try {
-                double[][] result = math.matrixTransponation(matrixA);
-
-                String DisplayableString = util.outputMatrixToOutputText(result);
-    
-                outputText.setText(DisplayableString);
-                outputText.setTextAlignment(TextAlignment.CENTER);
-            } catch (IllegalArgumentException e) {
-                
-                outputText.setText(e.getMessage());
-                outputText.setTextAlignment(TextAlignment.CENTER);
-            }
+            invokeOperation(matricies, TRANPOSE_STRING);
         });
 
         addButton.setOnMouseClicked((event) -> {
@@ -87,45 +79,25 @@ public class MatrixCalcController {
 
             checkInputAndDisplayIfInputIsNotValid(stringMatrix, 2);
 
-            double[][] matrixA = util.stringToMatrix(stringMatrixA);
-            double[][] matrixB = util.stringToMatrix(stringMatrixB);
+            ArrayList<double[][]> matricies = new ArrayList<double[][]>();
+            matricies.add(util.stringToMatrix(stringMatrixA));
+            matricies.add(util.stringToMatrix(stringMatrixB));
 
-            try {
-                double[][] result = math.matrixAddition(matrixA, matrixB);
-
-                String DisplayableString = util.outputMatrixToOutputText(result);
-    
-                outputText.setText(DisplayableString);
-                outputText.setTextAlignment(TextAlignment.CENTER);
-            } catch (IllegalArgumentException e) {
-                
-                outputText.setText(e.getMessage());
-                outputText.setTextAlignment(TextAlignment.CENTER);
-            }
+            invokeOperation(matricies, ADDITION_STRING);
         });
 
         substractButton.setOnMouseClicked((event) -> {
             String stringMatrixA = matrixATextArea.getText();
             String stringMatrixB = matrixBTextArea.getText();
             String[] stringMatrix = { stringMatrixA, stringMatrixB };
-            
+
             checkInputAndDisplayIfInputIsNotValid(stringMatrix, 2);
 
-            double[][] matrixA = util.stringToMatrix(stringMatrixA);
-            double[][] matrixB = util.stringToMatrix(stringMatrixB);
+            ArrayList<double[][]> matricies = new ArrayList<double[][]>();
+            matricies.add(util.stringToMatrix(stringMatrixA));
+            matricies.add(util.stringToMatrix(stringMatrixB));
 
-            try {
-                double[][] result = math.matrixSubstraction(matrixA, matrixB);
-
-                String DisplayableString = util.outputMatrixToOutputText(result);
-
-                outputText.setText(DisplayableString);
-                outputText.setTextAlignment(TextAlignment.CENTER);
-            } catch (IllegalArgumentException e) {
-
-                outputText.setText(e.getMessage());
-                outputText.setTextAlignment(TextAlignment.CENTER);
-            }
+            invokeOperation(matricies, SUBSTRACTION_STRING);
         });
 
         DetAButton.setOnMouseClicked((event) -> {
@@ -134,21 +106,10 @@ public class MatrixCalcController {
 
             checkInputAndDisplayIfInputIsNotValid(stringMatrix, 1);
 
-            double[][] matrixA = util.stringToMatrix(stringMatrixA);
+            ArrayList<double[][]> matricies = new ArrayList<double[][]>();
+            matricies.add(util.stringToMatrix(stringMatrixA));
 
-            try {
-                double result = math.calcDeterminat(matrixA);
-
-                String DisplayableString = Double.toString(result);
-
-                outputText.setText(DisplayableString);
-                outputText.setTextAlignment(TextAlignment.CENTER);
-
-            } catch (IllegalArgumentException e) {
-
-                outputText.setText(e.getMessage());
-                outputText.setTextAlignment(TextAlignment.CENTER);
-            }
+            invokeOperation(matricies, CALCDETERMINAT_STRING);
         });
 
         DetBButton.setOnMouseClicked((event) -> {
@@ -157,22 +118,94 @@ public class MatrixCalcController {
 
             checkInputAndDisplayIfInputIsNotValid(stringMatrix, 1);
 
-            double[][] matrixB = util.stringToMatrix(stringMatrixB);
+            ArrayList<double[][]> matricies = new ArrayList<double[][]>();
+            matricies.add(util.stringToMatrix(stringMatrixB));
 
-            try {
-                double result = math.calcDeterminat(matrixB);
-
-                String DisplayableString = Double.toString(result);
-
-                outputText.setText(DisplayableString);
-                outputText.setTextAlignment(TextAlignment.CENTER);
-
-            } catch (IllegalArgumentException e) {
-
-                outputText.setText(e.getMessage());
-                outputText.setTextAlignment(TextAlignment.CENTER);
-            }
+            invokeOperation(matricies, CALCDETERMINAT_STRING);
         });
+    }
+
+    /**
+     * Invokes the right operations form the MatrixCalcMath class 
+     * @param matricies contains both or onely one Matrix
+     * @param operation One of the Global Constats to select wich Operation is needed.
+     */
+    private void invokeOperation(ArrayList<double[][]> matricies, String operation) {
+        if (matricies.size() == 2) {
+            if (operation.equals(MULTIPLICATION_STRING)) {
+                try {
+                    double[][] result = math.matrixMultiplication(matricies.get(0), matricies.get(1));
+
+                    String DisplayableString = util.outputMatrixToOutputText(result);
+
+                    outputText.setText(DisplayableString);
+                    outputText.setTextAlignment(TextAlignment.CENTER);
+                } catch (IllegalArgumentException e) {
+
+                    outputText.setText(e.getMessage());
+                    outputText.setTextAlignment(TextAlignment.CENTER);
+                }
+            } else if (operation.equals(ADDITION_STRING)) {
+                try {
+                    double[][] result = math.matrixAddition(matricies.get(0), matricies.get(1));
+        
+                    String DisplayableString = util.outputMatrixToOutputText(result);
+        
+                    outputText.setText(DisplayableString);
+                    outputText.setTextAlignment(TextAlignment.CENTER);
+                } catch (IllegalArgumentException e) {
+        
+                    outputText.setText(e.getMessage());
+                    outputText.setTextAlignment(TextAlignment.CENTER);
+                }
+            } else if (operation.equals(SUBSTRACTION_STRING)) {
+                try {
+                    double[][] result = math.matrixSubstraction(matricies.get(0), matricies.get(1));
+        
+                    String DisplayableString = util.outputMatrixToOutputText(result);
+        
+                    outputText.setText(DisplayableString);
+                    outputText.setTextAlignment(TextAlignment.CENTER);
+                } catch (IllegalArgumentException e) {
+        
+                    outputText.setText(e.getMessage());
+                    outputText.setTextAlignment(TextAlignment.CENTER);
+                }
+            }
+        }else if (matricies.size() == 1) {
+            if (operation.equals(TRANPOSE_STRING)) {
+                try {
+                    double[][] result = math.matrixTransponation(matricies.get(0));
+        
+                    String DisplayableString = util.outputMatrixToOutputText(result);
+        
+                    outputText.setText(DisplayableString);
+                    outputText.setTextAlignment(TextAlignment.CENTER);
+                } catch (IllegalArgumentException e) {
+        
+                    outputText.setText(e.getMessage());
+                    outputText.setTextAlignment(TextAlignment.CENTER);
+                }
+            }
+            if (operation.equals(CALCDETERMINAT_STRING)) {
+                try {
+                    double result = math.calcDeterminat(matricies.get(0));
+        
+                    String DisplayableString = Double.toString(result);
+        
+                    outputText.setText(DisplayableString);
+                    outputText.setTextAlignment(TextAlignment.CENTER);
+                } catch (IllegalArgumentException e) {
+        
+                    outputText.setText(e.getMessage());
+                    outputText.setTextAlignment(TextAlignment.CENTER);
+                } catch (Exception e){
+
+                    outputText.setText(e.getMessage());
+                    outputText.setTextAlignment(TextAlignment.CENTER);
+                }
+            }
+        }
     }
 
     // TODO Wirte tests for the extracted Methode.
