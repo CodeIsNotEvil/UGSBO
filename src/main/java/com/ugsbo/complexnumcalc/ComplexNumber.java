@@ -128,6 +128,10 @@ public class ComplexNumber {
         return qoutient;
     }
 
+    /**
+     * Calucates the absolute value of this complex number
+     * @return the absolute value
+     */
     public Double absolutValueOf(){
         Double absoluteValue = Math.sqrt(Math.pow(this.realPart, 2) + Math.pow(this.imaginaryPart, 2)) ;
         return absoluteValue;

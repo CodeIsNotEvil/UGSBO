@@ -6,7 +6,7 @@ import org.junit.Test;
 public class AbsoluteValueOfComplexNumbersTest {
 
     @Test
-    public void TheAbsoluteValueOfAComplexNumberWithOnlyARealPart_IsNotTHeAbsoluteValueOfTheRealPart() {
+    public void TheAbsoluteValueOfAComplexNumberWithOnlyARealPart_IsNotTheAbsoluteValueOfTheRealPart() {
         ComplexNumber complexNumber = new ComplexNumber(Double.valueOf(4), Double.valueOf(0));
         Double expected = Double.valueOf(4);
 
