@@ -108,4 +108,24 @@ public class ComplexNumber {
         return product;
     }
 
+    /**
+     * Divides the dividend by the divisor, the dividend is this Instance.
+     * 
+     * @param divisor The ComplexNumber by wich this Instance will get divided
+     * @return The Qoutient of the Instance and the divisor
+     */
+    public ComplexNumber divide(ComplexNumber divisor) {
+        Double qoutientRealPart, qoutientImaginaryPart, tempDivisor;
+
+        tempDivisor = divisor.realPart * divisor.realPart + divisor.imaginaryPart * divisor.imaginaryPart;
+        qoutientRealPart = this.realPart * divisor.realPart + this.imaginaryPart * divisor.imaginaryPart;
+        qoutientImaginaryPart = this.imaginaryPart * divisor.realPart - this.realPart * divisor.imaginaryPart;
+        qoutientImaginaryPart /= tempDivisor;
+        qoutientRealPart /= tempDivisor;
+
+        ComplexNumber qoutient = new ComplexNumber(qoutientRealPart, qoutientImaginaryPart);
+
+        return qoutient;
+    }
+
 }
