@@ -56,4 +56,22 @@ public class ComplexNumber {
         }
     }
 
+    /**
+     * Adds two complex Numbers together.
+     * 
+     * @param addend The complex Number.
+     * @return The result of adding the two complex Numbers together, as a conplex
+     *         Number.
+     */
+    public ComplexNumber add(ComplexNumber addend) {
+        Double sumRealPart, sumImaginaryPart;
+
+        sumRealPart = this.realPart + addend.realPart;
+        sumImaginaryPart = this.imaginaryPart + addend.imaginaryPart;
+
+        ComplexNumber sum = new ComplexNumber(sumRealPart, sumImaginaryPart);
+
+        return sum;
+    }
+
 }
