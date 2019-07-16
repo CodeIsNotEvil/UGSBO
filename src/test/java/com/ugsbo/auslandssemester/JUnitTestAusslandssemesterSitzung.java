@@ -390,6 +390,32 @@ public class JUnitTestAusslandssemesterSitzung {
 		assertEquals("erwartet Antwortstring", e, a);
 	}
 	
+	@Test
+	public void finanzierungEuropaZwei() {
+		Sitzung test = new Sitzung("Mustermann", "Max", 4,"Europa");
+		String e = "Wenn du dich auf Ersamus beworben hast dann solltest du demnächst deine Rückmeldung bekommen.";
+		String a = test.finanzierung(2, "Europa");
+		assertEquals("erwartet Antwortstring", e, a);
+	}
+	
+	@Test
+	public void finanzierungEuropaDrei() {
+		Sitzung test = new Sitzung("Mustermann", "Max", 6,"Europa");
+		String e = "Denk am besten schon mal ein bisschen an die Finanzierung. Frag an ob Erasmus für dich in Frage kommt.";
+		String a = test.finanzierung(3, "Europa");
+		assertEquals("erwartet Antwortstring", e, a);
+	}
+	
+	@Test
+	public void finanzierungEuropaVier() {
+		Sitzung test = new Sitzung("Mustermann", "Max", 13,"Europa");
+		String e = "Über die Finanzierung kann man sich nie zu früh Gedanken machen. Aber bitte keine Hektik.";
+		String a = test.finanzierung(4, "Europa");
+		assertEquals("erwartet Antwortstring", e, a);
+	}
+	
+	
+	
 	
 
 }
