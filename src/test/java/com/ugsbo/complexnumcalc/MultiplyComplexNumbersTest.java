@@ -1,6 +1,7 @@
 package com.ugsbo.complexnumcalc;
 
-import static org.junit.Assert.assertTrue;
+import static org.hamcrest.MatcherAssert.assertThat; 
+import static org.hamcrest.Matchers.*;
 
 import org.junit.Test;
 
@@ -14,7 +15,7 @@ public class MultiplyComplexNumbersTest {
 
         ComplexNumber product = firstFaktor.multiply(secoundFaktor);
 
-        assertTrue("The product is not as expected", product.equals(expected));
+        assertThat("The product is not as expected", product, equalTo(expected));
     }
 
     @Test
@@ -25,6 +26,6 @@ public class MultiplyComplexNumbersTest {
 
         ComplexNumber product = firstFaktor.multiply(secoundFaktor);
 
-        assertTrue("The product is not as expected", product.equals(expected));
+        assertThat("The product is not as expected", product, equalTo(expected));
     }
 }
