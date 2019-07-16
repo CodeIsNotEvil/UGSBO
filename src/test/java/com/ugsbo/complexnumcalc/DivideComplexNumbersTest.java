@@ -1,6 +1,7 @@
 package com.ugsbo.complexnumcalc;
 
-import static org.junit.Assert.assertTrue;
+import static org.hamcrest.MatcherAssert.assertThat; 
+import static org.hamcrest.Matchers.*;
 
 import org.junit.Test;
 
@@ -14,7 +15,7 @@ public class DivideComplexNumbersTest {
 
         ComplexNumber quotient = dividend.divide(divisor);
 
-        assertTrue("The quotient is not as expected", quotient.equals(expected));
+        assertThat("The quotient is not as expected", quotient, equalTo(expected));
     }
 
     @Test
@@ -25,6 +26,6 @@ public class DivideComplexNumbersTest {
 
         ComplexNumber quotient = dividend.divide(divisor);
 
-        assertTrue("The quotient is not as expected", quotient.equals(expected));
+        assertThat("The quotient is not as expected", quotient, equalTo(expected));
     }
 }
