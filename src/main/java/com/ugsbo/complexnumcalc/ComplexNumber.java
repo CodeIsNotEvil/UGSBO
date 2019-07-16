@@ -128,4 +128,9 @@ public class ComplexNumber {
         return qoutient;
     }
 
+    public Double absolutValueOf(){
+        Double absoluteValue = Math.sqrt(Math.pow(this.realPart, 2)) ;
+        return absoluteValue;
+    }
+
 }
