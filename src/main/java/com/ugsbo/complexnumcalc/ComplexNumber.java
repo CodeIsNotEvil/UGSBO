@@ -48,12 +48,14 @@ public class ComplexNumber {
      * @param complexNumber The number wich gets compared with this Instance
      * @return True if the complex Numbers are Equal
      */
-    public boolean equals(ComplexNumber complexNumber) {
-        if (this.realPart.equals(complexNumber.realPart) && this.imaginaryPart.equals(complexNumber.imaginaryPart)) {
-            return true;
+    @Override
+    public boolean equals(Object complexNumber) {
+        if (complexNumber instanceof ComplexNumber){
+            ComplexNumber that = (ComplexNumber) complexNumber;
+            return this.realPart.equals(that.realPart) && this.imaginaryPart.equals(that.imaginaryPart);
         } else {
             return false;
-        }
+        } 
     }
 
     /**
