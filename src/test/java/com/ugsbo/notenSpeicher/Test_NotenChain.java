@@ -11,7 +11,7 @@ public class Test_NotenChain {
   
   @Before
   public void setUp() throws Exception {
-    Workingobjekt = new NotenKette();
+    Workingobjekt = new NotenKette("first", 2);
   }
 
   @Test

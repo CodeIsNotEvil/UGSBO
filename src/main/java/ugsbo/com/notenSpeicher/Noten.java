@@ -29,7 +29,7 @@ public class Noten {
     Note = eingabeNote;
     ownHash = createNewHash(eingabeFach+previousHash);
     
-    durchschnitt = (durchschnitt+eingabeNote)/2;
+    this.durchschnitt = (durchschnitt+eingabeNote)/2;
     
     this.vorher = vorher;
     this.previousHash = previousHash;
