@@ -129,7 +129,7 @@ public class ComplexNumber {
     }
 
     public Double absolutValueOf(){
-        Double absoluteValue = Math.sqrt(Math.pow(this.realPart, 2)) ;
+        Double absoluteValue = Math.sqrt(Math.pow(this.realPart, 2) + Math.pow(this.imaginaryPart, 2)) ;
         return absoluteValue;
     }
 
