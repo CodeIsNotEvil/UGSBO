@@ -91,4 +91,21 @@ public class ComplexNumber {
         return differenz;
     }
 
+    /**
+     * Multiplies the faktor with this Instance.
+     * 
+     * @param faktor The ComplexNumber by wich this Instance will get multiplyed
+     * @return The product of this Instance and the faktor
+     */
+    public ComplexNumber multiply(ComplexNumber faktor) {
+        Double productRealPart, productImaginaryPart;
+
+        productRealPart = this.realPart * faktor.realPart + this.imaginaryPart * faktor.imaginaryPart * -1.0;
+        productImaginaryPart = 0.0;
+
+        ComplexNumber product = new ComplexNumber(productRealPart, productImaginaryPart);
+
+        return product;
+    }
+
 }
