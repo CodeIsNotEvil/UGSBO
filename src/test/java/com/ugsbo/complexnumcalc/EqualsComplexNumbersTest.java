@@ -5,7 +5,7 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-public class EqualsComplexNumversTest {
+public class EqualsComplexNumbersTest {
 
     @Test
     public void TwoEqualNumbersWithOnlyRealPart_AreNotDetectedAsEqual() {
