@@ -19,5 +19,20 @@ public class NotenKette {
     Workingobjekt = newWorkingObjekt;
   }
 
+  public String toString() {
+    String erg = "";
+    Noten temp = Workingobjekt;
+    
+    while (true) {
+      erg += temp.getFach() + "\t"+ temp.getNote() +"\n";
+      
+      temp = temp.getVorher();
+      
+      if (temp == null) {
+        return erg;
+      }
+      
+    }
+  }
   
 }
