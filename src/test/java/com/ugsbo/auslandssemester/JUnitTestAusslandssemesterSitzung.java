@@ -321,7 +321,7 @@ public class JUnitTestAusslandssemesterSitzung {
 	@Test
 	public void finanzierungAsienEins() {
 		Sitzung test = new Sitzung("Mustermann", "Max", 1,"Asien");
-		String e = "Es tut mir Leid, aber du bist zu spät dran. Alle Deadlines sind durch.";
+		String e = "Selbst wenn du bisher noch gar nicht an die Finanzierung gedacht hast solltest du es jetzt tun. Besser spät als nie.";
 		String a = test.finanzierung(1, "Asien");
 		assertEquals("erwartet Antwortstring", e, a);
 	}
@@ -329,7 +329,7 @@ public class JUnitTestAusslandssemesterSitzung {
 	@Test
 	public void finanzierungUSAEins() {
 		Sitzung test = new Sitzung("Mustermann", "Max", 1,"USA");
-		String e = "Es tut mir Leid, aber du bist zu spät dran. Alle Deadlines sind durch.";
+		String e = "Selbst wenn du bisher noch gar nicht an die Finanzierung gedacht hast solltest du es jetzt tun. Besser spät als nie.";
 		String a = test.finanzierung(1, "USA");
 		assertEquals("erwartet Antwortstring", e, a);
 	}
@@ -337,7 +337,7 @@ public class JUnitTestAusslandssemesterSitzung {
 	@Test
 	public void finanzierungAsienZwei() {
 		Sitzung test = new Sitzung("Mustermann", "Max", 4,"Asien");
-		String e = "Die Bewerbungsdeadlines sind hier wahrscheinlich schon durch. Stipendien könnten aber noch gehen";
+		String e =  "Wenn du dich noch nicht um die Finanzierung gekümmert hast, dann musst du dich jetzt aber ran halten.";
 		String a = test.finanzierung(2, "USA");
 		assertEquals("erwartet Antwortstring", e, a);
 	}
@@ -345,7 +345,7 @@ public class JUnitTestAusslandssemesterSitzung {
 	@Test
 	public void finanzierungUSAZwei() {
 		Sitzung test = new Sitzung("Mustermann", "Max", 4,"USA");
-		String e = "Die Bewerbungsdeadlines sind hier wahrscheinlich schon durch. Stipendien könnten aber noch gehen";
+		String e =  "Wenn du dich noch nicht um die Finanzierung gekümmert hast, dann musst du dich jetzt aber ran halten.";
 		String a = test.finanzierung(2, "USA");
 		assertEquals("erwartet Antwortstring", e, a);
 	}

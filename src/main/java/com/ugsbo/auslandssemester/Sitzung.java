@@ -115,6 +115,46 @@ public class Sitzung {
 		return tipp;
 
 	}
+	
+	//neuer Tipp zur Finanzierung 
+	
+	public String finanzierung(int kategorieZeit, String kategorieZiel) {
+		String tipp = "kein Tipp";
+		if(kategorieZiel == "USA" || kategorieZiel == "Asien") {
+			if(kategorieZeit == 4) {
+				tipp = "Finanzierung ist keine leichte Sache, darüber kann man sich nie zu früh Gedanken machen. Stichwort: Stipendium.";
+			}
+			
+			if(kategorieZeit == 3) {
+				tipp = "Jetzt musst du auf jeden Fall überlegen wie du das finanziern willst. Sprich vielleicht mal mit deinen Eltern oder such nach Stipendien";
+			}
+			
+			if(kategorieZeit == 2) {
+				tipp = "Wenn du dich noch nicht um die Finanzierung gekümmert hast, dann musst du dich jetzt aber ran halten.";
+			}
+			if(kategorieZeit == 1) {
+				tipp = "Selbst wenn du bisher noch gar nicht an die Finanzierung gedacht hast solltest du es jetzt tun. Besser spät als nie.";
+			}
+			
+		} else {
+			if(kategorieZeit == 4) {
+				tipp = "Über die Finanzierung kann man sich nie zu früh Gedanken machen. Aber bitte keine Hektik.";
+			}
+			
+			if(kategorieZeit == 3) {
+				tipp = "Denk am besten schon mal ein bisschen an die Finanzierung. Frag an ob Erasmus für dich in Frage kommt.";
+			}
+			
+			if(kategorieZeit == 2) {
+				tipp = "Wenn du dich auf Ersamus beworben hast dann solltest du demnächst deine Rückmeldung bekommen.";
+			}
+			if(kategorieZeit == 1) {
+				tipp = "Wenn du ein Erasmus+ STipendium bekommst, dann wirst du noch einen Englischtest absolvieren und einen Vertrag unterschreiben müssen. Denk auch an deine Immatrikulationsbescheingung.";
+			}
+		}
+		return tipp;
+
+	}
 
 	// neuer Tipp zum Wohnen
 	public String wohnen(int kategorieZeit) {
