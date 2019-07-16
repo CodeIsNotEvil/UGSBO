@@ -137,4 +137,18 @@ public class ComplexNumber {
         return absoluteValue;
     }
 
+    /**
+     * Calucates the absolute value of this complex number
+     * @return the absolute value
+     */
+    public ComplexNumber conjugationOf(){
+        if(this.imaginaryPart.equals(Double.valueOf(0))){
+            return this;
+        } else {
+            this.imaginaryPart *= (-1);
+            return this;
+        }
+        
+    }
+
 }
