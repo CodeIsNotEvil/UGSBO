@@ -1,15 +1,15 @@
 package com.ugsbo.complexnumcalc;
 
 public class ComplexNumber {
-    private int realPart;
-    private int imaginaryPart;
+    private Double realPart;
+    private Double imaginaryPart;
 
     /**
-     * @param realPart The real part of the complex Number
+     * @param realPart      The real part of the complex Number
      * @param imaginaryPart The imaginary part of the complex Number
      */
 
-    public ComplexNumber(int realPart, int imaginaryPart) {
+    public ComplexNumber(Double realPart, Double imaginaryPart) {
         this.realPart = realPart;
         this.imaginaryPart = imaginaryPart;
     }
@@ -17,29 +17,43 @@ public class ComplexNumber {
     /**
      * @return the realPart
      */
-    public int getRealPart() {
+    public Double getRealPart() {
         return realPart;
     }
 
     /**
      * @param realPart the realPart to set
      */
-    public void setRealPart(int realPart) {
+    public void setRealPart(Double realPart) {
         this.realPart = realPart;
     }
 
     /**
      * @return the imaginaryPart
      */
-    public int getImaginaryPart() {
+    public Double getImaginaryPart() {
         return imaginaryPart;
     }
 
     /**
      * @param imaginaryPart the imaginaryPart to set
      */
-    public void setImaginaryPart(int imaginaryPart) {
+    public void setImaginaryPart(Double imaginaryPart) {
         this.imaginaryPart = imaginaryPart;
-    }   
-    
+    }
+
+    /**
+     * Checks if the given complex Number is equal to this object.
+     * 
+     * @param complexNumber The number wich gets compared with this Instance
+     * @return True if the complex Numbers are Equal
+     */
+    public boolean equals(ComplexNumber complexNumber) {
+        if (this.realPart.equals(complexNumber.realPart) && this.imaginaryPart.equals(complexNumber.imaginaryPart)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }
