@@ -7,7 +7,7 @@ public class Noten {
 
   String Fach;
   int Note;
-  float durchschnitt;
+  double durchschnitt;
   Noten vorher;
   
   String ownHash;
@@ -24,7 +24,7 @@ public class Noten {
     ownHash = createNewHash(eingabeFach);
   }
   
-  public Noten(String eingabeFach, int eingabeNote, String previousHash, int durchschnitt, Noten vorher) {
+  public Noten(String eingabeFach, int eingabeNote, String previousHash, double durchschnitt, Noten vorher) {
     Fach = eingabeFach;
     Note = eingabeNote;
     ownHash = createNewHash(eingabeFach+previousHash);
@@ -62,7 +62,7 @@ public class Noten {
     return Note;
   }
   
-  public float getDurchschnitt() {
+  public double getDurchschnitt() {
     return durchschnitt;
   }
   

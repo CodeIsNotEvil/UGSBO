@@ -19,21 +19,21 @@ public class Test_NotenChain {
     String eingabeFach = "Mathe";
     int eingabeNote = 2;
     
-    int erwartet = 2;
-    int ergebnis;
+    double erwartet = 2;
+    double ergebnis;
     
     Workingobjekt.add(eingabeFach, eingabeNote);
     ergebnis = Workingobjekt.durchschnitt();
     
-    assertEquals("Durchschnitt ist korrekt", erwartet, ergebnis);
+    assertEquals(erwartet, ergebnis, 0.1);
   }
   
   @Test
   public void hinzufügenMehrAlsEinmal() {
     String eingabeFach = "Mathe";
     int eingabeNote = 2;
-    int ergebnis;
-    int erwartet = 2;
+    double ergebnis;
+    double erwartet = 2;
     
     Workingobjekt.add(eingabeFach, eingabeNote);
     Workingobjekt.add(eingabeFach, eingabeNote);
@@ -41,7 +41,7 @@ public class Test_NotenChain {
     
     ergebnis = Workingobjekt.durchschnitt();
     
-    assertEquals("eingabe und Ergebnis sind gleich", erwartet, ergebnis);
+    assertEquals(erwartet, ergebnis, 0.1);
   }
   
   @Test
@@ -49,15 +49,15 @@ public class Test_NotenChain {
     String eingabeFach = "Mathe";
     int eingabeNote = 2;
     int eingabeNotezwei = 0;
-    int ergebnis;
-    int erwartet = 2;
+    double ergebnis;
+    double erwartet = 2;
     
     Workingobjekt.add(eingabeFach, eingabeNote);
     Workingobjekt.add(eingabeFach, eingabeNotezwei);
     
     ergebnis = Workingobjekt.durchschnitt();
     
-    assertEquals("Durchscnitt hat sich nicht verändert", erwartet, ergebnis);
+    assertEquals(erwartet, ergebnis, 0.1);
   }
   
 }

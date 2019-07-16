@@ -8,14 +8,14 @@ public class NotenKette {
     Workingobjekt = new Noten("first", 0);
   }
 
-  public int durchschnitt() {
-    // TODO Auto-generated method stub
-    return 0;
+  public double durchschnitt() {
+    return Workingobjekt.getDurchschnitt();
   }
 
   public void add(String eingabeFach, int eingabeNote) {
-    // TODO Auto-generated method stub
-    
+    Noten newWorkingObjekt = new Noten(eingabeFach,eingabeNote, Workingobjekt.previousHash, Workingobjekt.durchschnitt, Workingobjekt);
+    Workingobjekt = newWorkingObjekt;
   }
 
+  
 }
