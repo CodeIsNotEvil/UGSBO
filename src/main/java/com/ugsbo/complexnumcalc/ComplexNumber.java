@@ -100,8 +100,8 @@ public class ComplexNumber {
     public ComplexNumber multiply(ComplexNumber faktor) {
         Double productRealPart, productImaginaryPart;
 
-        productRealPart = this.realPart * faktor.realPart + this.imaginaryPart * faktor.imaginaryPart * -1.0;
-        productImaginaryPart = 0.0;
+        productRealPart = this.realPart * faktor.realPart - this.imaginaryPart * faktor.imaginaryPart;
+        productImaginaryPart = this.realPart * faktor.imaginaryPart + this.imaginaryPart * faktor.realPart;
 
         ComplexNumber product = new ComplexNumber(productRealPart, productImaginaryPart);
 
