@@ -74,4 +74,21 @@ public class ComplexNumber {
         return sum;
     }
 
+    /**
+     * Substracts the Subtrahend form this instance.
+     * 
+     * @param subtrahend The Number wich will be substracted form the Minuend
+     * @return The Differenz of the Minuend and Subtrahend.
+     */
+    public ComplexNumber substract(ComplexNumber subtrahend) {
+        Double differenzRealPart, differenzImaginaryPart;
+
+        differenzRealPart = this.realPart - subtrahend.realPart;
+        differenzImaginaryPart = this.imaginaryPart - subtrahend.imaginaryPart;
+
+        ComplexNumber differenz = new ComplexNumber(differenzRealPart, differenzImaginaryPart);
+
+        return differenz;
+    }
+
 }
