@@ -28,15 +28,17 @@ public class AuslandssemesterMain {
 
 			System.out.println("Tipp 2:");
 			System.out.println(g.finanzierung(g.kategorieInMonaten(), g.kategorieDestination()));
+			
+
+			System.out.println("Tipp 4:");
+			System.out.println(g.learningAgreement(g.kategorieInMonaten()));
+
 
 			System.out.println("Tipp 3:");
 			System.out.println(g.wohnen(g.kategorieInMonaten()));
 
 			System.out.println("Tipp 3:");
 			System.out.println(g.packen(g.kategorieInMonaten()));
-
-			System.out.println("Tipp 4:");
-			System.out.println(g.learningAgreement(g.kategorieInMonaten()));
 
 		}
 	}
