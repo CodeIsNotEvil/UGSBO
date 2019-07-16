@@ -1,6 +1,7 @@
 package com.ugsbo.complexnumcalc;
 
-import static org.junit.Assert.assertTrue;
+import static org.hamcrest.MatcherAssert.assertThat; 
+import static org.hamcrest.Matchers.*;
 
 import org.junit.Test;
 
@@ -14,7 +15,7 @@ public class AddComplexNumbersTest {
 
         ComplexNumber sum = firstAddend.add(secoundAddend);
 
-        assertTrue("Dont sum to the sum", sum.equals(expected));
+        assertThat("Dont sum to the sum", sum, equalTo(expected));
     }
 
     @Test
@@ -25,6 +26,6 @@ public class AddComplexNumbersTest {
 
         ComplexNumber sum = firstAddend.add(secoundAddend);
 
-        assertTrue("Dont sum to the sum", sum.equals(expected));
+        assertThat("Dont sum to the sum", sum, equalTo(expected));
     }
 }
