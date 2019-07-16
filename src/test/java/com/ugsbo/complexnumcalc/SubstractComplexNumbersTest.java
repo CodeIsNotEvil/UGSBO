@@ -1,6 +1,7 @@
 package com.ugsbo.complexnumcalc;
 
-import static org.junit.Assert.assertTrue;
+import static org.hamcrest.MatcherAssert.assertThat; 
+import static org.hamcrest.Matchers.*;
 
 import org.junit.Test;
 
@@ -14,7 +15,7 @@ public class SubstractComplexNumbersTest {
 
         ComplexNumber difference = minuend.substract(subtrahend);
 
-        assertTrue("The difference is not as expected", difference.equals(expected));
+        assertThat("The difference is not as expected", difference, equalTo(expected));
     }
 
     @Test
@@ -25,6 +26,6 @@ public class SubstractComplexNumbersTest {
 
         ComplexNumber difference = minuend.substract(subtrahend);
 
-        assertTrue("The difference is not as expected", difference.equals(expected));
+        assertThat("The difference is not as expected", difference, equalTo(expected));
     }
 }
