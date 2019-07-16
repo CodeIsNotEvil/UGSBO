@@ -2,8 +2,10 @@ package ugsbo.com.notenSpeicher;
 
 public class NotenKette {
 
+  Noten Workingobjekt;
+  
   public NotenKette() {
-    // TODO Auto-generated constructor stub
+    Workingobjekt = new Noten("first", 0);
   }
 
   public int durchschnitt() {

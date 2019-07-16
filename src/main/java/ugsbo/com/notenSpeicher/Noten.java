@@ -7,7 +7,7 @@ public class Noten {
 
   String Fach;
   int Note;
-  int durchschnitt;
+  float durchschnitt;
   Noten vorher;
   
   String ownHash;
@@ -22,6 +22,17 @@ public class Noten {
     previousHash = null;
     
     ownHash = createNewHash(eingabeFach);
+  }
+  
+  public Noten(String eingabeFach, int eingabeNote, String previousHash, int durchschnitt, Noten vorher) {
+    Fach = eingabeFach;
+    Note = eingabeNote;
+    ownHash = createNewHash(eingabeFach+previousHash);
+    
+    durchschnitt = (durchschnitt+eingabeNote)/2;
+    
+    this.vorher = vorher;
+    this.previousHash = previousHash;
   }
 
   private String createNewHash(String input) {
@@ -51,7 +62,7 @@ public class Noten {
     return Note;
   }
   
-  public int getDurchschnitt() {
+  public float getDurchschnitt() {
     return durchschnitt;
   }
   
