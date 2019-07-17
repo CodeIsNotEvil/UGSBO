@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ugsbo.gui.BasicGuiController">
+   <children>
+      <AnchorPane maxHeight="50.0" minHeight="50.0" minWidth="-Infinity" prefHeight="50.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label text="UGSBO" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
+            <TextField layoutX="415.0" layoutY="13.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="13.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="140.0" minWidth="-Infinity" prefHeight="350.0" prefWidth="150.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="50.0">
+         <children>
+            <Label layoutX="43.0" layoutY="14.0" text="Team O.o" AnchorPane.leftAnchor="43.0" AnchorPane.rightAnchor="43.0" AnchorPane.topAnchor="10.0" />
+            <Label layoutX="22.0" layoutY="50.0" text="Christian Baltzer" AnchorPane.topAnchor="40.0" />
+            <Label layoutX="14.0" layoutY="71.0" text="Carolin Brückmann" AnchorPane.topAnchor="71.0" />
+            <Label layoutX="19.0" layoutY="109.0" text="Jacqueline Heinze" AnchorPane.topAnchor="100.0" />
+            <Label layoutX="22.0" layoutY="130.0" text="Lukas Reichwein" AnchorPane.topAnchor="130.0" />
+         </children>
+      </AnchorPane>
+    <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="50.0">
+         <children>
+            <Button fx:id="matrixCalc" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="260.0" text="Matrix Calculator" textAlignment="CENTER" AnchorPane.leftAnchor="19.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="15.0" />
+            <Button fx:id="app2" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="260.0" text="App2" textAlignment="CENTER" AnchorPane.leftAnchor="19.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="60.0" />
+            <Button fx:id="app3" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="260.0" text="App3" textAlignment="CENTER" AnchorPane.leftAnchor="19.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="105.0" />
+            <Button fx:id="app4" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="260.0" text="App4" textAlignment="CENTER" AnchorPane.leftAnchor="19.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="150.0" />
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </AnchorPane>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="150.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0" />
+   </children>
+</AnchorPane>
