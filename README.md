@@ -2,13 +2,16 @@
 
 `Ultra Geile Studenten Benutzer Oberfläche (UGSBO)`
 
+Das Gource Video:
+https://youtu.be/4Dtot2jW1PA
+
 ## Funktionen
 # UGSBO
 
 Ultra Geile Studenten Benutzer Oberfläche (UGSBO)
 
 Funktionen
-- [ ] SAP für Studenten
+- [x] SAP für Studenten
    - [ ] Was hab ich im Kühlschrank?
    - [ ] Was hab ich im Kleiderschrank?
 - [ ] Busplan für die Heimfahrt
@@ -22,8 +25,8 @@ Funktionen
 - [ ] praktische Tools für  die Uni?
       - [ ] ABC-Analyse Rechner
       - [ ] String Calculator
-      - [ ] Vokabeltrainer 
-      - [ ] Matrix Rechner (transformation)
+      - [x] Vokabeltrainer 
+      - [x] Matrix Rechner - Version 1.0
 - [ ] TODO Liste
 - [ ] Wetter API
    - [ ] Wetter Zuhause
@@ -32,6 +35,6 @@ Funktionen
 - [ ] Stundenplan
    - [ ] Notizen
    - [ ] Einbinden der Wetter-Funktion?
-- [ ] Buchhaltung mit Auswertung
+- [x] Buchhaltung mit Auswertung
 - [ ] RSS-Feed Reader für Nachrichten
    - [ ] FEFE
